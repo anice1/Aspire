@@ -19,7 +19,7 @@ class CreateSchoolAdminRegisterTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('othernames');
-            $table->string('email');
+            $table->string('email',100)->unique();
             $table->string('gender');
             $table->string('school_name');
             $table->string('address');

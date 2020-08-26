@@ -9,6 +9,11 @@ use App\Student;
 use App\Role;
 class UserRegistrationController extends Controller
 {
+
+    public function register_page(){
+        return view('registration.admin');
+    }
+
     public function create_admin(Request $request){
         
         $user = new SchoolAdmin;
@@ -22,7 +27,7 @@ class UserRegistrationController extends Controller
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->password = $request->password;
-        return redirect('admin.login');
+        return redirect('register/store');
         
     }
 

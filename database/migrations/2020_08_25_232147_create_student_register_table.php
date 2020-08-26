@@ -19,7 +19,7 @@ class CreateStudentRegisterTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('othernames');
-            $table->string('email')->unique();
+            $table->string('email',100)->unique();
             $table->string('dob');
             $table->string('gender');
             $table->string('class_id');

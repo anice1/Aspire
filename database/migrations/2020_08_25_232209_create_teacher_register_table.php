@@ -22,7 +22,7 @@ class CreateTeacherRegisterTable extends Migration
             $table->datetime('dob');
             $table->string('gender');
             $table->string('tclass');
-            $table->string('email')->unique();
+            $table->string('email',100)->unique();
             $table->string('password');
             $table->string('qualification');
             $table->SoftDeletes();
