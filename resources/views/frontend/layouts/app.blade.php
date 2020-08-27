@@ -28,8 +28,9 @@
         <!-- Materialize  CSS -->
         <link rel="stylesheet" href="css/materialize.css">
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        <link href="https://www/fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://www/fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <!-- Bootstrap Core Css -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Modernize js -->
@@ -42,9 +43,9 @@
             @include('frontend.inc.header')
             <div class="dashboard-page-one">
                 @include('frontend.inc.sidebar')
-                @if:{{ route(student) }}
-                @include('frontend.inc.dashboardsummary')
-                @endif
+    
+                
+            
                 @yield('content')
             </div>
         </div>

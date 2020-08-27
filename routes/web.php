@@ -20,10 +20,15 @@ Route::get('/', function () {
 Route::get('/student', function () {
     return view('frontend.students.index');
 })->name('student');
-Route::get('/create', function () {
+Route::get('/create_student', function () {
     return view('frontend.students.create');
 });
-
+Route::get('/edit_student', function () {
+    return view('frontend.students.edit');
+});
+Route::get('/student_disable', function () {
+    return view('frontend.students.disable');
+});
 /*
 |---------------------------------
 | Admin Registration Route

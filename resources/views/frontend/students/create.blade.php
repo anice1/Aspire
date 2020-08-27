@@ -20,19 +20,6 @@
                 <div class="item-title">
                     <h3>Add New Students</h3>
                 </div>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                       aria-expanded="false">...</a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-times text-orange-red"></i>Close</a>
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                    </div>
-                </div>
             </div>
             <form class="new-added-form">
                 <div class="row">
@@ -60,7 +47,7 @@
                         <i class="far fa-calendar-alt"></i>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label>Roll</label>
+                        <label>Address</label>
                         <input type="text" placeholder="" class="form-control">
                     </div>
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -104,23 +91,28 @@
                         </select>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label>Section *</label>
-                        <select class="select2">
-                            <option value="">Please Select Section *</option>
-                            <option value="1">Pink</option>
-                            <option value="2">Blue</option>
-                            <option value="3">Bird</option>
-                            <option value="3">Rose</option>
-                            <option value="3">Red</option>
-                        </select>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label>Admission ID</label>
-                        <input type="text" placeholder="" class="form-control">
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <label>Phone</label>
                         <input type="text" placeholder="" class="form-control">
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label>Guardian FullName *</label>
+                        <input type="text" placeholder="" class="form-control">
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label>Guardian phone *</label>
+                        <input type="text" placeholder="" class="form-control">
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label>Guardian Email</label>
+                        <input type="email" placeholder="" class="form-control">
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label>Guardian Occupation *</label>
+                        <input type="text" placeholder="" class="form-control">
+                    </div>
+                    <div class="col-lg-6 col-12 form-group mg-t-30">
+                        <label class="text-dark-medium">Upload Guardian Photo (150px X 150px)</label>
+                        <input type="file" class="form-control-file">
                     </div>
                     <div class="col-lg-6 col-12 form-group">
                         <label>Short BIO</label>
@@ -128,7 +120,7 @@
                                   rows="9"></textarea>
                     </div>
                     <div class="col-lg-6 col-12 form-group mg-t-30">
-                        <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
+                        <label class="text-dark-medium">Upload Student Photo (150px X 150px) *</label>
                         <input type="file" class="form-control-file">
                     </div>
                     <div class="col-12 form-group mg-t-8">
@@ -140,10 +132,6 @@
         </div>
     </div>
     <!-- Admit Form Area End Here -->
-    <footer class="footer-wrap-layout1">
-        <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a
-                href="#">PsdBosS</a></div>
-    </footer>
 </div>
 
 @endsection

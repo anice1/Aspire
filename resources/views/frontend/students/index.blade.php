@@ -100,10 +100,10 @@
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <a class="dropdown-item" href="#"><i
                                                 class="fas fa-times text-orange-red"></i>Close</a>
-                                        <a class="dropdown-item" href="#"><i
+                                        <a class="dropdown-item" href="/student"><i
                                                 class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                                         <a class="dropdown-item" href="#"><i
-                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                                class="fas fa-redo-alt text-orange-peel"></i>disable</a>
                                     </div>
                                 </div>
                             </td>
@@ -1100,10 +1100,6 @@
             </div>
         </div>
         <!-- Student Table Area End Here -->
-        <footer class="footer-wrap-layout1">
-            <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a
-                    href="#">PsdBosS</a></div>
-        </footer>
     </div>
 
 @endsection
