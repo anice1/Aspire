@@ -90,7 +90,7 @@
         <div>
             <div class="dashboard-summery mg-b-20">
                 <div class="panel-body">
-                    <h3>Welcome Steven Johnson</h3>
+                    <h3>Welcome {{ auth()->user()->name }}</h3>
                     <p>Your presence and cooperation will help us to improve the education system of our organization.</p>
                 </div>
             </div>

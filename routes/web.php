@@ -13,25 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.welcome');
-});
-
-Route::get('/student', function () {
-
-    return view('frontend.students.index');
-})->name('student');
-
-
-Route::get('/create', function () {
-    return view('frontend.students.create');
-});
-
-Route::get('/teacher-add', function () {
-    return view('frontend.teachers.create');
-});
-
-Route::resource('teacher', 'TeacherController');
 
 
 // Route::resource('/teacher','TeacherController');
@@ -57,20 +38,33 @@ Route::resource('teacher', 'TeacherController');
 | Student Registration Route
 |---------------------------------
 */
-//    Route::post('/student/create', 'UserRegistrationController@create_student');
 //
-//Auth::routes();
+Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
-//Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth']], function() {
 //
-//    Route::resource('roles','RoleController');
+    Route::resource('roles','RoleController');
 //
-//    Route::resource('users','UserController');
+    Route::resource('users','UserController');
 //
 //    Route::resource('students','StudentController');
 //
-//    Route::resource('teachers','TeacherController');
+    Route::resource('teachers','TeacherController');
 //
 //
-//});
+});
+Route::group(['middleware' => ['auth']], function(){
+
+    Route::get('/', function () {
+        return view('frontend.welcome');
+    });
+
+    Route::resource('students','StudentController');
+
+
+    Route::get('teacher', function () {
+        return view('frontend.teachers.create');
+    });
+
+});

@@ -47,7 +47,7 @@ class StudentController extends Controller
 
         $students = Student::latest()->paginate(5);
 
-        return view('students.index',compact('students'))
+        return view('frontend.students.index',compact('students'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -68,7 +68,7 @@ class StudentController extends Controller
 
     {
 
-        return view('students.create');
+        return view('frontend.students.create');
 
     }
 
@@ -91,15 +91,14 @@ class StudentController extends Controller
 
         request()->validate([
 
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'full name' => 'required',
-            'detail' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'othernames' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
+            'email' => 'required',
+            'class' => 'required',
+            'section' => 'required',
 
         ]);
 
@@ -130,7 +129,7 @@ class StudentController extends Controller
 
     {
 
-        return view('students.show',compact('student'));
+        return view('frontend.students.index',compact('student'));
 
     }
 
@@ -151,7 +150,7 @@ class StudentController extends Controller
 
     {
 
-        return view('students.edit',compact('student'));
+        return view('frontend.students.edit',compact('student'));
 
     }
 
@@ -176,14 +175,14 @@ class StudentController extends Controller
 
         request()->validate([
 
-            'name' => 'required',
-            'name' => 'required',
-            'name' => 'required',
-            'name' => 'required',
-            'name' => 'required',
-            'name' => 'required',
-            'name' => 'required',
-            'detail' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'othernames' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
+            'email' => 'required',
+            'class' => 'required',
+            'section' => 'required',
 
         ]);
 
@@ -191,7 +190,7 @@ class StudentController extends Controller
         $student->update($request->all());
 
 
-        return redirect()->route('students.index')
+        return redirect()->route('frontend.students.index')
 
             ->with('success','Student updated successfully');
 
@@ -217,7 +216,7 @@ class StudentController extends Controller
         $student->delete();
 
 
-        return redirect()->route('students.index')
+        return redirect()->route('frontend.students.index')
 
             ->with('success','Student deleted successfully');
 
