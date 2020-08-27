@@ -14,28 +14,50 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.welcome');
 });
 
+Route::get('/student', function () {
+    return view('frontend.students.index');
+})->name('student');
+Route::get('/create', function () {
+    return view('frontend.students.create');
+});
 
 /*
 |---------------------------------
 | Admin Registration Route
 |---------------------------------
 */
-    Route::get('/register', 'UserRegistrationController@register_page');
-    Route::post('/register/store', 'UserRegistrationController@create_admin');
-
+//    Route::get('/register', 'UserRegistrationController@register_page');
+//    Route::post('/register/store', 'UserRegistrationController@create_admin');
+//
 /*
 |---------------------------------
 | Teacher Registration Route
 |---------------------------------
 */
-    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
-    
+//    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
+
 /*
 |---------------------------------
 | Student Registration Route
 |---------------------------------
-*/  
-    Route::post('/student/create', 'UserRegistrationController@create_student');
+*/
+//    Route::post('/student/create', 'UserRegistrationController@create_student');
+//
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::group(['middleware' => ['auth']], function() {
+//
+//    Route::resource('roles','RoleController');
+//
+//    Route::resource('users','UserController');
+//
+//    Route::resource('students','StudentController');
+//
+//    Route::resource('teachers','TeacherController');
+//
+//
+//});
