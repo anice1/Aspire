@@ -10,9 +10,6 @@ use App\Role;
 class UserRegistrationController extends Controller
 {
 
-    public function register_page(){
-        return view('registration.admin');
-    }
 
     public function create_admin(Request $request){
         
@@ -35,16 +32,24 @@ class UserRegistrationController extends Controller
         
         $user = new Teacher;
         $user->role_id = 2;
-        $user->firstname = $request->fname;
-        $user->lastname = $request->lname;
-        $user->othernames = $request->onames;
-        $user->dob = $request->dob;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
         $user->gender = $request->gender;
-        $user->qualification = $request->qualification;
-        $user->tclass = $request->tclass;
+        $user->dob = $request->dob;
+        $user->blood_group = $request->blood_group;
+        $user->religion = $request->religion;
         $user->email = $request->email;
         $user->password = $request->password;
-        return redirect('admin.teachers');
+        $user->tclass = $request->class;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $request->bio = $request->bio;
+        $user->file = $request->file;
+        $user->save();
+        // if($file){
+        //     $name = $file->getClientOriginalName();
+        // }
+        return redirect('frontend.teachers.create');
     }
 
     public function create_student(Request $request){

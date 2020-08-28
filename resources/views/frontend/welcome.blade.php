@@ -3,6 +3,7 @@
 @section('content')
     <!-- Dashboard Content Start Here -->
 
+@include('frontend.inc.dashboardsummary')
     <div class="row gutters-20">
         <div class="col-12 col-xl-6 col-3-xxxl">
             <div class="card dashboard-card-three pd-b-20">

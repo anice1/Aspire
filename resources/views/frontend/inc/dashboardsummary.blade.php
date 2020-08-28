@@ -2,12 +2,6 @@
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
         <h3>Admin Dashboard</h3>
-        <!-- <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>Admin</li>
-        </ul> -->
         <ul class="breadcrumb breadcrumb-col-pink">
             <li><a href="index.html"><i class="material-icons"></i> Home</a></li>
             <li class="active"><i class="material-icons">dashboard</i> Admin</li>

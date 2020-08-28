@@ -21,6 +21,17 @@ Route::get('/student', function () {
 
     return view('frontend.students.index');
 })->name('student');
+<<<<<<< HEAD
+Route::get('/create_student', function () {
+    return view('frontend.students.create');
+});
+Route::get('/edit_student', function () {
+    return view('frontend.students.edit');
+});
+Route::get('/student_disable', function () {
+    return view('frontend.students.disable');
+});
+=======
 
 
 Route::get('/create', function () {
@@ -38,6 +49,7 @@ Route::resource('teacher', 'TeacherController');
 // Route::get('/teacher', 'TeacherController@index');
 
 
+>>>>>>> c63c51d595002272549ef8d7837a0f248ab6557a
 /*
 |---------------------------------
 | Admin Registration Route
@@ -51,7 +63,6 @@ Route::resource('teacher', 'TeacherController');
 | Teacher Registration Route
 |---------------------------------
 */
-//    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
 
 /*
 |---------------------------------

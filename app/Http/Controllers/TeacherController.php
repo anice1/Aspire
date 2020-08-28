@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -14,7 +15,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        return view('registration.teacher');
     }
 
     /**
@@ -35,7 +36,26 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new Teacher;
+        $user->role_id = 2;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->gender = $request->gender;
+        $user->dob = $request->dob;
+        $user->blood_group = $request->blood_group;
+        $user->religion = $request->religion;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->tclass = $request->class;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->bio = $request->bio;
+        $user->file = $request->file;
+        $user->save();
+        // if($file){
+        //     $name = $file->getClientOriginalName();
+        // }
+        return redirect('teacher-add')->with('success', 'Teacher Added successfully');
     }
 
     /**
@@ -82,4 +102,5 @@ class TeacherController extends Controller
     {
         //
     }
+
 }

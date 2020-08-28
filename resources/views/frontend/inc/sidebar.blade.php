@@ -9,7 +9,7 @@
         <ul class="nav nav-sidebar-menu sidebar-toggle-view">
             <li class="nav-item">
                 <!-- The dashboard loads acording to autheticated users but the default is the admin -->
-                <a href="index.html" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
@@ -41,7 +41,7 @@
                                 class="fas fa-angle-right"></i>Teacher Details</a>
                     </li>
                     <li class="nav-item">
-                        <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                        <a href="teacher-add" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>
                 </ul>
