@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\frontend;
 
 use App\Student;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     /**
 
-     * Display a listing of the resource.
+     * Display a listing of the res ource.
 
      *
 

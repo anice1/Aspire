@@ -50,7 +50,6 @@ Route::group(['middleware' => ['auth']], function() {
 //
 //    Route::resource('students','StudentController');
 //
-    Route::resource('teachers','TeacherController');
 //
 //
 });
@@ -60,7 +59,10 @@ Route::group(['middleware' => ['auth']], function(){
         return view('frontend.welcome');
     });
 
-    Route::resource('students','StudentController');
+    Route::resource('students','frontend\StudentController');
+    Route::resource('schools','frontend\SchoolController');
+    Route::resource('teachers','frontend\TeacherController');
+
 
 
     Route::get('teacher', function () {

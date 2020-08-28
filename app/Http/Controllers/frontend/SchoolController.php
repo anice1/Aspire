@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\frontend;
 
 use App\School;
 use Illuminate\Http\Request;
@@ -54,7 +54,26 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'othernames' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
+            'email' => 'required',
+            'class' => 'required',
+            'section' => 'required',
+
+        ]);
+
+
+        School::create($request->all());
+
+
+        return redirect()->route('schools.index')
+
+            ->with('success','Student created successfully.');
     }
 
     /**
@@ -65,7 +84,8 @@ class SchoolController extends Controller
      */
     public function show(School $school)
     {
-        //
+        return view('frontend.schools.index',compact('school'));
+
     }
 
     /**
@@ -76,7 +96,8 @@ class SchoolController extends Controller
      */
     public function edit(School $school)
     {
-        //
+        return view('frontend.schools.edit',compact('school'));
+
     }
 
     /**
@@ -88,7 +109,26 @@ class SchoolController extends Controller
      */
     public function update(Request $request, School $school)
     {
-        //
+        request()->validate([
+
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'othernames' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
+            'email' => 'required',
+            'class' => 'required',
+            'section' => 'required',
+
+        ]);
+
+
+        $school->update($request->all());
+
+
+        return redirect()->route('frontend.schools.index')
+
+            ->with('success','Student updated successfully');
     }
 
     /**

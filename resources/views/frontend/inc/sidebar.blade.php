@@ -20,7 +20,7 @@
                             Schools</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('students.create')}}" class="nav-link"><i
+                        <a href="{{route('schools.create')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Add Schools</a>
                     </li>
                     <li class="nav-item">

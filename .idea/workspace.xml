@@ -20,22 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc4342e-49f2-4e77-9c42-14d1e302a130" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/StudentFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_25_232147_create_student_register_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_25_232147_create_student_register_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/dashboardsummary.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/dashboardsummary.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SchoolController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schools/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/students/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/students/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/students/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schools/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +189,7 @@
       <workItem from="1598502688514" duration="7951000" />
       <workItem from="1598533643012" duration="8216000" />
       <workItem from="1598542190853" duration="1458000" />
-      <workItem from="1598565402442" duration="6060000" />
+      <workItem from="1598565402442" duration="9611000" />
     </task>
     <servers />
   </component>
@@ -218,14 +209,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="416" y="126" width="528" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598571364065">
+    <state x="416" y="126" width="528" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598572893239">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="416" y="126" width="528" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1598571364065" />
-    <state x="346" y="58" width="672" height="678" key="search.everywhere.popup" timestamp="1598571309323">
+    <state x="416" y="126" width="528" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1598572893239" />
+    <state x="346" y="58" width="672" height="678" key="search.everywhere.popup" timestamp="1598574868512">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="58" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1598571309323" />
+    <state x="346" y="58" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1598574868512" />
     <state x="346" y="61" width="672" height="704" key="search.everywhere.popup/0.1.1366.766@0.1.1366.766" timestamp="1598509172450" />
   </component>
   <component name="XDebuggerManager">
