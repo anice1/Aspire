@@ -18,11 +18,25 @@ Route::get('/', function () {
 });
 
 Route::get('/student', function () {
+
     return view('frontend.students.index');
 })->name('student');
+
+
 Route::get('/create', function () {
     return view('frontend.students.create');
 });
+
+Route::get('/teacher-add', function () {
+    return view('frontend.teachers.create');
+});
+
+Route::resource('teacher', 'TeacherController');
+
+
+// Route::resource('/teacher','TeacherController');
+// Route::get('/teacher', 'TeacherController@index');
+
 
 /*
 |---------------------------------
@@ -37,7 +51,6 @@ Route::get('/create', function () {
 | Teacher Registration Route
 |---------------------------------
 */
-//    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
 
 /*
 |---------------------------------

@@ -42,9 +42,6 @@
             @include('frontend.inc.header')
             <div class="dashboard-page-one">
                 @include('frontend.inc.sidebar')
-                @if:{{ route(student) }}
-                @include('frontend.inc.dashboardsummary')
-                @endif
                 @yield('content')
             </div>
         </div>
