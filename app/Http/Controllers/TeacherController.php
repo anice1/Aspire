@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -44,7 +45,7 @@ class TeacherController extends Controller
         $user->blood_group = $request->blood_group;
         $user->religion = $request->religion;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->tclass = $request->class;
         $user->address = $request->address;
         $user->phone = $request->phone;
@@ -54,7 +55,7 @@ class TeacherController extends Controller
         // if($file){
         //     $name = $file->getClientOriginalName();
         // }
-        return redirect('teacher-add');
+        return redirect('teacher-add')->with('success', 'Teacher Added successfully');
     }
 
     /**

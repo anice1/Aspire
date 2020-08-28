@@ -12,6 +12,15 @@
                         <li>Add New Teacher</li>
                     </ul>
                 </div>
+                @if ($message = Session::get('success'))
+
+                                <div class="alert alert-success">
+
+                                    <p>{{ $message }}</p>
+
+                                </div>
+
+                            @endif
                 <!-- Breadcubs Area End Here -->
                 <!-- Add New Teacher Area Start Here -->
                 <div class="card height-auto">
@@ -45,9 +54,9 @@
                                     <label>Gender *</label>
                                     <select class="select2 select2-hidden-accessible" name='gender' data-select2-id="1" tabindex="-1" aria-hidden="true">
                                         <option value="" data-select2-id="3">Please Select Gender *</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Others</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
                                     </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-nrwp-container"><span class="select2-selection__rendered" id="select2-nrwp-container" role="textbox" aria-readonly="true" title="Please Select Gender *">Please Select Gender *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
