@@ -38,7 +38,15 @@ class PermissionTableSeeder extends Seeder
 
             'student-edit',
 
-            'student-delete'
+            'student-delete',
+
+            'admin-list',
+
+            'admin-create',
+
+            'admin-edit',
+
+            'admin-delete',
 
 
         ];
@@ -52,6 +60,15 @@ class PermissionTableSeeder extends Seeder
         // create roles and assign created permissions
 
         // or may be done by chaining
+        $admin = Role::create(['name' => 'admin'])
+            ->givePermissionTo([
+                'admin-list',
+
+                'admin-create',
+
+                'admin-edit',
+
+                'admin-delete']);
         $student = Role::create(['name' => 'student'])
             ->givePermissionTo([
                 'student-list',
@@ -62,7 +79,7 @@ class PermissionTableSeeder extends Seeder
 
                 'student-delete']);
 
-        $admin = Role::create(['name' => 'admin'])
+        $school = Role::create(['name' => 'school'])
             ->givePermissionTo([
                 'role-list',
 

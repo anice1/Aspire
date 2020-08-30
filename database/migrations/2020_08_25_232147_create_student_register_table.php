@@ -15,14 +15,16 @@ class CreateStudentRegisterTable extends Migration
     {
         Schema::create('student', function (Blueprint $table) {
             $table->id();
-            $table->integer('role_id');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('othernames');
             $table->string('email',100)->unique();
             $table->string('dob');
             $table->string('gender');
-            $table->string('class_id');
+            $table->string('class');
+            $table->string('section');
+            $table->string('address');
+            $table->string('guardian');
             $table->string('password');
             $table->SoftDeletes();
             $table->timestamps();

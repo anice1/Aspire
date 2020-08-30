@@ -16,7 +16,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+        <link rel="stylesheet" href="css/all.min.css">
         <!-- Flaticon CSS -->
         <link rel="stylesheet" href="fonts/flaticon.css">
         <!-- Full Calender CSS -->
@@ -26,10 +26,10 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
         <!-- Materialize  CSS -->
-        <link rel="stylesheet" href="css/materialize.css">
+        <link rel="stylesheet" href="{{asset('css/materialize.css')}}">
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        <link href="https://www/fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://www/fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <!-- Bootstrap Core Css -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,6 @@
             @include('frontend.inc.header')
             <div class="dashboard-page-one">
                 @include('frontend.inc.sidebar')
-    
-                
-            
                 @yield('content')
             </div>
         </div>
