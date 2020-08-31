@@ -5,14 +5,12 @@
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3>Students</h3>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>{{'Edit Students Details'}}</li>
+            <ul class="breadcrumb breadcrumb-col-pink">
+                <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
+                <li><i class="material-icons">person_add</i> {{'Edit Students Details'}}</li>
             </ul>
         </div>
+        <!-- Breadcubs Area End Here -->
         @if ($errors->any())
 
             <div class="alert alert-danger">
@@ -31,136 +29,124 @@
 
             </div>
 
-    @endif
-    <!-- Breadcubs Area End Here -->
-        <!-- Admit Form Area Start Here -->
-        <div class="card height-auto">
-            <div class="card-body">
-                <div class="heading-layout1">
-                    <div class="item-title">
-                        <h3>{{'Edit ' . $student->lastname . ' Details'}}</h3>
-                    </div>
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                           aria-expanded="false">...</a>
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i
-                                    class="fas fa-times text-orange-red"></i>Close</a>
-                            <a class="dropdown-item" href="#"><i
-                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                            <a class="dropdown-item" href="#"><i
-                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+            @endif
+            <!-- Breadcubs Area End Here -->
+                <!-- Admit Form Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>{{'Edit ' . $student->lastname . ' Details'}}</h3>
+                            </div>
                         </div>
-                    </div>
+                        <form class="new-added-form" action="{{route('students.update', $student)}}" method="PUT">
+                            @csrf
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" name="firstname" value="{{$student->firstname}}" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" name="lastname" value="{{$student->lastname}}" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Other Names *</label>
+                                    <input type="text" name="othernames" value="{{$student->othernames}}" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Date Of Birth *</label>
+                                    <input type="date" name="dob" value="{{$student->dob}}" class="form-control air-datepicker"
+                                        data-position='bottom right'>
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>email</label>
+                                    <input type="email" name="email"  value="{{$student->email}}" class="form-control">
+                                </div>
+                                {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
+                                {{--                        <label>Blood Group *</label>--}}
+                                {{--                        <select class="select2">--}}
+                                {{--                            <option value="">Please Select Group *</option>--}}
+                                {{--                            <option value="1">A+</option>--}}
+                                {{--                            <option value="2">A-</option>--}}
+                                {{--                            <option value="3">B+</option>--}}
+                                {{--                            <option value="3">B-</option>--}}
+                                {{--                            <option value="3">O+</option>--}}
+                                {{--                            <option value="3">O-</option>--}}
+                                {{--                        </select>--}}
+                                {{--                    </div>--}}
+                                {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
+                                {{--                        <label>Religion *</label>--}}
+                                {{--                        <select class="select2">--}}
+                                {{--                            <option value="">Please Select Religion *</option>--}}
+                                {{--                            <option value="1">Islam</option>--}}
+                                {{--                            <option value="2">Hindu</option>--}}
+                                {{--                            <option value="3">Christian</option>--}}
+                                {{--                            <option value="3">Buddish</option>--}}
+                                {{--                            <option value="3">Others</option>--}}
+                                {{--                        </select>--}}
+                                {{--                    </div>--}}
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="password" value="{{$student->password}}" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Class *</label>
+                                    <select class="select2" name="class">
+                                        <option value="{{$student->class}}">Please Select Class *</option>
+                                        <option value="creche">Play</option>
+                                        <option value="nursery">Nursery</option>
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                        <option value="four">Four</option>
+                                        <option value="five">Five</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Phone</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Guardian FullName *</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Guardian phone *</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Guardian Email</label>
+                                <input type="email" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <label>Guardian Occupation *</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-lg-6 col-12 form-group mg-t-30">
+                                <label class="text-dark-medium">Upload Guardian Photo (150px X 150px)</label>
+                                <input type="file" class="form-control-file">
+                            </div>
+                            <div class="col-lg-6 col-12 form-group">
+                                <label>Short BIO</label>
+                                <textarea class="textarea form-control" name="message" id="form-message" cols="10"
+                                        rows="9"></textarea>
+                            </div>
+                            <div class="col-lg-6 col-12 form-group mg-t-30">
+                                <label class="text-dark-medium">Upload Student Photo (150px X 150px) *</label>
+                                <input type="file" class="form-control-file">
+                            </div>
+                            <div class="col-12 form-group mg-t-8">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">update</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <form class="new-added-form" action="{{route('students.update', $student)}}" method="PUT">
-                    @csrf
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>First Name *</label>
-                            <input type="text" name="firstname" value="{{$student->firstname}}" class="form-control">
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Last Name *</label>
-                            <input type="text" name="lastname" value="{{$student->lastname}}" class="form-control">
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Other Names *</label>
-                            <input type="text" name="othernames" value="{{$student->othernames}}" class="form-control">
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Date Of Birth *</label>
-                            <input type="date" name="dob" value="{{$student->dob}}" class="form-control air-datepicker"
-                                   data-position='bottom right'>
-                            <i class="far fa-calendar-alt"></i>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>email</label>
-                            <input type="email" name="email"  value="{{$student->email}}" class="form-control">
-                        </div>
-                        {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
-                        {{--                        <label>Blood Group *</label>--}}
-                        {{--                        <select class="select2">--}}
-                        {{--                            <option value="">Please Select Group *</option>--}}
-                        {{--                            <option value="1">A+</option>--}}
-                        {{--                            <option value="2">A-</option>--}}
-                        {{--                            <option value="3">B+</option>--}}
-                        {{--                            <option value="3">B-</option>--}}
-                        {{--                            <option value="3">O+</option>--}}
-                        {{--                            <option value="3">O-</option>--}}
-                        {{--                        </select>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
-                        {{--                        <label>Religion *</label>--}}
-                        {{--                        <select class="select2">--}}
-                        {{--                            <option value="">Please Select Religion *</option>--}}
-                        {{--                            <option value="1">Islam</option>--}}
-                        {{--                            <option value="2">Hindu</option>--}}
-                        {{--                            <option value="3">Christian</option>--}}
-                        {{--                            <option value="3">Buddish</option>--}}
-                        {{--                            <option value="3">Others</option>--}}
-                        {{--                        </select>--}}
-                        {{--                    </div>--}}
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" value="{{$student->password}}" class="form-control">
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Class *</label>
-                            <select class="select2" name="class">
-                                <option value="{{$student->class}}">Please Select Class *</option>
-                                <option value="creche">Play</option>
-                                <option value="nursery">Nursery</option>
-                                <option value="one">One</option>
-                                <option value="two">Two</option>
-                                <option value="three">Three</option>
-                                <option value="four">Four</option>
-                                <option value="five">Five</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Section *</label>
-                            <select class="select2" name="section" >
-                                <option value="{{$student->section}}">Please Select Section *</option>
-                                <option value="pink">Pink</option>
-                                <option value="blue">Blue</option>
-                                <option value="bird">Bird</option>
-                                <option value="rose">Rose</option>
-                                <option value="red">Red</option>
-                            </select>
-                        </div>
-                        {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
-                        {{--                        <label>Admission ID</label>--}}
-                        {{--                        <input type="text" placeholder="" class="form-control">--}}
-                        {{--                    </div>--}}
-                        <div class="col-xl-3 col-lg-6 col-12 form-group">
-                            <label>Guardian</label>
-                            <input type="text" name="guardian" value="{{$student->guardian}}" class="form-control">
-                        </div>
-                        <div class="col-lg-6 col-12 form-group">
-                            <label>address</label>
-                            <textarea class="textarea form-control" name="address" value="{{$student->address}}" id="form-message" cols="8"
-                                      rows="7"></textarea>
-                        </div>
-                        <div class="col-lg-6 col-12 form-group mg-t-30">
-                            <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
-                            <input type="file" class="form-control-file">
-                        </div>
-                        <div class="col-12 form-group mg-t-8">
-                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">update</button>
-                            {{--                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>--}}
-                        </div>
-                    </div>
-                </form>
             </div>
+            <!-- Admit Form Area End Here -->
         </div>
-        <!-- Admit Form Area End Here -->
-        <footer class="footer-wrap-layout1">
-            <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a
-                    href="#">PsdBosS</a>
+                <!-- Student Details Area End Here -->
+                @include('frontend.inc.footer')
             </div>
-        </footer>
-    </div>
-
 @endsection

@@ -5,11 +5,9 @@
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
                     <h3>Teacher</h3>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Add New Teacher</li>
+                    <ul class="breadcrumb breadcrumb-col-pink">
+                        <li><a href="index.html"><i class="material-icons"></i> Home</a></li>
+                        <li class="active"><i class="material-icons">perm_identity</i>Add New Teacher</li>
                     </ul>
                 </div>
                 @if ($message = Session::get('success'))
