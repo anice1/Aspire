@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\user;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,8 +12,7 @@ class Student extends Model
 
     protected $table = 'student';
     protected $fillable = [
-        'user_id','firstname', 'lastname', 'othernames',
-        'dob', 'email', 'class', 'gender', 'guardian','guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
+        'user_id','dob', 'email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
 
 
     ];
@@ -24,6 +24,6 @@ class Student extends Model
         return $this->belongsTo('App\Role');
     }
     public function user() {
-        return $this->morphOne('App\User', 'userable');
+        return $this->belongsTo('App\User');
     }
 }

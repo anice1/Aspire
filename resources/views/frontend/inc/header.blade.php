@@ -35,7 +35,7 @@
                             <button type="submit">
                                 <span class="flaticon-search" aria-hidden="true"></span>
                             </button>
-                        </span>
+                        </span>  
                         <input type="text" class="form-control" placeholder="Find Something . . .">
                     </div>
                 </li> -->
@@ -45,7 +45,7 @@
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            <h5 class="item-title">{{ auth()->user()->name }}</h5>
+                            <h5 class="item-title">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h5>
                             <span>Admin</span>
                         </div>
                         <div class="admin-img">
