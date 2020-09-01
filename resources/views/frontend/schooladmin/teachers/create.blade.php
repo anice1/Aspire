@@ -7,18 +7,18 @@
                     <h3>Teacher</h3>
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons"></i> Home</a></li>
-                        <li class="active"><i class="material-icons">perm_identity</i>Add New Teacher</li>
+                        <li class="active"><i class="material-icons"></i>Add New Teacher</li>
                     </ul>
                 </div>
                 @if ($message = Session::get('success'))
 
-                                <div class="alert alert-success">
+                                <div class="alert alert-success" role='alert'>
 
                                     <p>{{ $message }}</p>
 
                                 </div>
 
-                            @endif
+                @endif
                 <!-- Breadcubs Area End Here -->
                 <!-- Add New Teacher Area Start Here -->
                 <div class="card height-auto">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="new-added-form" method='post' action="{{route('teacher.store')}}" enctype='multipart/form-data'>
+                        <form class="new-added-form" method='post' action="{{route('teachers.store')}}" enctype='multipart/form-data'>
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>E-Mail</label>
-                                    <input type="email" name='email' placeholder="" class="form-control">
+                                    <input type="email" name='email' placeholder="example@example.com" class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Password</label>

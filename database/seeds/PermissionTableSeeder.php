@@ -48,6 +48,25 @@ class PermissionTableSeeder extends Seeder
 
             'admin-delete',
 
+            // Teachers
+
+            'create-course',
+
+            'list-course',
+
+            'update-course',
+
+            'delete-course',
+
+            'create-assignment',
+
+            'list-assignment',
+
+            'update-assignment',
+
+            'delete-assignment',
+
+            
 
         ];
 
@@ -105,5 +124,26 @@ class PermissionTableSeeder extends Seeder
 
                 'student-delete'
             ]);
+
+        $teacher = Role::create(['name'=>'teacher'])->givePermissionTo([
+            'student-list',
+            
+            'create-course',
+
+            'list-course',
+
+            'update-course',
+
+            'delete-course',
+
+            'create-assignment',
+
+            'list-assignment',
+
+            'update-assignment',
+
+            'delete-assignment',
+
+        ]);
     }
 }

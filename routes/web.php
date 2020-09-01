@@ -54,18 +54,18 @@ Route::group(['middleware' => ['auth']], function() {
 //
 //
 });
-Route::group(['middleware' => ['auth']], function(){
+// Route::group(['middleware' => ['auth']], function(){
 
 
 
 
 
 
-    Route::get('teacher', function () {
-        return view('frontend.teachers.create');
-    });
+//     Route::get('teacher', function () {
+//         return view('frontend.teachers.create');
+//     });
 
-});
+// });
 
 
 //School Admin Routes
