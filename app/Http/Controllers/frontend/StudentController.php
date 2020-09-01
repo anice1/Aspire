@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Student;
 use App\User;
-use Illuminate\Http\Request;
+use App\Student;
+
+use Request;
+
 
 class StudentController extends Controller
 {
@@ -94,7 +96,6 @@ class StudentController extends Controller
 
             'firstname' => 'required',
             'lastname' => 'required',
-            'othernames' => 'required',
             'dob' => 'required',
             'email' => 'required',
             'gender' => 'required',
@@ -110,13 +111,12 @@ class StudentController extends Controller
 
 
         $user = User::create(Request::only('firstname', 'lastname' , 'email', 'password'));
-        $request['password'] = Hash::make($request['password']);
         $user->assignRole('student');
 
-        $user->Student()->create(Request::only('firstname', 'lastname', 'othernames', 'dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupationu'));
+        $user->Student()->create(Request::only('dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
 
-        return redirect()->route('frontend.schooladmin.students.index')
+        return redirect()->route('frontend.schooladmin.students.allstudents')
 
             ->with('success','Student created successfully.');
 
