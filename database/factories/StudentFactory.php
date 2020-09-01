@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Student;
+use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -18,17 +19,16 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(Student::class, function (Faker $faker) {
+    $user = factory(User::class)->create();
     return [
-        'firstname' => $faker->name,
-        'lastname' => $faker->name,
-        'othernames' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'dob' => Str::random(3),
+        'user_id' => $user->id,
+        'dob' => date('Y-M-D'),
         'gender' => 'male',
         'class' => 2,
-        'section' => $faker->name,
-        'address' => $faker->name,
+        'phone' => $faker->phoneNumber,
         'guardian' => $faker->name,
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'guardian_phone' => $faker->phoneNumber,
+        'guardian_email' => $faker->email,
+        'guardian_occupation' => $faker->title, // password
     ];
 });

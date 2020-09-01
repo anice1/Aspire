@@ -16,7 +16,7 @@
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Schools</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{route('students.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                        <a href="{{route('schools.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Schools</a>
                     </li>
                     <li class="nav-item">
@@ -24,12 +24,12 @@
                                 class="fas fa-angle-right"></i>Add Schools</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
+                        <a href="{{route('schools.edit')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Edit Schools</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
+                        <a href="{{route('schools.edit')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Disable Schools</a>
                     </li>
                 </ul>
@@ -52,7 +52,7 @@
                                 class="fas fa-angle-right"></i>Add Student</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
+                        <a href="{{route('students.edit')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Student Promotion</a>
                     </li>
                 </ul>
@@ -62,15 +62,15 @@
                         class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="/all-teacher" class="nav-link"><i class="fas fa-angle-right"></i>All
+                        <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/teacher-details" class="nav-link"><i
+                        <a href="{{route('teachers.show')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Teacher Details</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/teacher-add" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                        <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>
                 </ul>

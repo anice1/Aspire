@@ -11,9 +11,8 @@ class Student extends Model
 
     protected $table = 'student';
     protected $fillable = [
-        'firstname', 'lastname', 'othernames',
-        'dob', 'email', 'class', 'gender',
-        'section', 'guardian', 'address', 'password',
+        'user_id','firstname', 'lastname', 'othernames',
+        'dob', 'email', 'class', 'gender', 'guardian','guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
 
 
     ];
@@ -23,5 +22,8 @@ class Student extends Model
 
     public function roles(){
         return $this->belongsTo('App\Role');
+    }
+    public function user() {
+        return $this->morphOne('App\User', 'userable');
     }
 }

@@ -27,12 +27,7 @@
                                 <table class="table display data-table text-nowrap">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input checkAll">
-                                                <label class="form-check-label">Roll</label>
-                                            </div>
-                                        </th>
+                                        <th>Reg</th>
                                         <th>Photo</th>
                                         <th>Name</th>
                                         <th>Gender</th>
@@ -49,12 +44,7 @@
                                     <tbody>
                                     @foreach($students as $student)
                                     <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input">
-                                                <label class="form-check-label">{{'#' . $student->id}}</label>
-                                            </div>
-                                        </td>
+                                        <td>{{'#00' . $student->id}}</td>
                                         <td class="text-center"><img src="img/figure/student2.png" alt="student"></td>
                                         <td>{{$student->firstname . ' ' . $student->lastname}}</td>
                                         <td>{{$student->gender}}</td>
@@ -88,7 +78,5 @@
                     </div>
                     <!-- Student Table Area End Here -->
                 </div>
-                            
-                @include('frontend.inc.footer')
             </div>
 @endsection

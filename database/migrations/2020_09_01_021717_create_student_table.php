@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchoolAdminRegisterTable extends Migration
+class CreateStudentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateSchoolAdminRegisterTable extends Migration
      */
     public function up()
     {
-        Schema::create('school', function (Blueprint $table) {
+        Schema::create('student', function (Blueprint $table) {
             $table->id();
-            $table->integer('role_id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('othernames');
-            $table->string('email',100)->unique();
+            $table->unsignedBigInteger('user_id');
+            $table->string('dob');
             $table->string('gender');
-            $table->string('school_name');
-            $table->string('address');
+            $table->string('class');
             $table->string('phone');
-            $table->string('password');
+            $table->string('guardian');
+            $table->string('guardian_phone');
+            $table->string('guardian_email');
+            $table->string('guardian_occupation');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->SoftDeletes();
             $table->timestamps();
         });
@@ -37,6 +37,6 @@ class CreateSchoolAdminRegisterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('school');
+        Schema::dropIfExists('student');
     }
 }

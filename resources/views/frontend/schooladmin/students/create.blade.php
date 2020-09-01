@@ -39,30 +39,30 @@
                                 <h3>Add New Student</h3>
                             </div>
                         </div>
-                        <form class="new-added-form" action="{{route('students.update', $student)}}" method="PUT">
+                        <form class="new-added-form" action="{{route('students.store')}}" method="PUT">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>First Name *</label>
-                                    <input type="text" name="firstname" value="{{$student->firstname}}" class="form-control">
+                                    <input type="text" name="firstname" class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Last Name *</label>
-                                    <input type="text" name="lastname" value="{{$student->lastname}}" class="form-control">
+                                    <input type="text" name="lastname"class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Other Names *</label>
-                                    <input type="text" name="othernames" value="{{$student->othernames}}" class="form-control">
+                                    <input type="text" name="othernames"  class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Date Of Birth *</label>
-                                    <input type="date" name="dob" value="{{$student->dob}}" class="form-control air-datepicker"
+                                    <input type="date" name="dob"  class="form-control air-datepicker"
                                         data-position='bottom right'>
                                     <i class="far fa-calendar-alt"></i>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>email</label>
-                                    <input type="email" name="email"  value="{{$student->email}}" class="form-control">
+                                    <input type="email" name="email"  class="form-control">
                                 </div>
                                 {{--                    <div class="col-xl-3 col-lg-6 col-12 form-group">--}}
                                 {{--                        <label>Blood Group *</label>--}}
@@ -89,12 +89,16 @@
                                 {{--                    </div>--}}
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Password</label>
-                                    <input type="password" name="password" value="{{$student->password}}" class="form-control">
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name="confirm-password" class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Class *</label>
                                     <select class="select2" name="class">
-                                        <option value="{{$student->class}}">Please Select Class *</option>
+                                        <option value="">Please Select Class *</option>
                                         <option value="creche">Play</option>
                                         <option value="nursery">Nursery</option>
                                         <option value="one">One</option>
@@ -105,49 +109,47 @@
                                     </select>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Phone</label>
-                                <input type="text" placeholder="" class="form-control">
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Guardian FullName *</label>
-                                <input type="text" placeholder="" class="form-control">
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Guardian phone *</label>
-                                <input type="text" placeholder="" class="form-control">
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Guardian Email</label>
-                                <input type="email" placeholder="" class="form-control">
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                <label>Guardian Occupation *</label>
-                                <input type="text" placeholder="" class="form-control">
-                            </div>
-                            <div class="col-lg-6 col-12 form-group mg-t-30">
-                                <label class="text-dark-medium">Upload Guardian Photo (150px X 150px)</label>
-                                <input type="file" class="form-control-file">
-                            </div>
-                            <div class="col-lg-6 col-12 form-group">
-                                <label>Short BIO</label>
-                                <textarea class="textarea form-control" name="message" id="form-message" cols="10"
-                                        rows="9"></textarea>
-                            </div>
-                            <div class="col-lg-6 col-12 form-group mg-t-30">
-                                <label class="text-dark-medium">Upload Student Photo (150px X 150px) *</label>
-                                <input type="file" class="form-control-file">
-                            </div>
-                            <div class="col-12 form-group mg-t-8">
-                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">update</button>
-                            </div>
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" placeholder="Enter Phone Number" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Guardian FullName *</label>
+                                    <input type="text" name="guardian"placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Guardian phone *</label>
+                                    <input type="text" name="guardian_phone" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Guardian Email</label>
+                                    <input type="email" name="guardian_email" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Guardian Occupation *</label>
+                                    <input type="text" name="guardian_occupation" placeholder="" class="form-control">
+                                </div>
+                               <!--  <div class="col-lg-6 col-12 form-group mg-t-30">
+                                    <label class="text-dark-medium">Upload Guardian Photo (150px X 150px)</label>
+                                    <input type="file" class="form-control-file">
+                                </div> -->
+                                <!-- <div class="col-lg-6 col-12 form-group">
+                                    <label>Short BIO</label>
+                                    <textarea class="textarea form-control" name="message" id="form-message" cols="10"
+                                            rows="9"></textarea>
+                                </div> -->
+                                <!-- <div class="col-lg-6 col-12 form-group mg-t-30">
+                                    <label class="text-dark-medium">Upload Student Photo (150px X 150px) *</label>
+                                    <input type="file" class="form-control-file">
+                                </div> -->
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Create</button>
+                                </div>
                         </div>
                     </form>
                 </div>
             </div>
             <!-- Admit Form Area End Here -->
         </div>
-                <!-- Student Details Area End Here -->
-                @include('frontend.inc.footer')
             </div>
 @endsection
               

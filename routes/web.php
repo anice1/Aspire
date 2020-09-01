@@ -45,7 +45,7 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function() {
 //
-    Route::resource('roles','RoleController');
+    Route::resource('roles','frontend\RoleController');
 //
     Route::resource('users','UserController');
 //
@@ -56,13 +56,8 @@ Route::group(['middleware' => ['auth']], function() {
 });
 Route::group(['middleware' => ['auth']], function(){
 
-    Route::get('/', function () {
-        return view('frontend.welcome');
-    });
 
-    Route::resource('students','frontend\StudentController');
-    Route::resource('schools','frontend\SchoolController');
-    Route::resource('teachers','frontend\TeacherController');
+
 
 
 
@@ -71,3 +66,17 @@ Route::group(['middleware' => ['auth']], function(){
     });
 
 });
+
+
+//School Admin Routes
+
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/', function () {
+        return view('frontend.welcome');
+    });
+    Route::resource('students','frontend\StudentController');
+    Route::resource('teachers','frontend\TeacherController');
+});
+
+
+Route::resource('schools','frontend\SchoolController');
