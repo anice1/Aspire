@@ -38,7 +38,8 @@ class TeacherController extends Controller
     public function index()
 
     {
-
+        
+        // return User::all();
         $teachers = Teacher::latest()->paginate(14);
 
         return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'))
