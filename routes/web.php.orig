@@ -13,12 +13,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('frontend.welcome');
+});
+
+Route::get('/student', function () {
+
+    return view('frontend.students.index');
+})->name('student');
+<<<<<<< HEAD
+Route::get('/create_student', function () {
+    return view('frontend.students.create');
+});
+Route::get('/edit_student', function () {
+    return view('frontend.students.edit');
+});
+Route::get('/student_disable', function () {
+    return view('frontend.students.disable');
+});
+=======
+
+
+Route::get('/create', function () {
+    return view('frontend.students.create');
+});
+
+Route::get('/teacher-add', function () {
+    return view('frontend.teachers.create');
+});
+
+Route::resource('teacher', 'TeacherController');
 
 
 // Route::resource('/teacher','TeacherController');
 // Route::get('/teacher', 'TeacherController@index');
 
 
+>>>>>>> c63c51d595002272549ef8d7837a0f248ab6557a
 /*
 |---------------------------------
 | Admin Registration Route
@@ -32,51 +63,26 @@ use Illuminate\Support\Facades\Route;
 | Teacher Registration Route
 |---------------------------------
 */
-//    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
 
 /*
 |---------------------------------
 | Student Registration Route
 |---------------------------------
 */
+//    Route::post('/student/create', 'UserRegistrationController@create_student');
 //
-Auth::routes();
+//Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => ['auth']], function() {
+//Route::group(['middleware' => ['auth']], function() {
 //
-    Route::resource('roles','frontend\RoleController');
+//    Route::resource('roles','RoleController');
 //
-    Route::resource('users','UserController');
+//    Route::resource('users','UserController');
 //
 //    Route::resource('students','StudentController');
 //
+//    Route::resource('teachers','TeacherController');
 //
 //
-});
-Route::group(['middleware' => ['auth']], function(){
-
-
-
-
-
-
-    Route::get('teacher', function () {
-        return view('frontend.teachers.create');
-    });
-
-});
-
-
-//School Admin Routes
-
-Route::group(['middleware' => ['auth']], function (){
-    Route::get('/', function () {
-        return view('frontend.welcome');
-    });
-    Route::resource('students','frontend\StudentController');
-    Route::resource('teachers','frontend\TeacherController');
-});
-
-
-Route::resource('schools','frontend\SchoolController');
+//});

@@ -16,7 +16,7 @@
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Schools</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{route('students.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                        <a href="{{route('schools.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Schools</a>
                     </li>
                     <li class="nav-item">
@@ -24,18 +24,74 @@
                                 class="fas fa-angle-right"></i>Add Schools</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
+                        <a href="{{route('schools.edit')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Edit Schools</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
+                        <a href="{{route('schools.edit')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Disable Schools</a>
                     </li>
                 </ul>
             </li>
             @endrole
             @role('school')
+            <li class="nav-item">
+                <!-- The dashboard loads acording to autheticated users but the default is the admin -->
+                <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{route('students.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('students.create')}}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Add Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('students.edit')}}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Student Promotion</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i
+                        class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('teachers.show')}}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Teacher Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Teacher</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="/#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="/all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Parents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/parents-details" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Parents Details</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="/add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Parent</a>
+                    </li> -->
+                </ul>
+            </li>
             <li class="nav-item">
                 <!-- The dashboard loads acording to autheticated users but the default is the admin -->
                 <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
@@ -171,7 +227,7 @@
             </li>
             <li class="nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-chat"></i><span>Messeage</span></a>
+                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
             </li>
             <li class="nav-item">
                 <a href="/map" class="nav-link"><i
@@ -184,25 +240,32 @@
             @endrole
             @role('student')
             <li class="nav-item">
-                <!-- The dashboard loads acording to autheticated users but the default is the admin -->
                 <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
             </li>
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="{{route('students.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('students.create')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Add Student</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/student-promotion" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Student Promotion</a>
-                    </li>
-                </ul>
+            <li class="nav-item">
+                <a href="/messaging" class="nav-link"><i
+                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Class Routine</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/map" class="nav-link"><i
+                        class="flaticon-menu-1"></i><span>Syllabus</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/all-book" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/all-book" class="nav-link"><i class="flaticon-shopping-list"></i><span>Results</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/notice-board" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+            </li>
+            <li class="nav-item">
+            <li class="nav-item">
+                <a href="/messaging" class="nav-link"><i
+                        class="flaticon-chat"></i><span>Messeage</span></a>
             </li>
             @endrole
         </ul>

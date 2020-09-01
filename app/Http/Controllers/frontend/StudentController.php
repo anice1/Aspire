@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Student;
+use App\User;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -45,9 +46,9 @@ class StudentController extends Controller
 
     {
 
-        $students = Student::latest()->paginate(5);
+        $students = Student::latest()->paginate(14);
 
-        return view('frontend.students.index',compact('students'))
+        return view('frontend.schooladmin.students.allstudents',compact('students'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -68,7 +69,7 @@ class StudentController extends Controller
 
     {
 
-        return view('frontend.students.create');
+        return view('frontend.schooladmin.students.create');
 
     }
 
@@ -94,19 +95,28 @@ class StudentController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'othernames' => 'required',
-            'gender' => 'required',
             'dob' => 'required',
             'email' => 'required',
+            'gender' => 'required',
+            'password' => 'required|same:confirm-password',
             'class' => 'required',
-            'section' => 'required',
+            'phone' => 'required',
+            'guardian' => 'required',
+            'guardian_phone' => 'required',
+            'guardian_email' => 'required',
+            'guardian_occupation' => 'required',
 
         ]);
 
 
-        Student::create($request->all());
+        $user = User::create(Request::only('firstname', 'lastname' , 'email', 'password'));
+        $request['password'] = Hash::make($request['password']);
+        $user->assignRole('student');
+
+        $user->Student()->create(Request::only('firstname', 'lastname', 'othernames', 'dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupationu'));
 
 
-        return redirect()->route('students.index')
+        return redirect()->route('frontend.schooladmin.students.index')
 
             ->with('success','Student created successfully.');
 
@@ -129,7 +139,7 @@ class StudentController extends Controller
 
     {
 
-        return view('frontend.students.index',compact('student'));
+        return view('frontend.schooladmin.students.index',compact('student'));
 
     }
 
@@ -150,7 +160,7 @@ class StudentController extends Controller
 
     {
 
-        return view('frontend.students.edit',compact('student'));
+        return view('frontend.schooladmin.students.edit',compact('student'));
 
     }
 
@@ -190,7 +200,7 @@ class StudentController extends Controller
         $student->update($request->all());
 
 
-        return redirect()->route('frontend.students.index')
+        return redirect()->route('frontend.schooladmin.students.index')
 
             ->with('success','Student updated successfully');
 
@@ -216,7 +226,7 @@ class StudentController extends Controller
         $student->delete();
 
 
-        return redirect()->route('frontend.students.index')
+        return redirect()->route('frontend.schooladmin.students.index')
 
             ->with('success','Student deleted successfully');
 
