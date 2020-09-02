@@ -39,7 +39,7 @@
                                 <h3>Add New Student</h3>
                             </div>
                         </div>
-                        <form class="new-added-form" action="{{route('students.store')}}" method="PUT">
+                        <form class="new-added-form" action="{{route('students.store')}}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -50,10 +50,10 @@
                                     <label>Last Name *</label>
                                     <input type="text" name="lastname"class="form-control">
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                               <!--  <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Other Names *</label>
                                     <input type="text" name="othernames"  class="form-control">
-                                </div>
+                                </div> -->
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Date Of Birth *</label>
                                     <input type="date" name="dob"  class="form-control air-datepicker"
@@ -94,6 +94,14 @@
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Confirm Password</label>
                                     <input type="password" name="confirm-password" class="form-control">
+                                </div>
+                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Gender *</label>
+                                    <select class="select2" name="gender">
+                                        <option value="">Please Select Class *</option>
+                                        <option value="creche">Female</option>
+                                        <option value="nursery">Male</option>
+                                    </select>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Class *</label>
