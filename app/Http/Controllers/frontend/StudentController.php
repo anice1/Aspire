@@ -116,7 +116,7 @@ class StudentController extends Controller
         $user->Student()->create(Request::only('dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
 
-        return redirect()->route('frontend.schooladmin.students.allstudents')
+        return redirect()->route('students.allstudents')
 
             ->with('success','Student created successfully.');
 
