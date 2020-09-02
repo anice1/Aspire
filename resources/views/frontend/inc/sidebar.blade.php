@@ -65,9 +65,6 @@
                             Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i class="fas fa-angle-right"></i>Teacher Details</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>

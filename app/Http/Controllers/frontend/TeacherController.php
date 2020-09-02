@@ -38,8 +38,7 @@ class TeacherController extends Controller
     public function index()
 
     {
-        
-        // return User::all();
+
         $teachers = Teacher::latest()->paginate(14);
 
         return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'))
@@ -117,17 +116,17 @@ class TeacherController extends Controller
 
      *
 
-     * @param  \App\Student  $student
+     * @param  \App\Teacher  $teacher
 
      * @return \Illuminate\Http\Response
 
      */
 
-    public function show(Student $student)
+    public function show($id)
 
     {
-
-        return view('frontend.schooladmin.students.index',compact('student'));
+        $teacher = Teacher::findOrfail($id);
+        return view('frontend.schooladmin.teachers.teacher-detail', compact('teacher'));
 
     }
 
@@ -144,11 +143,11 @@ class TeacherController extends Controller
 
      */
 
-    public function edit(Student $student)
+    public function edit($id)
 
     {
-
-        return view('frontend.schooladmin.students.edit',compact('student'));
+        $teacher = Teacher::findOrfail($id);
+        return view('frontend.schooladmin.teachers.edit',compact('teacher'));
 
     }
 
@@ -167,30 +166,42 @@ class TeacherController extends Controller
 
      */
 
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
 
     {
 
-        request()->validate([
+        // User updated data seeding
+        
+        $user = User::find($id)->teacher;
+        return $user;
+        // $user = User::update(['firstname'=>$request->firstname,'lastname'=>$request->lastname,
+        // 'email'=>$request->email, 'password'=>Hash::make($request->password)]);
+        // $user->assignRole('teacher');
+        // $user->save();
+    
+        
+        // // Teacher data seeding
 
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'othernames' => 'required',
-            'gender' => 'required',
-            'dob' => 'required',
-            'email' => 'required',
-            'class' => 'required',
-            'section' => 'required',
-
-        ]);
-
-
-        $student->update($request->all());
+        // $teacher = new Teacher;
+        // $teacher->user_id = $user->id;
+        // $teacher->gender = $request->gender;
+        // $teacher->dob = $request->dob;
+        // $teacher->blood_group = $request->blood_group;
+        // $teacher->religion = $request->religion;
+        // $teacher->class = $request->class;
+        // $teacher->address = $request->address;
+        // $teacher->phone = $request->phone;
+        // $teacher->bio = $request->bio;
+        // $teacher->save();
 
 
-        return redirect()->route('frontend.schooladmin.students.index')
+        // $teacher = Teacher::findOrfail($id);
+        // $teacher->update($request->all());
 
-            ->with('success','Student updated successfully');
+
+        // return redirect()->route('frontend.schooladmin.teachers.teacher-detail')
+
+        //     ->with('success','Record updated successfully');
 
     }
 
@@ -207,16 +218,14 @@ class TeacherController extends Controller
 
      */
 
-    public function destroy(Student $student)
+    public function destroy(Teacher $teacher, $id)
 
     {
 
-        $student->delete();
+        $teacher->delete();
+        User::findOrfail($id)->delete();
 
-
-        return redirect()->route('frontend.schooladmin.students.index')
-
-            ->with('success','Student deleted successfully');
+        return redirect()->back()->with('success','Teacher deleted successfully');
 
     }
 
