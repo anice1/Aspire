@@ -16,13 +16,17 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc4342e-49f2-4e77-9c42-14d1e302a130" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" afterDir="false" />
-    </list>
+    <list default="true" id="9dc4342e-49f2-4e77-9c42-14d1e302a130" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -199,7 +204,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -211,10 +228,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="416" y="126" width="528" height="487" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1598572893239" />
+    <state x="99" y="101" width="1168" height="567" key="DiffContextDialog" timestamp="1599010645953">
+      <screen x="0" y="1" width="1366" height="766" />
+    </state>
+    <state x="99" y="101" width="1168" height="567" key="DiffContextDialog/0.1.1366.766@0.1.1366.766" timestamp="1599010645953" />
     <state x="469" y="125" width="428" height="487" key="FileChooserDialogImpl" timestamp="1598665665754">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="469" y="125" width="428" height="487" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1598665665754" />
+    <state x="480" y="302" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599010645901">
+      <screen x="0" y="1" width="1366" height="766" />
+    </state>
+    <state x="480" y="302" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1.1366.766@0.1.1366.766" timestamp="1599010645901" />
     <state x="346" y="61" width="672" height="704" key="search.everywhere.popup" timestamp="1599009424521">
       <screen x="0" y="1" width="1366" height="766" />
     </state>
