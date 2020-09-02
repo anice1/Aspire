@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>About Me</h3>
+                                <h3>About {{ $student->user->firstname . ' ' . $student->user->lastname }}</h3>
                             </div>
                         </div>
                         <div class="single-info-details">
@@ -31,8 +31,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <p>Aliquam erat volutpat. Curabiene natis massa sedde lacu stiquen sodale 
-                                word moun taiery.Aliquam erat volutpaturabiene natis massa sedde  sodale 
+                                <p>Aliquam erat volutpat. Curabiene natis massa sedde lacu stiquen sodale
+                                word moun taiery.Aliquam erat volutpaturabiene natis massa sedde  sodale
                                 word moun taiery.</p>
                                 <div class="info-table table-responsive">
                                     <table class="table text-nowrap">

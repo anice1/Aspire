@@ -71,9 +71,7 @@ Route::group(['middleware' => ['auth']], function() {
 //School Admin Routes
 
 Route::group(['middleware' => ['auth']], function (){
-    Route::get('/', function () {
-        return view('frontend.welcome');
-    });
+    Route::get('/', 'frontend\DashboardController@index');
     Route::resource('students','frontend\StudentController');
     Route::resource('teachers','frontend\TeacherController');
 });
