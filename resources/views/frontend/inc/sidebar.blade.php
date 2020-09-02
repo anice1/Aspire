@@ -53,7 +53,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('students.edit', '$student')}}" class="nav-link">
-                            <i>class="fas fa-angle-right"></i>Student Promotion</a>
+                            <i class="fas fa-angle-right"></i>Student Promotion</a>
                     </li>
                 </ul>
             </li>
@@ -66,8 +66,8 @@
                             Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link">
-                            <i>class="fas fa-angle-right"></i>Teacher Details</a>
+                        <a href="{{route('teachers.show','$teacher')}}" class="nav-link"><i class="fas fa-angle-right"></i>
+                            Teachers Details</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
