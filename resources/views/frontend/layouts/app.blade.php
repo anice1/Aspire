@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ASPIRECREED | HOME</title>
+        <title>ASPIRESUTIES | HOME</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -29,9 +29,9 @@
         <link rel="stylesheet" href="{{asset('css/materialize.css')}}">
         <!-- Google Fonts -->
          <!-- Google Fonts -->
-        <link href="https://www/fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-        <link href="https://www/fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://www/use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">     
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">   
         <!-- Bootstrap Core Css -->
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <!-- Modernize js -->

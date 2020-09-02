@@ -39,4 +39,7 @@ class User extends Authenticatable
     public function teacher() {
         return $this->belongsTo('App\Teacher');
     }
+    public function Student() {
+        return $this->hasOne('App\Student', 'user_id');
+    }
 }
