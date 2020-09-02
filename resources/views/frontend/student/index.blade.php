@@ -72,7 +72,7 @@
                     <div>
                         <div class="dashboard-summery mg-b-20">
                             <div class="panel-body">
-                                <h3>Welcome {{ auth()->user()->name }}</h3>
+                                <h3>Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname }}</h3>
                                 <p>Your presence and cooperation will help us to improve the education system of our organization.</p>
                             </div>
                         </div>
@@ -419,7 +419,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Exam Result Area End Here -->    
+                <!-- Exam Result Area End Here -->
 
                 <div class="col-4-xxxl col-xl-6 col-12">
                     <div class="card dashboard-card-three">

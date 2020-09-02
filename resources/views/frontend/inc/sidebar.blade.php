@@ -66,11 +66,6 @@
                             Teachers</a>
                     </li>
                     <li class="nav-item">
-
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Teacher Details</a>
-                    </li>
-                    <li class="nav-item">   
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>
@@ -93,7 +88,7 @@
                     </li> -->
                 </ul>
             </li>
-            
+
             <li class="nav-item sidebar-nav-item">
                 <a href="/#" class="nav-link"><i class="flaticon-books"></i><span>Manage Library</span></a>
                 <ul class="nav sub-group-menu">
