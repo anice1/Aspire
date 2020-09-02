@@ -22,32 +22,6 @@
     <list default="true" id="9dc4342e-49f2-4e77-9c42-14d1e302a130" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Notice/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Notice/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Timetable/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Timetable/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Timetable/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/library/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/library/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/library/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/delete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schools/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/allstudents.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/disable.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/students/profile.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/syllabus/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/syllabus/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/syllabus/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/teachers/all-teachers.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/teachers/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/teachers/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/teachers/teacher-detail.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,11 +215,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="469" y="125" width="428" height="487" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1598665665754" />
-    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup" timestamp="1598837616029">
+    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup" timestamp="1599014527418">
       <screen x="0" y="1" width="1366" height="766" />
     </state>
     <state x="346" y="58" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1598574868512" />
-    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup/0.1.1366.766@0.1.1366.766" timestamp="1598837616029" />
+    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup/0.1.1366.766@0.1.1366.766" timestamp="1599014527418" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
