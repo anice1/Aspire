@@ -40,6 +40,7 @@
                     </div>
                 </li> -->
             </ul>
+            
             <ul class="navbar-nav">
                 <li class="navbar-item dropdown header-admin">
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -58,20 +59,20 @@
                         </div>
                         <div class="item-content">
                             <ul class="settings-list">
-                                <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
-                                <!-- <li><a href="#"><i class="flaticon-list"></i>Task</a></li>      -->
-                                <li><a href="messaging.html"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
+                                <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>                                <li><a href="messaging.html"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
                                 <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
                                 <li>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
-                                        <button><a>{{'Logout'}}</a></button>
+                                        <a >{{'Logout'}}</a>
+                                        <a href="#"><i class="flaticon-turn-off"></i><button></button> </a>
                                     </form>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
+
                 <li class="navbar-item dropdown header-message">
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
