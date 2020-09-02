@@ -62,7 +62,7 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('students.edit', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('students.show', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                                                 </div>
                                             </div>

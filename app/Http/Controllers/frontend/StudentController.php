@@ -135,11 +135,12 @@ class StudentController extends Controller
 
      */
 
-    public function show(Student $student)
+    public function show($student)
 
     {
-
-        return view('frontend.schooladmin.students.index',compact('student'));
+        $student = Student::find($student);
+//        return $student;
+        return view('frontend.student.profile',compact('student'));
 
     }
 
@@ -159,7 +160,6 @@ class StudentController extends Controller
     public function edit(Student $student)
 
     {
-
         return view('frontend.schooladmin.students.edit',compact('student'));
 
     }

@@ -22,14 +22,12 @@
     <list default="true" id="9dc4342e-49f2-4e77-9c42-14d1e302a130" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/messaging.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/messaging.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/allstudents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/allstudents.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/student/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/student/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +165,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/frontend/student" />
       <recent name="$PROJECT_DIR$/resources/views/frontend" />
     </key>
   </component>
@@ -196,6 +195,8 @@
       <workItem from="1598597451408" duration="694000" />
       <workItem from="1598665622539" duration="46000" />
       <workItem from="1598836718093" duration="1279000" />
+      <workItem from="1599038528432" duration="1547000" />
+      <workItem from="1599040746868" duration="6922000" />
     </task>
     <servers />
   </component>
@@ -223,11 +224,15 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="469" y="125" width="428" height="487" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1598665665754" />
-    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup" timestamp="1599014527418">
+    <state x="29" y="1" width="620" height="766" key="find.popup" timestamp="1599041319024">
+      <screen x="0" y="1" width="1366" height="766" />
+    </state>
+    <state x="29" y="1" width="620" height="766" key="find.popup/0.1.1366.766@0.1.1366.766" timestamp="1599041319024" />
+    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup" timestamp="1599047063136">
       <screen x="0" y="1" width="1366" height="766" />
     </state>
     <state x="346" y="58" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1598574868512" />
-    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup/0.1.1366.766@0.1.1366.766" timestamp="1599014527418" />
+    <state x="346" y="61" width="672" height="704" key="search.everywhere.popup/0.1.1366.766@0.1.1366.766" timestamp="1599047063136" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
