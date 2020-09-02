@@ -16,17 +16,14 @@ class CreateTeachersTable extends Migration
         Schema::create('teacher', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
-            // $table->string('firstname');
-            // $table->string('lastname');
             $table->string('blood_group');
             $table->string('gender');
             $table->string('dob');
             $table->string('religion');
-            // $table->string('email')->unique();
             $table->string('class');
             $table->string('phone');
             $table->text('address');
-            $table->string('bio');
+            $table->text('bio');
             // $table->string('photo');
             $table->SoftDeletes();
             $table->timestamps();

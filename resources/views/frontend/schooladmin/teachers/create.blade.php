@@ -23,20 +23,6 @@
                 <!-- Add New Teacher Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
-                        <div class="heading-layout1">
-                            <div class="item-title">
-                                <h3>Add New Teacher</h3>
-                            </div>
-                           <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
-        
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                </div>
-                            </div>
-                        </div>
                         <form class="new-added-form" method='post' action="{{route('teachers.store')}}" enctype='multipart/form-data'>
                             {{csrf_field()}}
                             <div class="row">
@@ -97,13 +83,13 @@
                                     <label>Class *</label>
                                     <select class="select2 select2-hidden-accessible" name='class' data-select2-id="10" tabindex="-1" aria-hidden="true">
                                         <option value="" data-select2-id="12">Please Select Class *</option>
-                                        <option value="1">Play</option>
-                                        <option value="2">Nursery</option>
-                                        <option value="3">One</option>
-                                        <option value="3">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="3">Four</option>
-                                        <option value="3">Five</option>
+                                        <option>Play</option>
+                                        <option>Nursery</option>
+                                        <option>One</option>
+                                        <option>Two</option>
+                                        <option>Three</option>
+                                        <option>Four</option>
+                                        <option>Five</option>
                                     </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="11" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-hfjo-container"><span class="select2-selection__rendered" id="select2-hfjo-container" role="textbox" aria-readonly="true" title="Please Select Class *">Please Select Class *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -133,6 +119,6 @@
                     </div>
                 </div>
                 <!-- Add New Teacher Area End Here -->
-    @include('frontend.inc.footer')
+    @include('frontend.inc.footer') 
             </div>
 @endsection
