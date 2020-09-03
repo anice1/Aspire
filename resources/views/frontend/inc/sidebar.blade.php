@@ -52,7 +52,12 @@
                                 class="fas fa-angle-right"></i>Add Student</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('students.show', '$student')}}" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
+                        <a href="{{route('students.show', '$student')}}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Student Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('students.edit', '$student')}}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Edit Student</a>
                     </li>
                 </ul>
             </li>
@@ -64,7 +69,12 @@
                         <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Teachers</a>
                     </li>
-                    <li class="nav-item">   
+                    <li class="nav-item">
+
+                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Teacher Details</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>
@@ -81,9 +91,13 @@
                         <a href="/parents-details" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Parents Details</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Parent</a>
+                    </li>
                 </ul>
             </li>
-            
+
             <li class="nav-item sidebar-nav-item">
                 <a href="/#" class="nav-link"><i class="flaticon-books"></i><span>Manage Library</span></a>
                 <ul class="nav sub-group-menu">
