@@ -101,7 +101,7 @@
                                     <label>Address</label>
                                     <input type="text" name='address' placeholder="" class="form-control" value='{{$teacher->address}}'>
                                 </div>
-                                
+
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Phone</label>
                                     <input type="text" placeholder="" name='phone' class="form-control" value='{{$teacher->phone}}'>
@@ -110,7 +110,7 @@
                                     <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
                                     <input type="file" name='photo' class="form-control-file">
                                 </div>
-                                
+
                                 <div class="col-lg-6 col-12 form-group">
                                     <label>Short BIO</label>
                                     <textarea class="textarea form-control" name="bio" id="form-message" cols="10" rows="9">{{$teacher->bio}}</textarea>
@@ -125,6 +125,5 @@
                     </div>
                 </div>
                 <!-- Add New Teacher Area End Here -->
-    @include('frontend.inc.footer') 
             </div>
 @endsection
