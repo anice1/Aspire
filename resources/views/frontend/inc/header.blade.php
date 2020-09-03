@@ -1,3 +1,4 @@
+<!-- <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script> -->
 <div id="wrapper" class="wrapper bg-ash">
     <!-- Header Menu Area Start Here -->
     <div class="navbar navbar-expand-md header-menu-one bg-light">
@@ -55,17 +56,18 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">{{ auth()->user()->name }}</h6>
+                            <h6 class="item-title">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h6>
                         </div>
                         <div class="item-content">
                             <ul class="settings-list">
-                                <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>                                <li><a href="messaging.html"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
+                                <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>                                
+                                <li><a href="messaging.html"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
                                 <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
                                 <li>
-                                    <form action="{{route('logout')}}" method="POST">
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('myform').submit();">
+                                    <i class="flaticon-turn-off"></i>{{ __('Logout') }}</a>
+                                    <form id="myform" action="{{ route('logout') }}" method="POST">
                                         @csrf
-                                        <a >{{'Logout'}}</a>
-                                        <a href="#"><i class="flaticon-turn-off"></i><button></button> </a>
                                     </form>
                                 </li>
                             </ul>

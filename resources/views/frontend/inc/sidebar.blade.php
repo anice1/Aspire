@@ -64,11 +64,6 @@
                         <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Teachers</a>
                     </li>
-                    <li class="nav-item">
-
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Teacher Details</a>
-                    </li>
                     <li class="nav-item">   
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
@@ -86,10 +81,6 @@
                         <a href="/parents-details" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Parents Details</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a href="/add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                            Parent</a>
-                    </li> -->
                 </ul>
             </li>
             
@@ -137,21 +128,49 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="/all-subject" class="nav-link"><i
-                        class="flaticon-open-book"></i><span>Subject</span></a>
+            <li class="nav-item sidebar-nav-item">
+                <a href="/messaging" class="nav-link"><i
+                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Add Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Trash</a>
+                            </li>
+                        </ul>
             </li>
             <li class="nav-item">
                 <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Time
                                     Table</span></a>
             </li>
-            <li class="nav-item">
-                <!-- <a href="/student-attendence" class="nav-link"><i
+            <!-- <li class="nav-item">
+                <a href="/student-attendence" class="nav-link"><i
                         class="flaticon-checklist"></i><span>Attendence</span></a>
-            </li> -->
-            <li class="nav-item">
-                <a href="/map" class="nav-link"><i
+            </li>  -->
+            <li class="nav-item sidebar-nav-item">
+                <a href="/messaging" class="nav-link"><i
                         class="flaticon-menu-1"></i><span>Syllabus</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Syllabus</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Add Syllabus</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Trash</a>
+                            </li>
+                        </ul>
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
@@ -170,18 +189,6 @@
                 <a href="/notice-board" class="nav-link"><i
                         class="flaticon-script"></i><span>Notice</span></a>
             </li>
-            <li class="nav-item">
-                <a href="/messaging" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="/map" class="nav-link"><i
-                        class="flaticon-planet-earth"></i><span>Map</span></a>
-            </li>
-            <!-- <li class="nav-item">
-                <a href="/account-settings" class="nav-link"><i
-                        class="flaticon-settings"></i><span>Account</span></a>
-            </li> -->
             @endrole
             @role('student')
             <li class="nav-item">
@@ -192,7 +199,7 @@
                         class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
             </li>
             <li class="nav-item">
-                <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Class Routine</span></a>
+                <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Timetable</span></a>
             </li>
             <li class="nav-item">
                 <a href="/map" class="nav-link"><i
@@ -246,7 +253,7 @@
                         </ul>
             </li>
             <li class="nav-item">
-                <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Class Routine</span></a>
+                <a href="/class-routine" class="nav-link"><i class="flaticon-calendar"></i><span>Timetable</span></a>
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/map" class="nav-link"><i
