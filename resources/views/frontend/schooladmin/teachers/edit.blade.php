@@ -6,7 +6,7 @@
                 <div class="breadcrumbs-area">
                     <h3>Teacher</h3>
                     <ul class="breadcrumb breadcrumb-col-pink">
-                        <li><a href="index.html"><i class="material-icons"></i> Home</a></li>
+                        <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
                         <li class="active"><i class="material-icons"></i>Add New Teacher</li>
                     </ul>
                 </div>

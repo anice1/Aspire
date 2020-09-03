@@ -1,10 +1,4 @@
-/**************************************
-
-Template Name: Aspirecreed 
-Template URL: https://www.radiustheme.com/demo/html/psdboss/akkhor/
-Description: School Management Admin Dashboard HTML Template
-
-
+/* 
 ======================================  
         Table Of Contents
 ======================================
@@ -206,6 +200,9 @@ h6 {
 .dropdown .dropdown-menu .dropdown-item {
   font-size: 14px;
   padding: 10px 15px;
+}
+.submit-btn{
+  display:none;
 }
 /*=============== 2.3 Forms ==================*/
 .form-group .form-control {
@@ -1323,6 +1320,7 @@ h6 {
 }
 .breadcrumbs-area ul li a:hover {
   color: #fea801;
+  text-decoration: none;
 }
 .breadcrumbs-area ul li:last-child {
   margin-right: 0;
