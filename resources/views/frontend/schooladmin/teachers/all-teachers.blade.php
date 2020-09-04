@@ -48,8 +48,12 @@
                                     @foreach($teachers as $teacher)
                                     <tr>
                                         <td>{{'#00' . $teacher->id}}</td>
-                                        <td class="text-center"><img src="img/figure/student2.png" alt="student"></td>
-                                        <td>{{$teacher->user->firstname . ' ' . $teacher->user->lastname}}</td>
+                                        <td class="text-center"><a href="{{route('teachers.show', $teacher->id)}}">
+                                            <img src="img/figure/student2.png" alt="student"></a></td>
+                                        <td><a href="{{route('teachers.show', $teacher->id)}}">
+                                                {{$teacher->firstname . ' ' . $teacher->lastname}}
+                                            </a>
+                                        </td>
                                         <td>{{$teacher->gender}}</td>
                                         <td>{{$teacher->class}}</td>
                                         <td>{{$teacher->address}}</td>
@@ -64,11 +68,11 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <!-- <a class="dropdown-item" href="{{route('students.edit', $student ?? '')}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a> -->
-                                                    <!-- <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
+                                                    <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
-                                                    </form> -->
+                                                    </form>
                                                     
                                                     <a class="dropdown-item" href="{{route('teachers.edit', $teacher->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i>Edit

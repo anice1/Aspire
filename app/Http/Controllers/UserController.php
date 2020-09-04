@@ -86,7 +86,7 @@ class UserController extends Controller
 
 
         $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+        $user->assignRole('admin');
 
 
         return redirect()->route('users.index')

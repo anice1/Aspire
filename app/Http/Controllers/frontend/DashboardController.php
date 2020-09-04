@@ -12,14 +12,27 @@ class DashboardController extends Controller
     {
         $user = User::all()->count();
 
-        if(Auth::user()->hasRole('school')){
+        if(Auth::user()->hasRole('school'))
+        {
             return view('frontend.schooladmin.welcome');
-        }elseif(Auth::user()->hasRole('student')){
+
+        }elseif(Auth::user()->hasRole('student'))
+        {
             return view('frontend.student.index');
-        }elseif(Auth::user()->hasRole('teacher')){
+
+        }elseif(Auth::user()->hasRole('teacher'))
+        {
+
             return view('frontend.teacher.index');
-        }else{
-            return "i Dont understand the logic bro";
+
+        }elseif(Auth::user()->hasRole('admin'))
+        {
+
+            return view('frontend.schooladmin.welcome');
+
+        }else
+        {
+            return "Out of range";
         }
     }
 }

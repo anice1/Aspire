@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id','firstname','lastname', 'email', 'password',
+        // 'user_id','firstname','lastname', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     protected $dates = ['deleted_at'];
@@ -45,7 +46,11 @@ class User extends Authenticatable
     public function teacher(){
         return $this->hasOne('App\Teacher', 'user_id');
     }
-    public function Student() {
+    public function student() {
         return $this->hasOne('App\Student', 'user_id');
+    }
+
+    public function school() {
+        return $this->hasOne('App\School', 'user_id');
     }
 }

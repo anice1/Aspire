@@ -7,9 +7,27 @@
                     <h3>Teacher</h3>
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons"></i>Add New Teacher</li>
+                        <li class="active"><i class="material-icons"></i>Update Teacher profile</li>
                     </ul>
                 </div>
+                @if ($errors->any())
+
+                    <div class="alert alert-danger">
+
+                        <strong>Whoops!</strong> There were some problems with your inputs.<br><br>
+
+                        <ul>
+                            @foreach ($errors->all() as $error)
+
+                                <li>{{ $error }}</li>
+
+                            @endforeach
+
+                        </ul>
+
+                </div>
+
+                @endif
                 @if ($message = Session::get('success'))
 
                                 <div class="alert alert-success" role='alert'>
@@ -19,11 +37,12 @@
                                 </div>
 
                 @endif
+                
                 <!-- Breadcubs Area End Here -->
                 <!-- Add New Teacher Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
-                        <form class="new-added-form" method='GET' action="{{route('teachers.update', $teacher->id)}}" enctype='multipart/form-data'>
+                        <form class="new-added-form" method='POST' action="{{route('teachers.update', $teacher->id)}}" enctype='multipart/form-data'>
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value='PUT'>
                             <div class="row">
@@ -79,10 +98,7 @@
                                     <label>E-Mail</label>
                                     <input type="email" name='email' placeholder="example@example.com" class="form-control" value='{{$teacher->user->email}}' disabled>
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Password</label>
-                                    <input type="password" name='password' placeholder="" class="form-control">
-                                </div>
+                                
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Class *</label>
                                     <select class="select2 select2-hidden-accessible" name='class' data-select2-id="10" tabindex="-1" aria-hidden="true">
@@ -106,17 +122,17 @@
                                     <label>Phone</label>
                                     <input type="text" placeholder="" name='phone' class="form-control" value='{{$teacher->phone}}'>
                                 </div>
+                                <div class="col-lg-6 col-12 form-group">
+                                    <label>Short BIO</label>
+                                    <textarea class="textarea form-control" name="bio" id="form-message" cols="10" rows="9">{{$teacher->bio}}</textarea>
+                                </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
                                     <input type="file" name='photo' class="form-control-file">
                                 </div>
 
-                                <div class="col-lg-6 col-12 form-group">
-                                    <label>Short BIO</label>
-                                    <textarea class="textarea form-control" name="bio" id="form-message" cols="10" rows="9">{{$teacher->bio}}</textarea>
-                                </div>
+                                
                                 <div class="col-12 form-group mg-t-8">
-                                    <a href="{{route('teachers.update',$teacher->id)}}" class="btn btn-primary">Update</a>
                                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                                     <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                                 </div>
