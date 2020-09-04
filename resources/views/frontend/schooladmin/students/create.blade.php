@@ -6,7 +6,7 @@
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
         <ul class="breadcrumb breadcrumb-col-pink">
-            <li><a href="index.html"><i class="material-icons"></i> Home</a></li>
+            <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
             <li class="active"><i class="material-icons">person_add</i>Add New Student</li>
         </ul>
     </div>

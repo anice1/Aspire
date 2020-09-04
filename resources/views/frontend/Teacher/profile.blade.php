@@ -15,64 +15,59 @@
                 <!-- Student Table Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
-                        <div class="heading-layout1">
-                            <div class="item-title">
-                                <h3>About Me</h3>
-                            </div>
-                        </div>
                         <div class="single-info-details">
                             <div class="item-img">
                                 <img src="img/figure/teacher.jpg" alt="teacher">
                             </div>
                             <div class="item-content">
                                 <div class="header-inline item-header">
-                                    <h3 class="text-dark-medium font-medium">{{$teacher->user->firstname .' '. $teacher->user->lastname}}</h3>
+                                    <h3 class="text-dark-medium font-medium">About {{$teacher ?? ''->user->firstname .' '. $teacher ?? ''->user->lastname}}</h3>
                                     <div class="header-elements">
                                         <ul>
                                             <li><a href="#"><i class="far fa-edit"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                            <li><a href="javascript:window.print()"><i class="fas fa-print"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <p>{{$teacher->bio}}</p>
+                                <p>{{$teacher ?? ''->bio}}</p>
                                 <div class="info-table table-responsive">
                                     <table class="table text-nowrap">
                                         <tbody>
                                             <tr>
                                                 <td>Name:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->user->firstname .' '. $teacher->user->lastname}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->user->firstname .' '. $teacher ?? ''->user->lastname}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Gender:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->gender}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->gender}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Religion:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->religion}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->religion}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Joining Date:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->created_at}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->created_at}}</td>
                                             </tr>
                                             <tr>
                                                 <td>E-mail:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->user->email}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->user->email}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Class:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->class}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->class}}</td>
                                             </tr>
                                             <tr>
                                                 <td>ID No:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->user_id}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->user_id}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Address:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->address}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->address}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Phone:</td>
-                                                <td class="font-medium text-dark-medium">{{$teacher->phone}}</td>
+                                                <td class="font-medium text-dark-medium">{{$teacher ?? ''->phone}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -81,5 +76,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Student Details Area End Here -->
+                @include('frontend.inc.footer')
+            </div>
 @endsection

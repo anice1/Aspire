@@ -27,7 +27,8 @@
                                     <h3 class="text-dark-medium font-medium">Jessia Rose</h3>
                                     <div class="header-elements">
                                         <ul>
-                                            <li><a href="#"><i class="fas fa-print"></i></a></li>
+                                            <li><a href="#"><i class="far fa-edit"></i></a></li>
+                                            <li><a href="javascript:window.print()"><i class="fas fa-print"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

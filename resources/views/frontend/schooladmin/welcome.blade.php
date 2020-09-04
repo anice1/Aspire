@@ -7,7 +7,7 @@
     <div class="row gutters-20">
         <div class="col-12 col-xl-6 col-3-xxxl">
             <div class="card dashboard-card-three pd-b-20">
-                <div class="card-body" id="card">
+                <div class="card-body">
                     <div class="heading-layout1">
                         <div class="item-title">
                             <h3>Students</h3>
@@ -17,11 +17,9 @@
                                aria-expanded="false">...</a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#" onclick="this.parentNode.style.display = 'none'"><i
+                                <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
                                         class="fas fa-times text-orange-red"></i>Close</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="#" onClick="window.location.reload();"><i
                                         class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                             </div>
                         </div>
@@ -54,11 +52,9 @@
                                aria-expanded="false">...</a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
+                                        class="fas fa-times text-orange-red"></i>Close</a>>
+                                <a class="dropdown-item" href="#" onClick="window.location.reload();"><i
                                         class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                             </div>
                         </div>
@@ -81,11 +77,9 @@
                                aria-expanded="false">...</a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
                                         class="fas fa-times text-orange-red"></i>Close</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="#" onClick="window.location.reload();"><i
                                         class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                             </div>
                         </div>
@@ -143,11 +137,9 @@
                                aria-expanded="false">...</a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
+                                        class="fas fa-times text-orange-red" ></i>Close</a>
+                                <a class="dropdown-item" href="#" onClick="window.location.reload();"><i
                                         class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                             </div>
                         </div>

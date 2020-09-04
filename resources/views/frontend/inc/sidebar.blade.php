@@ -52,10 +52,6 @@
                                 class="fas fa-angle-right"></i>Add Student</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('students.show', '$student')}}" class="nav-link">
-                            <i class="fas fa-angle-right"></i>Student Details</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{route('students.edit', '$student')}}" class="nav-link">
                             <i class="fas fa-angle-right"></i>Edit Student</a>
                     </li>
@@ -70,14 +66,12 @@
                             Teachers</a>
                     </li>
                     <li class="nav-item">
-
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Teacher Details</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
                     </li>
+                    <li class="nav-item">
+                                <a href="" class="nav-link"><i class="fas fa-angle-right"></i>Trash</a>
+                     </li>
                 </ul>
             </li>
             <li class="nav-item sidebar-nav-item">
@@ -90,10 +84,6 @@
                     <li class="nav-item">
                         <a href="/parents-details" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Parents Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                            Parent</a>
                     </li>
                 </ul>
             </li>
@@ -209,6 +199,9 @@
                 <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
             </li>
             <li class="nav-item">
+                <a href="/" class="nav-link"><i class="flaticon-ring"></i><span>Profile</span></a>
+            </li>
+            <li class="nav-item">
                 <a href="/messaging" class="nav-link"><i
                         class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
             </li>
@@ -238,6 +231,9 @@
             @role('teacher')
             <li class="nav-item">
                 <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('profile')}}" class="nav-link"><i class="flaticon-ring"></i><span>Profile</span></a>
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
@@ -283,7 +279,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Trash</a>
+                                        class="fas fa-angle-right"></i>Archived</a>
                             </li>
                         </ul>
             </li>
@@ -300,10 +296,6 @@
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i
                                         class="fas fa-angle-right"></i>Add Result</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Trash</a>
                             </li>
                         </ul>
             </li>

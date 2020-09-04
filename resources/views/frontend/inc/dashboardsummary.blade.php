@@ -1,7 +1,6 @@
 <div class="dashboard-content-one">
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
-        <h3>Admin Dashboard</h3>
         <ul class="breadcrumb breadcrumb-col-pink">
             <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
             <li class="active"><i class="material-icons">dashboard</i> Admin</li>
@@ -84,8 +83,12 @@
         <div>
             <div class="dashboard-summery mg-b-20">
                 <div class="panel-body">
-                    <h3>Welcome {{ auth()->user()->name }}</h3>
-                    <p>Your presence and cooperation will help us to improve the education system of our organization.</p>
+                    <h3 class="tainer">  Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h3>
+                    <p class="typewrite" data-period="2000" data-type='[ "Your presence and cooperation will help us to improve the education system of our organization.",
+                        "Education is not to reform students or amuse them or to make them experts technicians.",
+                        "It is to unsettle their minds, widen their horizons, inflame their intellects, teach them to think straight, if possible." ]'>
+                    <span class="wrap"></span> 
+                    </p>
                 </div>
             </div>
         </div>

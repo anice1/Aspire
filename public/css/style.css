@@ -2682,7 +2682,7 @@ ul {
   top: -17px;
   left: -17px;
 }
-/*=============== 6.4 Account Settings ==================*/
+/* =============== 6.4 Account Settings ==================
 .account-settings-box .user-details-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2748,7 +2748,7 @@ ul {
 .account-settings-box .all-user-box .media.active {
   background-color: #debbbb;
 }
-/*=============== 6.5 UI Elements ==================*/
+/*=============== 6.5 UI Elements ==================*
 .ui-btn-wrap ul li {
   display: inline-block;
   margin-right: 10px;
@@ -2970,7 +2970,7 @@ ul {
 }
 .ui-tab-card .card-body .icon-tab .tab-content {
   padding-top: 26px;
-}
+} */
 /*=======================================================================
 7. DASHBOARD STYLES 
 =========================================================================*/
@@ -3150,7 +3150,7 @@ ul {
   transform: translateY(-50%);
   z-index: 5;
   color: #222222;
-} */
+} 
 .dashboard-card-one .card-body .earning-report .dropdown .dropdown-menu {
   top: 20px !important;
   min-width: 15rem;
@@ -3221,7 +3221,7 @@ ul {
 .dashboard-card-two .card-body .expense-report .monthly-expense .expense-amount span {
   font-size: 16px;
   color: #646464;
-}
+}*/
 .dashboard-card-three .card-body .doughnut-chart-wrap {
   padding: 5px 0 50px;
   display: flex;
@@ -3270,7 +3270,7 @@ ul {
 .dashboard-card-four .card-body .calender-wrap .fc-calender .fc-view-container .fc-basicWeek-view table .fc-head .fc-head-container .fc-day-header {
   font-size: 14px;
 }
-.dashboard-card-five .card-body .traffic-title {
+/* .dashboard-card-five .card-body .traffic-title {
   color: #a5a5a5;
   margin-bottom: 10px;
 }
@@ -3339,7 +3339,7 @@ ul {
   top: 50%;
   left: 6px;
   transform: translateY(-50%);
-}
+} */
 .dashboard-card-six ::-webkit-scrollbar {
   width: 10px;
   background: #f0f1f2;
@@ -3385,6 +3385,7 @@ ul {
 .dashboard-card-six .card-body .notice-box-wrap .notice-list .entry-meta span {
   color: #a4a4a4;
 }
+/* 
 .dashboard-card-seven .social-media {
   border-radius: 4px;
   padding: 30px 20px;
@@ -3419,7 +3420,7 @@ ul {
 .dashboard-card-seven .social-media .social-like {
   font-size: 26px;
   color: #ffffff;
-}
+} */
 /*=============== 7.2 Dashboard Page Two ==================*/
 .dashboard-card-ten .card-body .student-info .media {
   margin-bottom: 6px;
@@ -4482,4 +4483,70 @@ ul {
 }
 .text-orange-red {
   color: #ff0000;
+}
+/* 
+=======================================
+      text animation css
+=======================================
+ */
+.tainer{
+  animation: text 2s 1;
+}
+@keyframes text {
+  0%{
+    color: black;
+    margin-bottom: 0px;
+
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: 0px;
+
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: 0px;
+
+  }
+}
+/* 
+=========================================
+    Print css
+=========================================
+ */
+ @media print{
+  body {
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+      }
+  .card-body {
+      padding: 15px 30px 30px;
+      }
+  i, .fa, .far .fas, ::before{
+      display:none;
+      }
+  .dashboard-content-one{
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 0 30px;
+      }
+  .single-info-details .item-content p{
+      width: 80%;
+      }
+  .heading-layout1{
+      display:none;
+      }
+  .dropdown{
+      display:none;
+      }
+  .header-element{
+      display:none;
+      }
+  .breadcrumbs-area{
+      display:none;
+      }
 }
