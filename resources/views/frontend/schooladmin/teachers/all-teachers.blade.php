@@ -47,7 +47,7 @@
                                     <tbody>
                                     @foreach($teachers as $teacher)
                                     <tr>
-                                        <td>{{'#00' . $teacher->id}}</td>
+                                        <td>{{$teacher->id}}</td>
                                         <td class="text-center"><a href="{{route('teachers.show', $teacher->id)}}">
                                             <img src="img/figure/student2.png" alt="student"></a></td>
                                         <td><a href="{{route('teachers.show', $teacher->id)}}">
@@ -89,7 +89,7 @@
                                     </tbody>
                                 </table>
 
-                                {!! $teachers->links() !!}
+                              {{--{!! $teachers->links() !!} --}}  
                             </div>
                         </div>
                     </div>
