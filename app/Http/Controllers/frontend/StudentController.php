@@ -49,8 +49,8 @@ class StudentController extends Controller
     public function index()
 
     {
-
-        $students = Student::latest()->paginate(14);
+        $id = auth()->user()->id;
+        $students = Student::latest()->where('school_id', $id)->paginate(14);
 
         return view('frontend.schooladmin.students.allstudents',compact('students'))
 

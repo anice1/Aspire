@@ -11,7 +11,10 @@ class Student extends Model
     use softDeletes;
     protected $table = 'student';
     protected $fillable = [
+
         'user_id','school_id','dob', 'firstname','lastname','email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
+
+
     ];
     protected $dates = ['deleted_at'];
 

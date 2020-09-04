@@ -45,7 +45,7 @@
                                     <tr>
                                         <td>{{'#00' . $student->id}}</td>
                                         <td class="text-center"><img src="{{$student->profile_image}}" alt="student"></td>
-                                        <td>{{$student->user->firstname . ' ' . $student->user->lastname}}</td>
+                                        <td>{{$student->firstname . ' ' . $student->lastname}}</td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$student->class}}</td>
                                         <td>{{$student->guardian }}</td>
