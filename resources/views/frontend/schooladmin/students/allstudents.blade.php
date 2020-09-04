@@ -31,7 +31,7 @@
                                         <th>Photo</th>
                                         <th>Full Name</th>
                                         <th>Gender</th>
-                                        <th>Class</th>s
+                                        <th>Class</th>
                                         <th>Parents</th>
                                         <th>Address</th>
                                         <th>Date Of Birth</th>
