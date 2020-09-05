@@ -39,14 +39,12 @@ class TeacherController extends Controller
     public function index()
 
     {
-        return Teacher::all();
-        
-        
-        $teachers = Teacher::latest()->paginate(14);
+        $id = auth()->user()->id; 
+        $teachers = Teacher::all()->where('school_id', $id);
 
-        return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'))
+        return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'));
 
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            // ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
 
