@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Teacher;
 use App\User;
+use App\School;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -38,12 +39,12 @@ class TeacherController extends Controller
     public function index()
 
     {
+        $id = auth()->user()->id; 
+        $teachers = Teacher::all()->where('school_id', $id);
 
-        $teachers = Teacher::latest()->paginate(14);
+        return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'));
 
-        return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'))
-
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            // ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
 
@@ -82,20 +83,35 @@ class TeacherController extends Controller
     public function store(Request $request)
 
     {
+        request()->validate([
+            
+            'firstname' => 'required',
+            'lastname'  => 'required',
+            'gender'    => 'required',
+            'email'     =>  'required',
+            'address'   =>  'required',
+            'bio'       =>  'required',
+            'password'  => 'required|min:8',
+            'dob'       => 'required',
+            'phone'     => 'required',        
+        ]);
 
         // User data seeding
         
-        $user = User::create(['firstname'=>$request->firstname,'lastname'=>$request->lastname,
+        $user = User::create(['username'=>$request->firstname.' '.$request->lastname,
         'email'=>$request->email, 'password'=>Hash::make($request->password)]);
         $user->assignRole('teacher');
         $user->save();
     
-        
+       
         // Teacher data seeding
 
         $teacher = new Teacher;
         $teacher->user_id = $user->id;
+        $teacher->school_id = auth()->user()->id;
         $teacher->gender = $request->gender;
+        $teacher->firstname = $request->firstname;
+        $teacher->lastname = $request->lastname;
         $teacher->dob = $request->dob;
         $teacher->blood_group = $request->blood_group;
         $teacher->religion = $request->religion;
@@ -137,7 +153,7 @@ class TeacherController extends Controller
 
      *
 
-     * @param  \App\Student  $student
+     * @param  \App\Teacher  $teacher
 
      * @return \Illuminate\Http\Response
 
@@ -146,7 +162,7 @@ class TeacherController extends Controller
     public function edit($id)
 
     {
-        $teacher = Teacher::findOrfail($id);
+        $teacher = Teacher::find($id);
         return view('frontend.schooladmin.teachers.edit',compact('teacher'));
 
     }
@@ -160,7 +176,7 @@ class TeacherController extends Controller
 
      * @param  \Illuminate\Http\Request  $request
 
-     * @param  \App\Student  $student
+     * @param  \App\Teacher  $teacher
 
      * @return \Illuminate\Http\Response
 
@@ -169,62 +185,39 @@ class TeacherController extends Controller
     public function update(Request $request, $id)
 
     {
+        request()->validate([
+            'dob'       => 'required',
+            'firstname' => 'required',
+            'lastname'  => 'required',
+            'phone'     => 'required',        
+        ]);
 
-        // User updated data seeding
-        
-        $user = User::find($id)->teacher;
-        return $user;
-        // $user = User::update(['firstname'=>$request->firstname,'lastname'=>$request->lastname,
-        // 'email'=>$request->email, 'password'=>Hash::make($request->password)]);
-        // $user->assignRole('teacher');
-        // $user->save();
-    
-        
-        // // Teacher data seeding
+        $teacher = Teacher::findOrfail($id);
+        $teacher->update([
+                'gender'=>$request->gender, 
+                'dob'=> $request->dob,
+                'blood_group'=>$request->blood_group,
+                'religion'=> $request->religion,
+                'class'=> $request->class,
+                'address'=>$request->address,
+                'phone'=>$request->phone,
+                'bio'=>$request->bio,
+                'firstname'=>$request->firstname,
+                'lastname'=>$request->lastname
+            ]);
 
-        // $teacher = new Teacher;
-        // $teacher->user_id = $user->id;
-        // $teacher->gender = $request->gender;
-        // $teacher->dob = $request->dob;
-        // $teacher->blood_group = $request->blood_group;
-        // $teacher->religion = $request->religion;
-        // $teacher->class = $request->class;
-        // $teacher->address = $request->address;
-        // $teacher->phone = $request->phone;
-        // $teacher->bio = $request->bio;
-        // $teacher->save();
+        return redirect()->back()->with('success','Record updated successfully.');
 
-
-        // $teacher = Teacher::findOrfail($id);
-        // $teacher->update($request->all());
-
-
-        // return redirect()->route('frontend.schooladmin.teachers.teacher-detail')
-
-        //     ->with('success','Record updated successfully');
-
+                
     }
 
-
-    /**
-
-     * Remove the specified resource from storage.
-
-     *
-
-     * @param  \App\Student  $student
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function destroy(Teacher $teacher, $id)
+    public function destroy(Request $request, $id)
 
     {
 
+        $teacher = Teacher::findOrfail($id);
+        $teacher->user->delete();
         $teacher->delete();
-        User::findOrfail($id)->delete();
-
         return redirect()->back()->with('success','Teacher deleted successfully');
 
     }

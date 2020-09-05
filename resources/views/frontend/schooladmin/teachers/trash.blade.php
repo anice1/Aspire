@@ -6,7 +6,7 @@
                 <div class="breadcrumbs-area">
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons">people</i> All Schools</li>
+                        <li class="active"><i class="material-icons">people</i>All Students</li>
                     </ul>
                 </div>
         <!-- Breadcubs Area End Here -->
@@ -34,32 +34,32 @@
                                     <tr>
                                         <th>SN</th>
                                         <th>Photo</th>
-                                        <th>School Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Date Founded</th>
-                                        <th>Proprietor</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Class</th>
                                         <th>Address</th>
-                                        <th>Date Added</th>
+                                        <th>Date Of Birth</th>
+                                        <th>Phone</th>
+                                        <th>E-mail</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($schools as $school)
+                                    @foreach($teachers as $teacher)
                                     <tr>
-                                        <td>{{'#00' . $school->id}}</td>
-                                        <td class="text-center"><a href="{{route('schools.show', $school->id)}}">
+                                        <td>{{'#00' . $teacher->id}}</td>
+                                        <td class="text-center"><a href="{{route('teachers.show', $teacher->id)}}">
                                             <img src="img/figure/student2.png" alt="student"></a></td>
-                                        <td><a href="{{route('schools.show', $school->id)}}">
-                                                {{$school->school_name}}
+                                        <td><a href="{{route('teachers.show', $teacher->id)}}">
+                                                {{$teacher->user->firstname . ' ' . $teacher->user->lastname}}
                                             </a>
                                         </td>
-                                        <td>{{$school->user->email}}</td>
-                                        <td>{{$school->phone}}</td>
-                                        <td>{{$school->dob}}</td>
-                                        <td>{{$school->firstname.' '.$school->lastname}}</td>
-                                        <td>{{$school->school_address}}</td>
-                                        <td>{{$school->created_at->diffForHumans()}}</td>
+                                        <td>{{$teacher->gender}}</td>
+                                        <td>{{$teacher->class}}</td>
+                                        <td>{{$teacher->address}}</td>
+                                        <td>{{$teacher->dob}}</td>
+                                        <td>{{$teacher->phone}}</td>
+                                        <td>{{$teacher->user->email}}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -68,17 +68,17 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <!-- <a class="dropdown-item" href="{{route('students.edit', $student ?? '')}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a> -->
-                                                    <form action="{{route('schools.destroy', $school->id)}}" method="post">
+                                                    <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
                                                     </form>
                                                     
-                                                    <a class="dropdown-item" href="{{route('schools.edit', $school->id)}}">
+                                                    <a class="dropdown-item" href="{{route('teachers.edit', $teacher->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i>Edit
                                                     </a>
                                                     
-                                                    <a class="dropdown-item" href="{{route('schools.show', $school->id)}}">
+                                                    <a class="dropdown-item" href="{{route('teachers.show', $teacher->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i>View
                                                     </a>
                                                 </div>
@@ -89,7 +89,7 @@
                                     </tbody>
                                 </table>
 
-                                {!! $schools->links() !!}
+                                {!! $teachers->links() !!}
                             </div>
                         </div>
                     </div>

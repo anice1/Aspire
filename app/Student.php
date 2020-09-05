@@ -11,7 +11,11 @@ class Student extends Model
     use softDeletes;
     protected $table = 'student';
     protected $fillable = [
+<<<<<<< HEAD
         'user_id', 'bio','address','profile_image','dob', 'email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
+=======
+        'user_id','school_id','dob', 'firstname','lastname','email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
+>>>>>>> master
 
 
     ];
@@ -24,5 +28,8 @@ class Student extends Model
     }
     public function user() {
         return $this->belongsTo('App\User');
+    }
+    public function school(){
+        return $this->belongsTo('App\School');
     }
 }

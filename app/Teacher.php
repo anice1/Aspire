@@ -22,13 +22,12 @@ class Teacher extends Model
     ];
 
 
-
-    public function roles(){
-        return $this->belongsTo('App\Role');
-    }
-
     public function user(){
         return $this->belongsTo('App\User');
+    }
+
+    public function school(){
+        return $this->belongsTo('App\School');
     }
 }
 

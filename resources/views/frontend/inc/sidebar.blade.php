@@ -23,14 +23,14 @@
                         <a href="{{route('schools.create')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Add Schools</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="{{route('schools.edit', '$student')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Edit Schools</a>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item">
                         <a href="{{route('schools.edit', '$student')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Disable Schools</a>
+                                class="fas fa-angle-right"></i>Disabled Schools</a>
                     </li>
                 </ul>
             </li>
@@ -69,11 +69,7 @@
                         <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Teachers</a>
                     </li>
-                    <li class="nav-item">
-
-                        <a href="{{route('teachers.show', '$teacher')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Teacher Details</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>

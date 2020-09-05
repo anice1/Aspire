@@ -47,7 +47,7 @@
                     <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            <h5 class="item-title">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h5>
+                            <h5 class="item-title">{{ auth()->user()->username}}</h5>
                             <span>Admin</span>
                         </div>
                         <div class="admin-img">
@@ -56,7 +56,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h6>
+                            <h6 class="item-title">{{ auth()->user()->username}}</h6>
                         </div>
                         <div class="item-content">
                             <ul class="settings-list">

@@ -14,58 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-// Route::resource('/teacher','TeacherController');
-// Route::get('/teacher', 'TeacherController@index');
-
-
-/*
-|---------------------------------
-| Admin Registration Route
-|---------------------------------
-*/
-//    Route::get('/register', 'UserRegistrationController@register_page');
-//    Route::post('/register/store', 'UserRegistrationController@create_admin');
-//
-/*
-|---------------------------------
-| Teacher Registration Route
-|---------------------------------
-*/
-//    Route::post('/teacher/store', 'UserRegistrationController@create_teacher');
-
 /*
 |---------------------------------
 | Student Registration Route
 |---------------------------------
 */
-//
+
 Auth::routes();
-//
-//Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['middleware' => ['auth']], function() {
-//
+
     Route::resource('roles','frontend\RoleController');
-//
+
     Route::resource('users','UserController');
-//
-//    Route::resource('students','StudentController');
-//
-//
-//
+
 });
-// Route::group(['middleware' => ['auth']], function(){
 
-
-
-
-
-
-//     Route::get('teacher', function () {
-//         return view('frontend.teachers.create');
-//     });
-
-// });
 
 
 //School Admin Routes

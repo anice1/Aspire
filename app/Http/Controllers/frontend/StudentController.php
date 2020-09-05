@@ -7,7 +7,7 @@ use App\Student;
 use App\traits\UploadTrait;
 use Request;
 use Str;
-
+use Hash;
 
 class StudentController extends Controller
 {
@@ -113,9 +113,8 @@ class StudentController extends Controller
             'profile_image'     =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048'
 
         ]);
-
-
-        $user = User::create(Request::only('firstname', 'lastname' , 'email', 'password'));
+        $username = Request::input('firstname').' '.Request::input('lastname');
+        $user = User::create(['username'=>$username, 'email'=>Request::input('email'), 'password' =>Hash::make(Request::input('password'))]);
         $user->assignRole('student');
 
         if ($request::has('profile_image')) {
@@ -132,7 +131,8 @@ class StudentController extends Controller
             // Set user profile image path in database to filePath
             $user->student()->profile_image = $filePath;
         }
-        $user->student()->create(Request::only('dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation', 'profile_image'));
+        $id = auth()->user()->id;
+        $user->student()->create(['school_id'=> $id,'dob'=>Request::input('dob'), 'gender'=>Request::input('gender'),'firstname'=>Request::input('firstname'),'lastname'=>Request::input('lastname'), 'class'=>Request::input('class'), 'phone'=>Request::input('phone'), 'guardian'=>Request::input('guardian'), 'guardian_phone'=>Request::input('guardian_phone'), 'guardian_email'=>Request::input('guardian_email'), 'guardian_occupation'=>Request::input('guardian_occupation')]);
 
         return redirect()->route('students.index')
 
@@ -215,8 +215,7 @@ class StudentController extends Controller
 
         $user = Student::find($student)->user;
         $student = Student::find($student);
-//        return $student;
-
+       // return $student
         $user->update(Request::only('firstname', 'lastname' , 'email', 'password'));
         $student->update(Request::only('dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
