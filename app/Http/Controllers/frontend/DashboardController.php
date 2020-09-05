@@ -23,12 +23,12 @@ class DashboardController extends Controller
         }elseif(Auth::user()->hasRole('teacher'))
         {
 
-            return view('frontend.teacher.index');
+            return view('frontend.Teacher.index');
 
         }elseif(Auth::user()->hasRole('admin'))
         {
 
-            return view('frontend.schooladmin.welcome');
+            return view('frontend.superadmin.welcome');
 
         }else
         {
