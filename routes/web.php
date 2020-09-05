@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/', 'frontend\DashboardController@index');
     Route::resource('students','frontend\StudentController');
     Route::resource('teachers','frontend\TeacherController');
+    Route::get('/profile','frontend\TeacherController@profile')->name('profile');
 });
 
 
