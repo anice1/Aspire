@@ -6,7 +6,7 @@ use App\User;
 use App\Student;
 
 use Request;
-
+use Hash;
 
 class StudentController extends Controller
 {
@@ -108,15 +108,14 @@ class StudentController extends Controller
             'guardian_occupation' => 'required',
 
         ]);
-
-
-        $user = User::create(Request::only('firstname', 'lastname' , 'email', 'password'));
+        $username = Request::input('firstname').' '.Request::input('lastname');
+        $user = User::create(['username'=>$username, 'email'=>Request::input('email'), 'password' =>Hash::make(Request::input('password'))]);
         $user->assignRole('student');
+        $id = auth()->user()->id;
+        $user->student()->create(['school_id'=> $id,'dob'=>Request::input('dob'), 'gender'=>Request::input('gender'),'firstname'=>Request::input('firstname'),'lastname'=>Request::input('lastname'), 'class'=>Request::input('class'), 'phone'=>Request::input('phone'), 'guardian'=>Request::input('guardian'), 'guardian_phone'=>Request::input('guardian_phone'), 'guardian_email'=>Request::input('guardian_email'), 'guardian_occupation'=>Request::input('guardian_occupation')]);
 
-        $user->Student()->create(Request::only('dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
-
-        return redirect()->route('frontend.schooladmin.students.allstudents')
+        return redirect()->route('students.index')
 
             ->with('success','Student created successfully.');
 

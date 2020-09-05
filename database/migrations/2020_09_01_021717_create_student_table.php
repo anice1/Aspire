@@ -18,6 +18,8 @@ class CreateStudentTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('school_id')->unsigned();
             // $table->integer('class_id')->unsigned();
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('dob');
             $table->string('gender');
             $table->string('class');

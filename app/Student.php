@@ -12,7 +12,7 @@ class Student extends Model
 
     protected $table = 'student';
     protected $fillable = [
-        'user_id','dob', 'email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
+        'user_id','school_id','dob', 'firstname','lastname','email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
 
 
     ];
@@ -25,5 +25,8 @@ class Student extends Model
     }
     public function user() {
         return $this->belongsTo('App\User');
+    }
+    public function school(){
+        return $this->belongsTo('App\School');
     }
 }
