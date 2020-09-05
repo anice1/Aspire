@@ -61,7 +61,10 @@
                         <a href="{{route('teachers.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Teachers</a>
                     </li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                     <li class="nav-item">
                         <a href="{{route('teachers.create')}}" class="nav-link"><i class="fas fa-angle-right"></i>Add
                             Teacher</a>
@@ -77,10 +80,6 @@
                     <li class="nav-item">
                         <a href="/all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Parents</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/parents-details" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Parents Details</a>
                     </li>
                 </ul>
             </li>
