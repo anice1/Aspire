@@ -4,12 +4,14 @@ namespace App\Http\Controllers\frontend;
 
 use App\User;
 use App\Student;
-
+use App\traits\UploadTrait;
 use Request;
+use Str;
 
 
 class StudentController extends Controller
 {
+    use UploadTrait;
     /**
 
      * Display a listing of the res ource.
@@ -101,11 +103,14 @@ class StudentController extends Controller
             'gender' => 'required',
             'password' => 'required|same:confirm-password',
             'class' => 'required',
+            'address' => 'required',
+            'bio' => 'required',
             'phone' => 'required',
             'guardian' => 'required',
             'guardian_phone' => 'required',
             'guardian_email' => 'required',
             'guardian_occupation' => 'required',
+            'profile_image'     =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048'
 
         ]);
 
@@ -113,10 +118,23 @@ class StudentController extends Controller
         $user = User::create(Request::only('firstname', 'lastname' , 'email', 'password'));
         $user->assignRole('student');
 
-        $user->Student()->create(Request::only('dob', 'gender', 'class', 'phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
+        if ($request::has('profile_image')) {
+            // Get image file
+            $image = $request::file('profile_image');
+            // Make a image name based on user name and current timestamp
+            $name = Str::slug($request::input('lastname')).'_'.time();
+            // Define folder path
+            $folder = '/uploads/images/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadOne($image, $folder, 'public', $name);
+            // Set user profile image path in database to filePath
+            $user->student()->profile_image = $filePath;
+        }
+        $user->student()->create(Request::only('dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation', 'profile_image'));
 
-
-        return redirect()->route('frontend.schooladmin.students.allstudents')
+        return redirect()->route('students.index')
 
             ->with('success','Student created successfully.');
 
@@ -160,26 +178,21 @@ class StudentController extends Controller
     public function edit(Student $student)
 
     {
+
         return view('frontend.schooladmin.students.edit',compact('student'));
 
     }
 
 
     /**
-
      * Update the specified resource in storage.
-
      *
-
-     * @param  \Illuminate\Http\Request  $request
-
-     * @param  \App\Student  $student
-
+     * @param Request $request
+     * @param Student $student
      * @return \Illuminate\Http\Response
-
      */
 
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $student)
 
     {
 
@@ -187,20 +200,28 @@ class StudentController extends Controller
 
             'firstname' => 'required',
             'lastname' => 'required',
-            'othernames' => 'required',
-            'gender' => 'required',
             'dob' => 'required',
-            'email' => 'required',
+            'gender' => 'required',
             'class' => 'required',
-            'section' => 'required',
+            'address' => 'required',
+            'bio' => 'required',
+            'phone' => 'required',
+            'guardian' => 'required',
+            'guardian_phone' => 'required',
+            'guardian_email' => 'required',
+            'guardian_occupation' => 'required',
 
         ]);
 
+        $user = Student::find($student)->user;
+        $student = Student::find($student);
+//        return $student;
 
-        $student->update($request->all());
+        $user->update(Request::only('firstname', 'lastname' , 'email', 'password'));
+        $student->update(Request::only('dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
 
-        return redirect()->route('frontend.schooladmin.students.index')
+        return redirect()->route('students.index')
 
             ->with('success','Student updated successfully');
 

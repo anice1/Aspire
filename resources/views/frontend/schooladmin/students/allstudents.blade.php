@@ -29,10 +29,9 @@
                                     <tr>
                                         <th>Reg</th>
                                         <th>Photo</th>
-                                        <th>Name</th>
+                                        <th>Full Name</th>
                                         <th>Gender</th>
-                                        <th>Class</th>
-                                        <th>Section</th>
+                                        <th>Class</th>s
                                         <th>Parents</th>
                                         <th>Address</th>
                                         <th>Date Of Birth</th>
@@ -45,16 +44,15 @@
                                     @foreach($students as $student)
                                     <tr>
                                         <td>{{'#00' . $student->id}}</td>
-                                        <td class="text-center"><img src="img/figure/student2.png" alt="student"></td>
-                                        <td>{{$student->firstname . ' ' . $student->lastname}}</td>
+                                        <td class="text-center"><img src="{{$student->profile_image}}" alt="student"></td>
+                                        <td>{{$student->user->firstname . ' ' . $student->user->lastname}}</td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$student->class}}</td>
-                                        <td>{{$student->section}}</td>
                                         <td>{{$student->guardian }}</td>
                                         <td>{{$student->address}}</td>
                                         <td>{{$student->dob}}</td>
                                         <td>{{$student->phone}}</td>
-                                        <td>{{$student->email}}</td>
+                                        <td>{{$student->user->email}}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -63,7 +61,12 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="{{route('students.show', $student)}}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Show</a>
+
+                                                    <a class="dropdown-item" href="{{route('students.edit', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                    <a class="dropdown-item" href="{{route('students.destroy', $student)}}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Disable</a>
                                                 </div>
                                             </div>
                                         </td>

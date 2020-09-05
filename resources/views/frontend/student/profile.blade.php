@@ -24,66 +24,56 @@
                             </div>
                             <div class="item-content">
                                 <div class="header-inline item-header">
-                                    <h3 class="text-dark-medium font-medium">Jessia Rose</h3>
+                                    <h3 class="text-dark-medium font-medium"> {{ $student->user->firstname . ' ' . $student->user->lastname }}</h3>
                                     <div class="header-elements">
                                         <ul>
                                             <li><a href="#"><i class="fas fa-print"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <p>Aliquam erat volutpat. Curabiene natis massa sedde lacu stiquen sodale
-                                word moun taiery.Aliquam erat volutpaturabiene natis massa sedde  sodale
-                                word moun taiery.</p>
+                                <p>{{$student->bio}}</p>
                                 <div class="info-table table-responsive">
                                     <table class="table text-nowrap">
                                         <tbody>
                                             <tr>
                                                 <td>Name:</td>
-                                                <td class="font-medium text-dark-medium">Jessia Rose</td>
+                                                <td class="font-medium text-dark-medium"> {{ $student->user->firstname . ' ' . $student->user->lastname }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Gender:</td>
-                                                <td class="font-medium text-dark-medium">Female</td>
+                                                <td class="font-medium text-dark-medium">{{$student->gender}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Guardian Name:</td>
-                                                <td class="font-medium text-dark-medium">Steve Jones</td>
+                                                <td class="font-medium text-dark-medium">{{$student->guardian}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Date Of Birth:</td>
-                                                <td class="font-medium text-dark-medium">07.08.2016</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Religion:</td>
-                                                <td class="font-medium text-dark-medium">Islam</td>
+                                                <td class="font-medium text-dark-medium">{{$student->dob}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Guardian Occupation:</td>
-                                                <td class="font-medium text-dark-medium">Graphic Designer</td>
+                                                <td class="font-medium text-dark-medium">{{$student->guardian_occupation}}</td>
                                             </tr>
                                             <tr>
                                                 <td>E-mail:</td>
-                                                <td class="font-medium text-dark-medium">jessiarose@gmail.com</td>
+                                                <td class="font-medium text-dark-medium">{{$student->user->email}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Admission Date:</td>
-                                                <td class="font-medium text-dark-medium">07.08.2019</td>
+                                                <td class="font-medium text-dark-medium">{{$student->created_at}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Class:</td>
-                                                <td class="font-medium text-dark-medium">2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Section:</td>
-                                                <td class="font-medium text-dark-medium">Pink</td>
+                                                <td class="font-medium text-dark-medium">{{$student->class}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Address:</td>
-                                                <td class="font-medium text-dark-medium">House #10, Road #6, Australia</td>
+                                                <td class="font-medium text-dark-medium">{{$student->address}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Phone:</td>
-                                                <td class="font-medium text-dark-medium">+ 88 98568888418</td>
+                                                <td class="font-medium text-dark-medium">{{$student->phone}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
