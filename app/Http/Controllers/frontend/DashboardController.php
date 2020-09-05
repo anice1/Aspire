@@ -19,6 +19,7 @@ class DashboardController extends Controller
         }elseif(Auth::user()->hasRole('student'))
         {
             return view('frontend.student.index');
+<<<<<<< HEAD
 
         }elseif(Auth::user()->hasRole('teacher'))
         {
@@ -33,6 +34,12 @@ class DashboardController extends Controller
         }else
         {
             return "Out of range";
+=======
+        }elseif(Auth::user()->hasRole('teacher')){
+            return view('frontend.Teacher.index');
+        }else{
+            return "i Dont understand the logic bro";
+>>>>>>> origin/shieldcode
         }
     }
 }

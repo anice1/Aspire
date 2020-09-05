@@ -65,5 +65,7 @@
         <script src="{{asset('js/Chart.min.js')}}"></script>
         <!-- Custom Js -->
         <script src="{{asset('js/main.js')}}"></script>
-    </body>
+        <!-- Text Js -->
+        <script src="{{asset('js/text.js')}}"></script>
+</body>
 </html>

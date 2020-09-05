@@ -72,8 +72,13 @@
                     <div>
                         <div class="dashboard-summery mg-b-20">
                             <div class="panel-body">
-                                <h3>Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname }}</h3>
-                                <p>Your presence and cooperation will help us to improve the education system of our organization.</p>
+                                <h3 class="tainer">  Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h3>
+                                <p class="typewrite" data-period="2000" data-type='[ "Education is our passport to the future, for tomorrow belongs to the people who prepare for it today.",
+                                    "Don’t let what you cannot do interfere with what you can do.",
+                                    "You have to build a strategy that can defeat the best strategy at present in your competition.",
+                                    "People who reach to the highest level are those who have collected experience throughout their lives with every failure." ]'>
+                                <span class="wrap"></span> 
+                                </p>
                             </div>
                         </div>
                     </div>

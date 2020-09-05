@@ -222,5 +222,12 @@ class TeacherController extends Controller
 
     }
 
+    public function profile(){
+
+        $teacher = auth()->user()->id;
+        return view('frontend.Teacher.profile');
+
+    }
+
 }
 
