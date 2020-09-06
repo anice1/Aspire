@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\superadmin;
+use App\Http\Controllers\controls\Controller;
+
 
 use App\School;
 use App\User;
@@ -105,7 +107,7 @@ class SchoolController extends Controller
     public function show($id)
     {
         $school = School::findOrfail($id);
-        return view('frontend.schools.index',compact('school'));
+        return view('frontend.superadmin.schools.view',compact('school'));
 
     }
 

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\schools;
+use App\Http\Controllers\controls\Controller;
 
 use App\User;
 use App\Student;
@@ -132,7 +133,7 @@ class StudentController extends Controller
             $user->student()->profile_image = $filePath;
         }
         $id = auth()->user()->id;
-        $user->student()->create(['school_id'=> $id,'dob'=>Request::input('dob'), 'gender'=>Request::input('gender'),'firstname'=>Request::input('firstname'),'lastname'=>Request::input('lastname'), 'class'=>Request::input('class'), 'phone'=>Request::input('phone'), 'guardian'=>Request::input('guardian'), 'guardian_phone'=>Request::input('guardian_phone'), 'guardian_email'=>Request::input('guardian_email'), 'guardian_occupation'=>Request::input('guardian_occupation')]);
+        $user->student()->create(['school_id'=> $id,'dob'=>Request::input('dob'), 'gender'=>Request::input('gender'),'firstname'=>Request::input('firstname'),'lastname'=>Request::input('lastname'), 'class'=>Request::input('class'),'address'=>Request::input('address'), 'bio'=>Request::input('bio'), 'phone'=>Request::input('phone'), 'guardian'=>Request::input('guardian'), 'guardian_phone'=>Request::input('guardian_phone'), 'guardian_email'=>Request::input('guardian_email'), 'guardian_occupation'=>Request::input('guardian_occupation')]);
 
         return redirect()->route('students.index')
 

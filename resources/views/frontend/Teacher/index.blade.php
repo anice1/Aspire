@@ -52,7 +52,7 @@
                         <div>
                             <div class="dashboard-summery mg-b-20">
                                 <div class="panel-body">
-                                    <h3 class="tainer">  Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h3>
+                                    <h3 class="tainer">  Welcome {{ auth()->user()->username}}</h3>
                                     <p class="typewrite" data-period="2000" data-type='[ "I am not a teacher, but an Awakener.",
                                      "The art of teaching is the art of assisting discovery.",
                                      "To have the chance to nurture students and enable them to ignite their own flame for learning is an essential aspect of teaching.",

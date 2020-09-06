@@ -24,9 +24,8 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
 
-    Route::resource('roles','frontend\RoleController');
+    Route::resource('roles','controls\RoleController');
 
-    Route::resource('users','UserController');
 
 });
 
@@ -35,11 +34,24 @@ Route::group(['middleware' => ['auth']], function() {
 //School Admin Routes
 
 Route::group(['middleware' => ['auth']], function (){
-    Route::get('/', 'frontend\DashboardController@index');
-    Route::resource('students','frontend\StudentController');
-    Route::resource('teachers','frontend\TeacherController');
-    Route::get('/profile','frontend\TeacherController@profile')->name('profile');
+    Route::get('/', 'controls\DashboardController@index');
 });
 
 
-Route::resource('schools','frontend\SchoolController');
+Route::group(['middleware'=>['superadmin','auth']], function(){
+    Route::resource('schools','controls\superadmin\SchoolController');
+    Route::resource('users','UserController');
+
+});
+
+/**
+     * I wrote my own custom middleware to handle the bug of routing 
+     * earliear before now a superadmin could visit the teachers and students route of all schools and vise versa
+     */
+
+Route::group(['middleware'=>['schooladmin','auth']], function(){
+
+    Route::resource('students','controls\schools\StudentController');
+    Route::resource('teachers','controls\schools\TeacherController');
+
+});
