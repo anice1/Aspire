@@ -84,7 +84,7 @@
             <div class="dashboard-summery mg-b-20">
                 <div class="panel-body">
 
-                    <h3 class="tainer">  Welcome {{ auth()->user()->firstname . ' ' . auth()->user()->lastname}}</h3>
+                    <h3 class="tainer">  Welcome {{ auth()->user()->username}}</h3>
                     <p class="typewrite" data-period="2000" data-type='[ "Your presence and cooperation will help us to improve the education system of our organization.",
                         "Education is not to reform students or amuse them or to make them experts technicians.",
                         "It is to unsettle their minds, widen their horizons, inflame their intellects, teach them to think straight, if possible." ]'>

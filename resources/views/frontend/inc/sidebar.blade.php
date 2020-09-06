@@ -225,7 +225,7 @@
                 <a href="/" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a href="{{route('profile')}}" class="nav-link"><i class="flaticon-ring"></i><span>Profile</span></a>
+                <a href="" class="nav-link"><i class="flaticon-ring"></i><span>Profile</span></a>
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>

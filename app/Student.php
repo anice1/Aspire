@@ -14,7 +14,6 @@ class Student extends Model
 
         'user_id','school_id','dob', 'bio','firstname','lastname','email', 'class', 'gender', 'guardian','phone', 'guardian_phone','guardian_email','guardian_occupation', 'address', 'password',
 
-
     ];
     protected $dates = ['deleted_at'];
 

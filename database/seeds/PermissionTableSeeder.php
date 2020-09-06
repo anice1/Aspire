@@ -88,6 +88,7 @@ class PermissionTableSeeder extends Seeder
                 'admin-edit',
 
                 'admin-delete']);
+                
         $student = Role::create(['name' => 'student'])
             ->givePermissionTo([
                 'student-list',

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\schools;
+use App\Http\Controllers\controls\Controller;
+
 
 use App\Teacher;
 use App\User;
@@ -219,13 +221,6 @@ class TeacherController extends Controller
         $teacher->user->delete();
         $teacher->delete();
         return redirect()->back()->with('success','Teacher deleted successfully');
-
-    }
-
-    public function profile(){
-
-        $teacher = auth()->user()->id;
-        return view('frontend.Teacher.profile');
 
     }
 
