@@ -28,7 +28,7 @@ class DashboardController extends Controller
         }elseif(Auth::user()->hasRole('admin'))
         {
 
-            return view('frontend.superadmin.welcome');
+            return view('frontend.schooladmin.welcome');
 
         }else
         {

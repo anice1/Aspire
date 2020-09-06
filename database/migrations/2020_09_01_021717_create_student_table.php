@@ -16,13 +16,12 @@ class CreateStudentTable extends Migration
         Schema::create('student', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('profile_image')->nullable();
             $table->integer('school_id')->unsigned();
+            $table->string('dob');
+            $table->string('gender');
             // $table->integer('class_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('dob');
-            $table->string('gender');
             $table->string('class');
             $table->string('address');
             $table->string('bio');
@@ -32,6 +31,7 @@ class CreateStudentTable extends Migration
             $table->string('guardian_email');
             $table->string('guardian_occupation');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('profile_image')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
