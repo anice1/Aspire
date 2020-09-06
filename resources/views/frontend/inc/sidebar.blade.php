@@ -231,7 +231,7 @@
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{route('students.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                        <a href="{{route('mystudents')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Students</a>
                     </li>
                 </ul>

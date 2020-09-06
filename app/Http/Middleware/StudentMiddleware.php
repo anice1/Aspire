@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class SuperadminMiddleware
+class StudentMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,14 +15,6 @@ class SuperadminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = auth()->user();
-
-        if(! $user->hasRole('admin')){
-            
-            return redirect('/');
-        
-        }
-        
         return $next($request);
     }
 }

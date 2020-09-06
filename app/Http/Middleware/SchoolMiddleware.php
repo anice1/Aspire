@@ -16,6 +16,7 @@ class SchoolMiddleware
     public function handle($request, Closure $next)
     {
         $user = auth()->user();
+        
         if(! $user->hasRole('school')){
 
             return redirect('/');
