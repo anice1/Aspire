@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="new-added-form" action="{{route('schools.store')}}" method="POST">
+                <form class="new-added-form" action="{{route('super.schools.store')}}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -114,25 +114,24 @@
                             <label>Confirm Password</label>
                             <input type="password" name="cpass" placeholder="" class="form-control" required>
                         </div>
-                        <div class="col-lg-6 col-12 form-group">
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>School Address</label>
-                            <textarea class="textarea form-control" name="school_address" id="form-message" cols="8"
-                                      rows="7" required></textarea>
+                            <input type="text" name="school_address" id="" class="form-control" required>
                         </div>
-                        <div class="col-lg-6 col-12 form-group">
-                            <label>Owner Address</label>
-                            <textarea class="textarea form-control" name="owner_address" id="form-message" cols="8"
-                                      rows="7" required></textarea>
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label>Owner's Address</label>
+                            <input type="text" name="owner_address" id="" class="form-control" required>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 form-group">
+                            <label class="text-dark-medium">Upload School Logo (150px X 150px)</label>
+                            <input type="file" name='photo' class="form-control-file">
                         </div>
                         <div class="col-lg-6 col-12 form-group">
                             <label>Short bio</label>
                             <textarea class="textarea form-control" name="bio" id="form-message" cols="8"
                                       rows="7" required></textarea>
                         </div>
-                        <div class="col-lg-6 col-12 form-group mg-t-30">
-                            <label class="text-dark-medium">Upload School Logo (150px X 150px)</label>
-                            <input type="file" name='photo' class="form-control-file">
-                        </div>
+                        
                         <div class="col-12 form-group mg-t-8">
                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                         </div>

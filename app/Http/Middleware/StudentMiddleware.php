@@ -15,6 +15,11 @@ class StudentMiddleware
      */
     public function handle($request, Closure $next)
     {
+
+        $user = auth()->user();
+        if(! $user->hasRole('student')){
+            return redirect('/');            
+        }
         return $next($request);
     }
 }

@@ -35,14 +35,14 @@ Route::group(['middleware' => ['auth']], function (){
      */
 
      
-Route::group(['middleware'=>['superadmin','auth']], function(){
+Route::name('super.')->group(function(){
+
     Route::resource('schools','controls\superadmin\SchoolController');
     Route::resource('users','UserController');
 
 });
 
-
-Route::group(['middleware'=>['schooladmin','auth']], function(){
+Route::name('school.')->group(function(){
 
     Route::resource('students','controls\schools\StudentController');
     Route::resource('teachers','controls\schools\TeacherController');
@@ -50,14 +50,14 @@ Route::group(['middleware'=>['schooladmin','auth']], function(){
 });
 
 
-Route::group(['middleware'=>['student','auth']], function(){
+Route::name('student.')->group(function(){
 
     Route::resource('student', 'controls\students\StudentController');
 });
 
 
-Route::group(['middleware'=>['teacher','auth']], function(){
+Route::name('teacher.',)->group(function(){
 
-    Route::get('students','controls\schools\StudentController@index')->name('mystudents');
+    Route::get('student','controls\schools\StudentController@index');
     Route::resource('teacher', 'controls\teachers\TeacherController');
 });

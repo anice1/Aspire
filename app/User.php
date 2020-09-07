@@ -6,12 +6,16 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Iatstuti\Database\Support\CascadeSoftDeletes;
 
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use Notifiable, HasRoles;
+    use SoftDeletes;
+    use CascadeSoftDeletes; 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +26,7 @@ class User extends Authenticatable
         'username', 'email', 'password',
     ];
 
+    protected $cascadeDeletes = ['school'];
     protected $dates = ['deleted_at'];
 
     /**
@@ -40,12 +45,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+
     ];
 
 
     public function teacher(){
         return $this->hasOne('App\Teacher', 'user_id');
     }
+
     public function student() {
         return $this->hasOne('App\Student', 'user_id');
     }

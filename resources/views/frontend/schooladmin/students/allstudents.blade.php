@@ -16,10 +16,10 @@
                             <form class="mg-b-20">
                                 <div class="row gutters-8">
                                     <div class="col-11-xxxl col-xl-10 col-lg-3 col-12 form-group">
-                                        <input type="text" placeholder="Search by Name ..." class="form-control">
+                                        <input type="text" placeholder="Search by Name ..." class="form-control" id='searchbox'>
                                     </div>
                                     <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                                        <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                                        <button type="button" class="fw-btn-fill btn-gradient-yellow" id='search-btn'>SEARCH</button>
                                     </div>
                                 </div>
                             </form>
@@ -42,7 +42,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($students as $student)
-                                    <tr>
+                                    <tr  class='datatable'>
                                         <td>{{'#00' . $student->id}}</td>
                                         <td class="text-center"><img src="{{$student->profile_image}}" alt="student"></td>
                                         <td>{{$student->firstname . ' ' . $student->lastname}}</td>
@@ -60,12 +60,12 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('students.show', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('school.students.show', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Show</a>
 
-                                                    <a class="dropdown-item" href="{{route('students.edit', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('school.students.edit', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                    <a class="dropdown-item" href="{{route('students.destroy', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('school.students.destroy', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Disable</a>
                                                 </div>
                                             </div>
@@ -74,8 +74,6 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-
-                                {!! $students->links() !!}
                             </div>
                         </div>
                     </div>
