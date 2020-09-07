@@ -15,8 +15,12 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teacher', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
-            $table->integer('school_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('school_id');
+            
+            // Relationships
+            $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
+
             $table->string('firstname');
             $table->string('lastname');
             $table->string('blood_group');

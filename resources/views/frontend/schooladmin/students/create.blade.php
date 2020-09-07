@@ -39,7 +39,7 @@
                                 <h3>Add New Student</h3>
                             </div>
                         </div>
-                        <form class="new-added-form" action="{{route('students.store')}}" method="POST" enctype="multipart/form-data">
+                        <form class="new-added-form" action="{{route('school.students.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\schools;
+use App\Http\Controllers\controls\Controller;
+
 
 use App\Teacher;
 use App\User;
@@ -24,6 +26,8 @@ class TeacherController extends Controller
 
     {
         $this->middleware('auth');
+        $this->middleware('schooladmin');
+
     }
 
     /**
@@ -39,8 +43,8 @@ class TeacherController extends Controller
     public function index()
 
     {
-        $id = auth()->user()->id; 
-        $teachers = Teacher::all()->where('school_id', $id);
+        
+        $teachers = User::find(auth()->user()->id)->school->teachers;
 
         return view('frontend.schooladmin.teachers.all-teachers',compact('teachers'));
 
@@ -106,21 +110,22 @@ class TeacherController extends Controller
        
         // Teacher data seeding
 
-        $teacher = new Teacher;
-        $teacher->user_id = $user->id;
-        $teacher->school_id = auth()->user()->id;
-        $teacher->gender = $request->gender;
-        $teacher->firstname = $request->firstname;
-        $teacher->lastname = $request->lastname;
-        $teacher->dob = $request->dob;
-        $teacher->blood_group = $request->blood_group;
-        $teacher->religion = $request->religion;
-        $teacher->class = $request->class;
-        $teacher->address = $request->address;
-        $teacher->phone = $request->phone;
-        $teacher->bio = $request->bio;
-        $teacher->save();
+        $teacher = new Teacher(['user_id'=>$user->id,
+                                'gender'=>$request->gender,
+                                'firstname'=>$request->firstname,
+                                'lastname'=> $request->lastname,
+                                'dob'=> $request->dob,
+                                'blood_group'=>$request->blood_group,
+                                'religion'=>$request->religion,
+                                'class'=> $request->class,
+                                'address'=>$request->address,
+                                'phone'=>$request->phone,
+                                'bio'=> $request->bio,
+                                ]);
         
+                                    $emp = User::findOrfail(auth()->user()->id)->school;
+                                    $emp->teachers()->save($teacher);
+
         return redirect()->back()->with('success','Teacher created successfully.');
 
     }
@@ -142,8 +147,7 @@ class TeacherController extends Controller
 
     {
         $teacher = Teacher::findOrfail($id);
-        return view('frontend.schooladmin.teachers.teacher-detail', compact('teacher'));
-
+        return view('frontend.Teacher.profile',compact('teacher'));
     }
 
 
@@ -219,13 +223,6 @@ class TeacherController extends Controller
         $teacher->user->delete();
         $teacher->delete();
         return redirect()->back()->with('success','Teacher deleted successfully');
-
-    }
-
-    public function profile(){
-
-        $teacher = auth()->user()->id;
-        return view('frontend.Teacher.profile');
 
     }
 

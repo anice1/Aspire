@@ -17,8 +17,7 @@ class CreateStudentTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('profile_image')->nullable();
-            $table->integer('school_id')->unsigned();
-            // $table->integer('class_id')->unsigned();
+            $table->unsignedBigInteger('school_id');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('dob');
@@ -31,7 +30,11 @@ class CreateStudentTable extends Migration
             $table->string('guardian_phone');
             $table->string('guardian_email');
             $table->string('guardian_occupation');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
+
+            
+            // Relationships
+            $table->foreign('school_id')->references('user_id')->on('school')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\schools;
+use App\Http\Controllers\controls\Controller;
 
 use App\User;
 use App\Student;
@@ -33,6 +34,11 @@ class StudentController extends Controller
         $this->middleware('permission:student-edit', ['only' => ['edit','update']]);
 
         $this->middleware('permission:student-delete', ['only' => ['destroy']]);
+        
+        $this->middleware('schooladmin');
+
+        $this->middleware('auth');
+
 
     }
 
@@ -49,8 +55,8 @@ class StudentController extends Controller
     public function index()
 
     {
-        $id = auth()->user()->id;
-        $students = Student::latest()->where('school_id', $id)->paginate(14);
+
+        $students = User::find(auth()->user()->id)->school->students;
 
         return view('frontend.schooladmin.students.allstudents',compact('students'))
 
@@ -131,10 +137,28 @@ class StudentController extends Controller
             // Set user profile image path in database to filePath
             $user->student()->profile_image = $filePath;
         }
-        $id = auth()->user()->id;
-        $user->student()->create(['school_id'=> $id,'dob'=>Request::input('dob'), 'gender'=>Request::input('gender'),'firstname'=>Request::input('firstname'),'lastname'=>Request::input('lastname'), 'class'=>Request::input('class'), 'phone'=>Request::input('phone'), 'guardian'=>Request::input('guardian'), 'guardian_phone'=>Request::input('guardian_phone'), 'guardian_email'=>Request::input('guardian_email'), 'guardian_occupation'=>Request::input('guardian_occupation')]);
 
-        return redirect()->route('students.index')
+
+        $student = new Student(['user_id'=>$user->id,
+                                'dob'=>Request::input('dob'), 
+                                'gender'=>Request::input('gender'),
+                                'firstname'=>Request::input('firstname'),
+                                'lastname'=>Request::input('lastname'), 
+                                'class'=>Request::input('class'),
+                                'address'=>Request::input('address'), 
+                                'bio'=>Request::input('bio'), 
+                                'phone'=>Request::input('phone'), 
+                                'guardian'=>Request::input('guardian'), 
+                                'guardian_phone'=>Request::input('guardian_phone'), 
+                                'guardian_email'=>Request::input('guardian_email'), 
+                                'guardian_occupation'=>Request::input('guardian_occupation')
+                                
+                                ]);
+
+        $school = User::findOrfail(auth()->user()->id)->school;
+        $school->students()->save($student);
+
+        return redirect()->route('school.students.index')
 
             ->with('success','Student created successfully.');
 

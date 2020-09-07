@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\controls\superadmin;
+use App\Http\Controllers\controls\Controller;
+
 
 use App\School;
 use App\User;
@@ -16,6 +18,7 @@ class SchoolController extends Controller
     {
 
         $this->middleware('auth');
+        $this->middleware('superadmin');
 
     }
     /**
@@ -105,7 +108,7 @@ class SchoolController extends Controller
     public function show($id)
     {
         $school = School::findOrfail($id);
-        return view('frontend.schools.index',compact('school'));
+        return view('frontend.superadmin.schools.view',compact('school'));
 
     }
 
@@ -158,8 +161,9 @@ class SchoolController extends Controller
      * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function destroy(School $school)
+    public function destroy(Request $request, $id)
     {
-        //
+        $school = School::findOrfail($id)->user;
+        return $school->delete();
     }
 }

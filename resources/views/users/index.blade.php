@@ -15,7 +15,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+                <a class="btn btn-success" href="{{ route('super.users.create') }}"> Create New User</a>
 
             </div>
 
@@ -77,11 +77,11 @@
 
                 <td>
 
-                    <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('super.users.show',$user->id) }}">Show</a>
 
-                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('super.users.edit',$user->id) }}">Edit</a>
 
-                    {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                    {!! Form::open(['method' => 'DELETE','route' => ['super.users.destroy', $user->id],'style'=>'display:inline']) !!}
 
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
