@@ -126,7 +126,7 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
+                        class="flaticon-open-book"></i><span>Courses</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -238,7 +238,7 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
+                        class="flaticon-open-book"></i><span>Courses</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
