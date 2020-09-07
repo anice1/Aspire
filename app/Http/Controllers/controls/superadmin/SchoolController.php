@@ -166,4 +166,9 @@ class SchoolController extends Controller
         $school = School::findOrfail($id)->user;
         return $school->delete();
     }
+
+    public function trashed(){
+        $schools = School::onlyTrashed()->get();
+        return view('frontend.superadmin.schools.trashed', compact('schools'));
+    }
 }

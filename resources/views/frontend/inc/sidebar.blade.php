@@ -25,7 +25,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('super.schools.edit', '$student')}}" class="nav-link"><i
+                        <a href="{{route('super.schools.trashed')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Disabled Schools</a>
                     </li>
                 </ul>

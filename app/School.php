@@ -14,7 +14,7 @@ class School extends Model
     
     protected $table = 'school';
     
-    protected $cascadeDeletes = ['teachers','students','class'];
+    protected $cascadeDeletes = ['teachers','students'];
     protected $dates = ['deleted_at'];
 
     protected $fillable = [

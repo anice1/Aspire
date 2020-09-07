@@ -30,7 +30,6 @@ class CreateStudentTable extends Migration
             $table->string('guardian_phone');
             $table->string('guardian_email');
             $table->string('guardian_occupation');
-            // $table->foreign('user_id')->references('id')->on('users');
 
             
             // Relationships
