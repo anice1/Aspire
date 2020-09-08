@@ -45,11 +45,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $i = 1;
+                                    @endphp
                                     @foreach($schools as $school)
                                     <tr class='datatable'>
-                                        <td>{{'#00' . $school->id}}</td>
+                                        <td>{{'#00' . $i++}}</td>
                                         <td class="text-center"><a href="{{route('super.schools.show', $school->id)}}">
-                                            <img src="img/figure/student2.png" alt="student"></a></td>
+                                            <img src="{{asset('/storage'.$school->profile_image)}}" alt="student"></a></td>
                                         <td><a href="{{route('super.schools.show', $school->id)}}">
                                                 {{$school->school_name}}
                                             </a>
@@ -62,23 +65,21 @@
                                         <td>{{$school->created_at->diffForHumans()}}</td>
                                         <td>
                                             <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                aria-expanded="false">
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <form action="{{route('super.schools.destroy', $school->id)}}" method="post">
+                                                    <a class="dropdown-item" href="{{route('super.schools.show', $school)}}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Show</a>
+
+                                                    <a class="dropdown-item" href="{{route('super.schools.edit', $schools)}}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                    <form action="{{route('super.schools.destroy', $schools)}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
                                                     </form>
-                                                    
-                                                    <a class="dropdown-item" href="{{route('super.schools.edit', $school->id)}}">
-                                                        <i class="fas fa-cogs text-dark-pastel-green"></i>Edit
-                                                    </a>
-                                                    
-                                                    <a class="dropdown-item" href="{{route('super.schools.show', $school->id)}}">
-                                                        <i class="fas fa-cogs text-dark-pastel-green"></i>View
-                                                    </a>
                                                 </div>
                                             </div>
                                         </td>

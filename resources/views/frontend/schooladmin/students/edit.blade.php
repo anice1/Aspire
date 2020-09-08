@@ -39,8 +39,7 @@
                                 <h3>{{'Edit ' . $student->lastname . ' Details'}}</h3>
                             </div>
                         </div>
-                        {!! Form::model($student, ['method' => 'PUT','route' => ['students.update', $student]]) !!}
-{{--                        <form class="new-added-form" action="{{route('students.edit', $student)}}" method="POST">--}}
+                        {!! Form::model($student, ['method' => 'PUT','route' => ['school.students.update', $student]]) !!}
                             @csrf`
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">

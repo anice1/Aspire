@@ -51,7 +51,15 @@
                             <span>Admin</span>
                         </div>
                         <div class="admin-img">
-                            <img src="img/figure/admin.jpg" alt="Admin">
+                            @if(Auth::user()->hasRole('school'))
+                            <img src="{{asset('/storage'.auth()->user()->school->profile_image)}}" alt="Admin" style="max-width: 70px;">
+                            @endif
+                            @if(Auth::user()->hasRole('teacher'))
+                            <img src="{{asset('/storage'.auth()->user()->profile_image)}}" alt="Admin">
+                            @endif
+                            @if(Auth::user()->hasRole('student'))
+                            <img src="{{asset('/storage'.auth()->user()->profile_image)}}" alt="Admin">
+                            @endif
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">

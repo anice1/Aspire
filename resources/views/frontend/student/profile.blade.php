@@ -20,7 +20,7 @@
                         </div>
                         <div class="single-info-details">
                             <div class="item-img">
-                                <img src="img/figure/student1.jpg" alt="student">
+                                <img src="{{asset('/storage'.$student->profile_image)}}" alt="student">
                             </div>
                             <div class="item-content">
                                 <div class="header-inline item-header">

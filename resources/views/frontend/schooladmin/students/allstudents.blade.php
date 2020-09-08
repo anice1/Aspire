@@ -41,10 +41,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $i = 1;
+                                    @endphp
                                     @foreach($students as $student)
                                     <tr  class='datatable'>
-                                        <td>{{'#00' . $student->id}}</td>
-                                        <td class="text-center"><img src="{{$student->profile_image}}" alt="student"></td>
+                                        <td>{{'#00' . $i++ }}</td>
+                                        <td class="text-center"><img src="{{asset('/storage'.$student->profile_image)}}" alt="student"></td>
                                         <td>{{$student->firstname . ' ' . $student->lastname}}</td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$student->class}}</td>
@@ -65,8 +68,11 @@
 
                                                     <a class="dropdown-item" href="{{route('school.students.edit', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                    <a class="dropdown-item" href="{{route('school.students.destroy', $student)}}"><i
-                                                            class="fas fa-cogs text-dark-pastel-green"></i>Disable</a>
+                                                    <form action="{{route('school.students.destroy', $student->id)}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="_method" value='DELETE'>
+                                                        <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </td>

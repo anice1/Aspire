@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="new-added-form" action="{{route('super.schools.store')}}" method="POST">
+                <form class="new-added-form" action="{{route('super.schools.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label class="text-dark-medium">Upload School Logo (150px X 150px)</label>
-                            <input type="file" name='photo' class="form-control-file">
+                            <input type="file" name='profile_image' class="form-control-file">
                         </div>
                         <div class="col-lg-6 col-12 form-group">
                             <label>Short bio</label>

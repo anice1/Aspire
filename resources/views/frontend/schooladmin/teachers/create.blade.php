@@ -126,7 +126,7 @@
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label class="text-dark-medium">Upload Student Photo (150px X 150px)</label>
-                                    <input type="file" name='photo' class="form-control-file">
+                                    <input type="file" name='profile_image' class="form-control-file">
                                 </div>
                                 
                                 <div class="col-lg-6 col-12 form-group">

@@ -14,10 +14,11 @@ class School extends Model
     
     protected $table = 'school';
     
-    protected $cascadeDeletes = ['teachers','students','class'];
+    protected $cascadeDeletes = ['teachers','students'];
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
+        'user_id',
         'school_name',
         'email',
         'phone',
@@ -40,9 +41,9 @@ class School extends Model
         return $this->hasMany('App\Student','school_id');
     }
     
-    public function class(){
-        return $this->hasMany('App\Class','school_id');
-    }
+    // public function class(){
+    //     return $this->hasMany('App\Class','school_id');
+    // }
 
     public function user(){
         return $this->belongsTo('App\User');

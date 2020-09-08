@@ -123,22 +123,6 @@ class StudentController extends Controller
         $user = User::create(['username'=>$username, 'email'=>Request::input('email'), 'password' =>Hash::make(Request::input('password'))]);
         $user->assignRole('student');
 
-        if ($request::has('profile_image')) {
-            // Get image file
-            $image = $request::file('profile_image');
-            // Make a image name based on user name and current timestamp
-            $name = Str::slug($request::input('lastname')).'_'.time();
-            // Define folder path
-            $folder = '/uploads/images/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadOne($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $user->student()->profile_image = $filePath;
-        }
-
-
         $student = new Student(['user_id'=>$user->id,
                                 'dob'=>Request::input('dob'), 
                                 'gender'=>Request::input('gender'),
@@ -154,6 +138,20 @@ class StudentController extends Controller
                                 'guardian_occupation'=>Request::input('guardian_occupation')
                                 
                                 ]);
+        if ($request::has('profile_image')) {
+            // Get image file
+            $image = $request::file('profile_image');
+            // Make a image name based on user name and current timestamp
+            $name = Str::slug($request::input('lastname')).'_'.time();
+            // Define folder path
+            $folder = '/uploads/images/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadOne($image, $folder, 'public', $name);
+            // Set user profile image path in database to filePath
+            $student->profile_image = $filePath;
+        }
 
         $school = User::findOrfail(auth()->user()->id)->school;
         $school->students()->save($student);
@@ -239,12 +237,12 @@ class StudentController extends Controller
 
         $user = Student::find($student)->user;
         $student = Student::find($student);
-       // return $student
-        $user->update(Request::only('firstname', 'lastname' , 'email', 'password'));
-        $student->update(Request::only('dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
+        $username = Request::input('firstname').' '.Request::input('lastname');
+        $user->update(['username'=>$username]);
+        $student->update(Request::only('firstname','lastname','dob', 'gender', 'class', 'address', 'bio','phone', 'guardian', 'guardian_phone', 'guardian_email', 'guardian_occupation'));
 
 
-        return redirect()->route('students.index')
+        return redirect()->route('school.students.index')
 
             ->with('success','Student updated successfully');
 
@@ -270,7 +268,7 @@ class StudentController extends Controller
         $student->delete();
 
 
-        return redirect()->route('frontend.schooladmin.students.index')
+        return redirect()->route('school.students.index')
 
             ->with('success','Student deleted successfully');
 

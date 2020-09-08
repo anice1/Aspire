@@ -7,11 +7,15 @@ use App\Http\Controllers\controls\Controller;
 use App\Teacher;
 use App\User;
 use App\School;
+use Str;
+use App\traits\UploadTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
+    use UploadTrait;
+
     /**
 
      * Display a listing of the res ource.
@@ -122,7 +126,20 @@ class TeacherController extends Controller
                                 'phone'=>$request->phone,
                                 'bio'=> $request->bio,
                                 ]);
-        
+        if ($request->has('profile_image')) {
+            // Get image file
+            $image = $request->file('profile_image');
+            // Make a image name based on user name and current timestamp
+            $name = Str::slug($request->input('lastname')).'_'.time();
+            // Define folder path
+            $folder = '/uploads/images/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadOne($image, $folder, 'public', $name);
+            // Set user profile image path in database to filePath
+            $teacher->profile_image = $filePath;
+        }
                                     $emp = User::findOrfail(auth()->user()->id)->school;
                                     $emp->teachers()->save($teacher);
 

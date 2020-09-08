@@ -31,7 +31,7 @@ class CreateTeachersTable extends Migration
             $table->string('phone');
             $table->text('address');
             $table->text('bio');
-            // $table->string('photo');
+            $table->string('profile_image')->nullable();
             $table->SoftDeletes();
             $table->timestamps();
         });
