@@ -18,6 +18,7 @@ class SchoolController extends Controller
     {
 
         $this->middleware('auth');
+        $this->middleware('superadmin');
 
     }
     /**
@@ -160,8 +161,9 @@ class SchoolController extends Controller
      * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function destroy(School $school)
+    public function destroy(Request $request, $id)
     {
-        //
+        $school = School::findOrfail($id)->user;
+        return $school->delete();
     }
 }

@@ -51,13 +51,13 @@
 
                         @else
 
-                            <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+                            <li><a class="nav-link" href="{{ route('super.users.index') }}">Manage Users</a></li>
 
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
 
-                            <li><a class="nav-link" href="{{ route('teachers.index') }}">Manage Teacher</a></li>
+                            <li><a class="nav-link" href="{{ route('school.teachers.index') }}">Manage Teacher</a></li>
 
-                            <li><a class="nav-link" href="{{ route('students.index') }}">Manage Students</a></li>
+                            <li><a class="nav-link" href="{{ route('school.students.index') }}">Manage Students</a></li>
 
                             <li class="nav-item dropdown">
 

@@ -6,7 +6,7 @@
                 <div class="breadcrumbs-area">
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons">people</i>All Students</li>
+                        <li class="active"><i class="material-icons">people</i>All Teachers</li>
                     </ul>
                 </div>
         <!-- Breadcubs Area End Here -->
@@ -18,16 +18,16 @@
                     <!-- Student Table Area Start Here -->
                     <div class="card height-auto">
                         <div class="card-body">
-                            <form class="mg-b-20">
+                            <!-- <form class="mg-b-20"> -->
                                 <div class="row gutters-8">
                                     <div class="col-11-xxxl col-xl-10 col-lg-3 col-12 form-group">
-                                        <input type="text" placeholder="Search by Name ..." class="form-control">
+                                        <input type="text" placeholder="Search by Name ..." class="form-control" id='searchbox'>
                                     </div>
                                     <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                                        <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                                        <button type="button" class="fw-btn-fill btn-gradient-yellow" id='search-btn'>SEARCH</button>
                                     </div>
                                 </div>
-                            </form>
+                            <!-- </form> -->
                             <div class="table-responsive">
                                 <table class="table display data-table text-nowrap">
                                     <thead>
@@ -46,11 +46,11 @@
                                     </thead>
                                     <tbody>
                                     @foreach($teachers as $teacher)
-                                    <tr>
+                                    <tr class='datatable'>
                                         <td>{{$teacher->id}}</td>
-                                        <td class="text-center"><a href="{{route('teachers.show', $teacher->id)}}">
+                                        <td class="text-center"><a href="{{route('school.teachers.show', $teacher->id)}}">
                                             <img src="img/figure/student2.png" alt="student"></a></td>
-                                        <td><a href="{{route('teachers.show', $teacher->id)}}">
+                                        <td><a href="{{route('school.teachers.show', $teacher->id)}}">
                                                 {{$teacher->firstname . ' ' . $teacher->lastname}}
                                             </a>
                                         </td>
@@ -66,19 +66,17 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <!-- <a class="dropdown-item" href="{{route('students.edit', $student ?? '')}}"><i
-                                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a> -->
-                                                    <form action="{{route('teachers.destroy', $teacher->id)}}" method="post">
+                                                    <form action="{{route('school.teachers.destroy', $teacher->id)}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
                                                     </form>
                                                     
-                                                    <a class="dropdown-item" href="{{route('teachers.edit', $teacher->id)}}">
+                                                    <a class="dropdown-item" href="{{route('school.teachers.edit', $teacher->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i>Edit
                                                     </a>
                                                     
-                                                    <a class="dropdown-item" href="{{route('teachers.show', $teacher->id)}}">
+                                                    <a class="dropdown-item" href="{{route('school.teachers.show', $teacher->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i>View
                                                     </a>
                                                 </div>

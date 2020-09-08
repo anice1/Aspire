@@ -42,7 +42,7 @@
                 <!-- Add New Teacher Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
-                        <form class="new-added-form" method='post' action="{{route('teachers.store')}}" enctype='multipart/form-data'>
+                        <form class="new-added-form" method='post' action="{{route('school.teachers.store')}}" enctype='multipart/form-data'>
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -97,6 +97,10 @@
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Password</label>
                                     <input type="password" name='password' placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name='confirm_password' placeholder="" class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Class *</label>

@@ -15,7 +15,7 @@ class CreateSchoolTable extends Migration
     {
         Schema::create('school', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id')->index();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('school_name');

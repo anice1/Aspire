@@ -430,4 +430,18 @@
     }
   });
 
+  
+    /*-------------------------------------
+          Table Filtering 
+      -------------------------------------*/
+  $('#search-btn').on('click', function(){
+      var value = $('#searchbox').val().toLowerCase();
+
+      $(".datatable").filter(function(){  
+
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        
+      });
+  });
+
 })(jQuery);

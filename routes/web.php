@@ -35,14 +35,21 @@ Route::group(['middleware' => ['auth']], function (){
      */
 
      
-Route::name('super.',['middleware'=>['superadmin','auth']])->group(function(){
+Route::name('super.')->group(function(){
+
     Route::resource('schools','controls\superadmin\SchoolController');
     Route::resource('users','UserController');
 
 });
 
+Route::get('all', function(){
+    // $emp = App\User::findOrfail(auth()->user()->id)->school;
+    // return $emp;
+    return App\User::find(auth()->user()->id)->school->students;
+    // return App\Teacher::find(2)->school;
+});
 
-Route::name('school.',['middleware'=>['schooladmin','auth']])->group(function(){
+Route::name('school.')->group(function(){
 
     Route::resource('students','controls\schools\StudentController');
     Route::resource('teachers','controls\schools\TeacherController');
@@ -50,13 +57,13 @@ Route::name('school.',['middleware'=>['schooladmin','auth']])->group(function(){
 });
 
 
-Route::name('student.',['middleware'=>['student','auth']])->group(function(){
+Route::name('student.')->group(function(){
 
     Route::resource('student', 'controls\students\StudentController');
 });
 
 
-Route::name('teacher.', ['middleware'=>['teacher','auth']])->group(function(){
+Route::name('teacher.',)->group(function(){
 
     Route::get('student','controls\schools\StudentController@index');
     Route::resource('teacher', 'controls\teachers\TeacherController');

@@ -16,20 +16,16 @@
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Schools</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{route('schools.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                        <a href="{{route('super.schools.index')}}" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Schools</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('schools.create')}}" class="nav-link"><i
+                        <a href="{{route('super.schools.create')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Add Schools</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a href="{{route('schools.edit', '$student')}}" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Edit Schools</a>
-                    </li> -->
 
                     <li class="nav-item">
-                        <a href="{{route('schools.edit', '$student')}}" class="nav-link"><i
+                        <a href="{{route('super.schools.edit', '$student')}}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Disabled Schools</a>
                     </li>
                 </ul>

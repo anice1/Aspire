@@ -5,14 +5,19 @@ use App\user;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Iatstuti\Database\Support\CascadeSoftDeletes;
+
 
 class Student extends Model
 {
     use softDeletes;
+    use CascadeSoftDeletes; 
+
+    
     protected $table = 'student';
     protected $fillable = [
 
-        'user_id','school_id','dob', 'firstname',
+        'user_id','dob', 'firstname',
         'lastname','email', 'class', 'gender', 
         'guardian','phone', 'guardian_phone',
         'guardian_email','guardian_occupation',
@@ -20,6 +25,8 @@ class Student extends Model
 
 
     ];
+
+    protected $cascadeDeletes = ['user'];
     protected $dates = ['deleted_at'];
 
 

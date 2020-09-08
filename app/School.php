@@ -5,11 +5,16 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Hash;
+use Iatstuti\Database\Support\CascadeSoftDeletes;
+
 class School extends Model
 {
+    use SoftDeletes; 
+    use CascadeSoftDeletes; 
     
     protected $table = 'school';
-
+    
+    protected $cascadeDeletes = ['teachers','students','class'];
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
