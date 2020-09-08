@@ -38,10 +38,10 @@ Route::group(['middleware' => ['auth']], function (){
 Route::name('super.')->group(function(){
 
     Route::resource('schools','controls\superadmin\SchoolController');
+    Route::get('/trashed','controls\superadmin\SchoolController@trashed')->name('schools.trashed');
     Route::resource('users','UserController');
 
 });
-
 Route::name('school.')->group(function(){
 
     Route::resource('students','controls\schools\StudentController');
