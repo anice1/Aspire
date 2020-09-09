@@ -29,69 +29,15 @@
                                     </div>
                                 </form>
                                 <div class="notice-board-wrap">
+                                    @foreach($notices as $notice)
                                     <div class="notice-list">
-                                        <div class="post-date bg-skyblue">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
+                                        <div class="post-date bg-skyblue">{{$notice->created_at->diffForHumans()}}</div>
+                                        <h6 class="notice-title">
+                                            <a href="#"> {{$notice->title}}</a>
+                                        </h6>
+                                        <div class="entry-meta">  {{$notice->postedBy}} / <span>{{$notice->created_at->diffForHumans()}}</span></div>
                                     </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-yellow">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-pink">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-skyblue">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-yellow">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-pink">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-skyblue">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-yellow">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
-                                    <div class="notice-list">
-                                        <div class="post-date bg-pink">16 June, 2019</div>
-                                        <h6 class="notice-title"><a href="#">Great School Great School manag mene esom  
-                                            text of the printing Great School manag mene esom  text of the printing manag 
-                                            mene esom  text of the printing.</a></h6>
-                                        <div class="entry-meta">  Jennyfar Lopez / <span>5 min ago</span></div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

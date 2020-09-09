@@ -177,9 +177,17 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="/notice-board" class="nav-link"><i
+            <li class="nav-item sidebar-nav-item">
+                <a href="" class="nav-link"><i
                         class="flaticon-script"></i><span>Notice</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{route('school.notice.index')}}" class="nav-link">All Notices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('school.notice.create')}}" class="nav-link">Create Notice</a>
+                    </li>
+                </ul>
             </li>
             @endrole
             @role('student')

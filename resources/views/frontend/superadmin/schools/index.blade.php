@@ -75,7 +75,7 @@
 
                                                     <a class="dropdown-item" href="{{route('super.schools.edit', $schools)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                    <form action="{{route('super.schools.destroy', $schools)}}" method="post">
+                                                    <form action="{{route('super.schools.destroy', $school->id)}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>

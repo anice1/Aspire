@@ -13,28 +13,36 @@
                 <div class="row">
                     <!-- Add Notice Area Start Here -->
                     <div class="col-4-xxxl col-12">
+                        @if($message = Session::get('success'))
+                            <div class="alert alert-success">
+                                {{$message}}
+                            </div>   
+                        @endif  
                         <div class="card height-auto">
                             <div class="card-body">
-                                <form class="new-added-form">
+                                <form action="{{route('school.notice.store')}}" method='post' class="new-added-form">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Title</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="text" name='title' placeholder="" class="form-control">
                                         </div>
-                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Details</label>
-                                            <input type="text" placeholder="" class="form-control">
-                                        </div>
+                                        
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Posted By </label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="text" placeholder="" name='postedby' class="form-control">
                                             <i class="fas fa-user"></i>
                                         </div>
-                                        <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                        <div class="col-lg-12 col-12 form-group">
+                                            <label>Message</label>
+                                            <textarea class="textarea form-control" name="message" id="form-message" cols="4"
+                                                    rows="8"></textarea>
+                                        </div>
+                                        <!--<div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Date</label>
                                             <input type="text" placeholder="" class="form-control air-datepicker">
                                             <i class="far fa-calendar-alt"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="col-12 form-group mg-t-8">
                                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Send</button>
                                         </div>

@@ -71,7 +71,7 @@
                                                         <input type="hidden" name="_method" value='DELETE'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
                                                     </form>                                                    
-                                                    <a class="dropdown-item" href="{{route('super.schools.show', $school->id)}}">
+                                                    <a class="dropdown-item" href="{{route('super.schools.restore', $school->id)}}">
                                                         <i class="fas fa-cogs text-dark-pastel-green"></i> Restore
                                                     </a>
                                                 </div>
