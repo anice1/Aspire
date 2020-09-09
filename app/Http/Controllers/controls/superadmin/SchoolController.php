@@ -183,11 +183,17 @@ class SchoolController extends Controller
     public function destroy(Request $request, $id)
     {
         $school = School::findOrfail($id)->user;
-        return $school->delete();
+        $school->delete();
+        return redirect()->back()->with('success','School Deleted successfully.');
     }
 
     public function trashed(){
         $schools = School::onlyTrashed()->get();
         return view('frontend.superadmin.schools.trashed', compact('schools'));
+    }
+    public function restore(School $school)
+    {
+        $school = School::findOrfail($school)->WithTrashed();
+        return $school;   
     }
 }

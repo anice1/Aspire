@@ -39,6 +39,7 @@ Route::name('super.')->group(function(){
 
     Route::resource('schools','controls\superadmin\SchoolController');
     Route::get('/trashed','controls\superadmin\SchoolController@trashed')->name('schools.trashed');
+    Route::get('/restore','controls\superadmin\SchoolController@restore')->name('schools.restore');
     Route::resource('users','UserController');
 
 });
