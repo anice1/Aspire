@@ -70,14 +70,14 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('super.schools.show', $school)}}"><i
+                                                    <a class="dropdown-item" href="{{route('super.schools.show', $school->id)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Show</a>
 
-                                                    <a class="dropdown-item" href="{{route('super.schools.edit', $schools)}}"><i
+                                                    <a class="dropdown-item" href="{{route('super.schools.edit', $school->id)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                                                     <form action="{{route('super.schools.destroy', $school->id)}}" method="post">
                                                         @csrf
-                                                        <input type="hidden" name="_method" value='DELETE'>
+                                                        <input type="hidden" name="_method" value='Delete'>
                                                         <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
                                                     </form>
                                                 </div>
