@@ -1,3 +1,3 @@
-<h1>ASPIRECREED</h1>
+<h1>ASPIRESUITE</h1>
 <h2>INTRODUCTION</h2>
 Learning and development is crucial to the success of all businesses. A learning management system (LMS)/school management system is a web-based platform that is designed to deliver and manage training content and resources. The Management System allows information sharing between individuals giving them the flexibility to access it from their workplace or home. Authorized individuals have 24/7 access to this unique system through URL or through a unique User ID and Password.It allows for easy reporting and tracking, ensuring talent managers have a good understanding of their workforce’s progress.We are thus trying to incorporate this effective program which allows faculty to understand and grade individual student based on their performance real time.It also allows the students to choose from wide range of training courses that helps in developing their skill set. 
