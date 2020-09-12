@@ -15,6 +15,14 @@
                 {{$message}}
             </div>
         @endif
+
+        @if($errors->any())
+            @foreach($errors->all() as $error)    
+                <div class="alert alert-danger">
+                    {{$error}}
+                </div>
+            @endforeach
+        @endif
                     <!-- Student Table Area Start Here -->
                     <div class="card height-auto">
                         <div class="card-body">

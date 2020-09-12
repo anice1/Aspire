@@ -93,6 +93,7 @@
                                             
                         <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label>Proprietor's Lastname</label>
+                            <!-- <input type="text" name="lastname"  placeholder="" class="form-control" required> -->
                             <input type="text" name="lastname"  placeholder="" class="form-control" required>
                         </div>
 

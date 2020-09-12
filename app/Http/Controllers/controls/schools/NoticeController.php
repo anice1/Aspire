@@ -7,17 +7,19 @@ use App\School;
 use App\Notice;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Notifications\Notices;
+use Auth;
 
 class NoticeController extends Controller
 {
-    public function _construct(){
+    public function __construct(){
         $this->middleware('auth');
         $this->middleware('schooladmin');
     }
 
 
     public function index(){
-        $notices = User::find(auth()->user()->id)->school->notice;
+        $notices = Auth::user()->notices;
         return view('frontend.schooladmin.notice.index', compact('notices'));
     }
 
@@ -26,12 +28,27 @@ class NoticeController extends Controller
     }
 
     public function store(Request $request){
+
+        request()->validate([
+            'title'     => 'required|max:80',
+            'postedby'  => 'required|max:30',
+            'message'   => 'required|max:2048',
+        ]);
+
         $notice = new Notice(['title'=>$request->title,
                                 'message'=>$request->message,
                                 'postedBy'=>$request->postedby]);
         
-                                $school = User::find(auth()->user()->id)->school;
-                                $school->notice()->save($notice);
+                                $user = User::find(auth()->user()->id);
+                                $user->notices()->save($notice);
+
+        $students = Auth::user()->school->students;
+        $user->notify(new Notices(Auth::user()->school->students));
+        foreach($students as $student){
+            $user->notify(new Notices($student->id));
+
+        }
+        $user->notify(new Notices(Auth::user()->school->teachers));
         return redirect()->back()->with('success','Notice Posted Successfully');
     }
 

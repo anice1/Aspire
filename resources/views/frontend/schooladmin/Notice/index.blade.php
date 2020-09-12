@@ -32,10 +32,13 @@
                                     @foreach($notices as $notice)
                                     <div class="notice-list">
                                         <div class="post-date bg-skyblue">{{$notice->created_at->diffForHumans()}}</div>
-                                        <h6 class="notice-title">
+                                        <h4 class="notice-title">
                                             <a href="#"> {{$notice->title}}</a>
                                         </h6>
-                                        <div class="entry-meta">  {{$notice->postedBy}} / <span>{{$notice->created_at->diffForHumans()}}</span></div>
+                                        <span>
+                                            {{substr($notice->message, 0, 150).'...'}}
+                                        </span>
+                                        <div class="entry-meta"><strong>{{$notice->postedBy}}</strong> / <span>{{$notice->created_at->diffForHumans()}}</span></div>
                                     </div>
                                     @endforeach
                                 </div>

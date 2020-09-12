@@ -58,7 +58,7 @@ class SchoolController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-
+            
             'school_name' => 'required',
             'email' => 'required',
             'phone' => 'required',
@@ -69,7 +69,9 @@ class SchoolController extends Controller
             'password' => 'required|min:8|same:cpass',
             'school_address' => 'required|max:255',
             'owner_address' => 'required|max:255',
-            'bio' => 'required|max:255',
+            'bio' => 'required|max:2024',
+            'profile_image'     =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+
 
         ]);
 

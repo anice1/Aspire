@@ -23,8 +23,8 @@ class CreateStudentTable extends Migration
             $table->string('gender');
             // $table->integer('class_id')->unsigned();
             $table->string('class');
-            $table->string('address');
-            $table->string('bio');
+            $table->text('address');
+            $table->text('bio');
             $table->string('phone');
             $table->string('guardian');
             $table->string('guardian_phone');

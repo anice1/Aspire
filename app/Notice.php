@@ -14,7 +14,8 @@ class Notice extends Model
 
 
 
-    public function school(){
-        $this->belongsTo('App\School');
+    public function user(){
+        $this->belongsTo('App\User');
     }
+
 }
