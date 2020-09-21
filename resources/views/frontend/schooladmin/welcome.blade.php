@@ -77,6 +77,8 @@
                                         aria-expanded="false">...</a>
 
                                     <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#"><i
+                                                class="fas fa-cogs text-dark-pastel-green"></i>Add</a>
                                         <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
                                                 class="fas fa-times text-orange-red"></i>Close</a>
                                         <a class="dropdown-item" href="#" onClick="window.location.reload();"><i

@@ -7,7 +7,7 @@
     <div class="breadcrumbs-area">
         <ul class="breadcrumb breadcrumb-col-pink">
             <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-            <li class="active"><i class="material-icons">person_add</i>Add New Student</li>
+            <li class="active"><i class="material-icons">person_add</i> Add New Student</li>
         </ul>
     </div>
     <!-- Breadcubs Area End Here -->
@@ -140,17 +140,17 @@
                                     <label class="text-dark-medium">Upload Guardian Photo (150px X 150px)</label>
                                     <input type="file" class="form-control-file">
                                 </div> -->
-                                <div class="col-lg-6 col-12 form-group">
+                                <div class="col-lg-4 col-12 form-group">
                                     <label>address</label>
                                     <textarea class="textarea form-control" name="address" id="form-message" cols="4"
                                             rows="9"></textarea>
                                 </div>
-                                <div class="col-lg-6 col-12 form-group">
+                                <div class="col-lg-5 col-12 form-group">
                                     <label>Short BIO</label>
                                     <textarea class="textarea form-control" name="bio" id="form-message" cols="4"
                                               rows="9"></textarea>
                                 </div>
-                                <div class="col-lg-6 col-12 form-group mg-t-30">
+                                <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
                                     <label class="text-dark-medium">Upload Student Photo (150px X 150px) *</label>
                                     <input type="file" name="profile_image" class="form-control-file">
                                 </div>
@@ -161,8 +161,10 @@
                     </form>
                 </div>
             </div>
-            <!-- Admit Form Area End Here -->
-        </div>
+            <!-- Admit Form Area End Here -->  
+                <!-- Footer Area Start Here -->
+                @include('frontend.inc.footer')
+                 <!-- Footer Area End Here -->
             </div>
 @endsection
 

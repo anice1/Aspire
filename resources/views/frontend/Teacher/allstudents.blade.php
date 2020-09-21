@@ -6,13 +6,29 @@
                 <div class="breadcrumbs-area">
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons">people</i>All Students</li>
+                        <li class="active"><i class="material-icons">people</i> All Students</li>
                     </ul>
                 </div>
         <!-- Breadcubs Area End Here -->
                     <!-- Student Table Area Start Here -->
                     <div class="card height-auto">
                         <div class="card-body">
+                            <div class="heading-layout1">
+                                <div class="item-title">
+                                    <h3>All Students Data</h3>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">...</a>
+
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#" onclick="this.parentNode.parentNode.parentNode.parentNode.style.display = 'none'"><i
+                                                class="fas fa-times text-orange-red"></i>Close</a>
+                                        <a class="dropdown-item" href="#" onClick="window.location.reload();"><i
+                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                    </div>
+                                </div>
+                            </div>
                             <form class="mg-b-20">
                                 <div class="row gutters-8">
                                     <div class="col-11-xxxl col-xl-10 col-lg-3 col-12 form-group">
@@ -82,4 +98,5 @@
                     <!-- Student Table Area End Here -->
                 </div>
             </div>
+            
 @endsection

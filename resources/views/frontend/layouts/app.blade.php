@@ -23,8 +23,10 @@
         <link rel="stylesheet" href="{{asset('css/fullcalendar.min.css')}}">
         <!-- Animate CSS -->
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        <!-- Materialize  CSS -->
-        <link rel="stylesheet" href="{{asset('css/materialize.css')}}">
+        <!-- File-upload CSS -->
+        <link rel="stylesheet" href="{{asset('css/imageuploadify.min.css')}}">
+        <!-- Summernote CSS -->
+        <link rel="stylesheet" href="{{asset('css/summernote.css')}}">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
          <!-- Google Fonts -->
@@ -63,9 +65,23 @@
         <script src="{{asset('js/fullcalendar.min.js')}}"></script>
         <!-- Chart Js -->
         <script src="{{asset('js/Chart.min.js')}}"></script>
+        <!-- Summernote Js -->
+        <script src="{{asset('js/summernote.js')}}"></script>
+        <!-- File-upload Js -->
+        <script src="{{asset('js/imageuploadify.min.js')}}"></script>
         <!-- Custom Js -->
         <script src="{{asset('js/main.js')}}"></script>
         <!-- Text Js -->
         <script src="{{asset('js/text.js')}}"></script>
+        <script>
+            $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 300,
+                tabsize: 2
+            });
+            
+            $('input[type="file"]').imageuploadify();
+            });
+        </script>
 </body>
 </html>

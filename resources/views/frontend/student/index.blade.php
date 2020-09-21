@@ -6,7 +6,7 @@
             <div class="breadcrumbs-area">
                 <ul class="breadcrumb breadcrumb-col-pink">
                     <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                    <li class="active"><i class="material-icons">Dashboard</i>Dashboard</li>
+                    <li class="active"><i class="material-icons">Dashboard</i> Dashboard</li>
                 </ul>
             </div>
             <!-- Breadcubs Area End Here -->
