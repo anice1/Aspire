@@ -45,7 +45,7 @@ class NoticeController extends Controller
         foreach($students as $student){
             $student->user->notify(new Messages($notice));
         }
-        return redirect()->back()->with('success','Notice Posted Successfully');
+        return redirect()->back()->with('success','Notice created successfully');
     }
 
     public function show($id){
