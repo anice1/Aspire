@@ -179,13 +179,13 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="" class="nav-link"><i
-                        class="flaticon-script"></i><span>Notice</span></a>
+                        class="flaticon-script"></i><span>Announcement</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{route('school.notice.index')}}" class="nav-link">All Notices</a>
+                        <a href="{{route('school.notice.index')}}" class="nav-link">All Announcements</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('school.notice.create')}}" class="nav-link">Create Notice</a>
+                        <a href="{{route('school.notice.create')}}" class="nav-link">Make Announcement</a>
                     </li>
                 </ul>
             </li>
@@ -218,9 +218,15 @@
                 <a href="/notice-board" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
             </li>
             <li class="nav-item">
-            <li class="nav-item">
-                <a href="/messaging" class="nav-link"><i
-                        class="flaticon-chat"></i><span>Messeage</span></a>
+                <a href="/messaging" class="nav-link">
+                    <i class="flaticon-chat"></i>
+                    <span>
+                        Messages 
+                        <span @if(! Auth::user()->notifications->count() > 0) style="display:none;" @else style="float:right; background:red; padding: 8px;" @endif>
+                            {{Auth::user()->notifications->count()}}
+                        </span>
+                    </span>
+                </a>
             </li>
             @endrole
 

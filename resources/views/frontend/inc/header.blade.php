@@ -63,7 +63,7 @@
                             <img src="{{asset('/storage'.auth()->user()->teacher->profile_image)}}" alt="Admin" style="max-width: 50px;">
                             @endif
                             @if(Auth::user()->hasRole('student'))
-                            <img src="{{asset('/storage'.auth()->user()->student->profile_image)}}" alt="Admin" style="max-width: 50px;">
+                            <img src="{{asset('/storage'.auth()->user()->student->profile_image)}}" alt="Admin" style="max-width:50px">
                             @endif
                         </div>
                     </a>
@@ -93,29 +93,32 @@
                        aria-expanded="false">
                         <i class="far fa-envelope"></i>
                         <div class="item-title d-md-none text-16 mg-l-10">Message</div>
-                        <span>5</span>
+                        <span @if(Auth::user()->unreadNotifications->count() <= 0) style='display:none' @endif> {{Auth::user()->unreadNotifications->count()}}</span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">05 Message</h6>
+                            <h6 class="item-title">{{Auth::user()->unreadNotifications->count()}} @if(Auth::user()->unreadNotifications->count()>0)Messages @else Message @endif</h6>
                         </div>
                         <div class="item-content">
-                            <div class="media">
+                            @foreach(Auth::user()->unreadNotifications as $notification)
+                            <div class="media" style='background: #f5f5f5; margin: 4px 0; padding: 0px'>
                                 <div class="item-img bg-skyblue author-online">
-                                    <img src="img/figure/student11.png" alt="img">
+                                @if(Auth::user()->id != $notification->data['messagedBy']['id'])
+                                    <img src="{{asset('/storage'.App\User::find($notification->data['messagedBy']['id'])->school->profile_image)}}" alt="Admin" style="max-width: 50px;">
+                                @endif
                                 </div>
                                 <div class="media-body space-sm">
                                     <div class="item-title">
                                         <a href="#message">
-                                            <span class="item-name">Maria Zaman</span>
-                                            <span class="item-time">18:30</span>
+                                            <span class="item-name">{{$notification->data['messagedBy']['username']}}</span>
+                                            <span class="item-time">{{$notification->created_at->diffForHumans()}}</span>
                                         </a>
                                     </div>
-                                    <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
+                                    <p>Posted a Notice</p>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </li>
@@ -124,29 +127,26 @@
                        aria-expanded="false">
                         <i class="far fa-bell"></i>
                         <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
-                        <span @if(Auth::user()->unreadNotifications->count() <= 0) style='display:none' @endif>{{Auth::user()->unreadNotifications->count()}}</span>
+                        <span>4</span>
                        
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">{{Auth::user()->unreadNotifications->count()}} Notifiacations</h6>
+                            <h6 class="item-title"></h6>
                         </div>
                         <div class="item-content">
-                            @foreach(Auth::user()->notifications as $notification)
                             <div class="media">
                                 <div class="item-icon bg-skyblue">
                                     <i class="fas fa-check"></i>
                                 </div>
                                 <div class="media-body space-sm">
                                         <div class="post-title">
-                                            {{$notification->created_at}}
                                        </div> 
-                                    <span>{{$notification->created_at->diffForHumans()}}</span>
+                                    <span></span>
                                 </div>
                             </div>
-                            @endforeach
-                            <!-- <div class="media">
+                            <div class="media">
                                 <div class="item-icon bg-orange">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
@@ -163,7 +163,7 @@
                                     <div class="post-title">Update Password</div>
                                     <span>45 Mins ago</span>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </li>

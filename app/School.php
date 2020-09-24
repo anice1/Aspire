@@ -43,7 +43,7 @@ class School extends Model
     }
     
     public function notice(){
-        return $this->hasMany('App\Notice','school_id');
+        return $this->hasMany('App\Notice','user_id');
     }
 
     public function user(){

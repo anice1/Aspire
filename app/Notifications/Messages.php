@@ -7,17 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class Notices extends Notification implements ShouldQueue
+use App\Notice;
+use App\Student;
+use Auth;
+class Messages extends Notification
 {
     use Queueable;
 
-    public $user;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    // protected $notice;
+    public $user;
 
     public function __construct($user)
     {
@@ -57,10 +59,12 @@ class Notices extends Notification implements ShouldQueue
      */
     public function toDatabase($notifiable)
     {
+
         return [
-            // 'user_id'=> $this->user->id,
-            // 'user_name' => $this->user->username,
-            // 'notice' => $this->user->notices,
+            'messagedBy' => Auth::user(),
+            'photo'=> Auth::user()->profile_image,
+            'message' => Auth::user()->notices,
+
         ];
     }
 }

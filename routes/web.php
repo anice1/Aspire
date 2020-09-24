@@ -1,6 +1,9 @@
 <?php
 use App\Notifications\Notices;
 use App\User;
+use App\School;
+use App\Student;
+use App\Teacher;
 use Illuminate\Support\Facades\Route;
 
 
@@ -52,13 +55,29 @@ Route::name('school.')->group(function(){
     Route::resource('teachers','controls\schools\TeacherController');
     Route::resource('/notice', 'controls\schools\NoticeController');
 
-    // Route::get('/note', function(){
-    //     return Auth::user()->school->students;
-    // //    return $user->notify(new Notices(User::find(3)));
-    // //     foreach($user->notifications as $notification){
-    // //         return $notification;
-    // //     }
-    // });
+    Route::get('/note', function(){
+        foreach(Auth::user()->notifications as $notification){
+            return $notification->data['messagedBy'];
+            return $notification->data['messagedBy']['id'];
+            return App\User::find($notification->data['messagedBy']['id'])->school->profile_image; 
+        }
+        foreach(Auth::user()->school->students as $student){
+        
+            return ['students'=> $student->user];
+
+        }
+        $students = Auth::user()->school->students; 
+        // return $students;
+        foreach($students as $student){
+            return $student->user;
+        }
+        // return Student::find(3)->user;
+        return Student::all()->where('school_id', Auth::user()->school->id);
+    //    return $user->notify(new Notices(User::find(3)));
+    //     foreach($user->notifications as $notification){
+    //         return $notification;
+    //     }
+    });
 });
 
 
