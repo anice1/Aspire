@@ -20,15 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b94e6bcd-e4b1-48f9-8f67-9eccc83bfabf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Student.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/RestoreSchool.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/controls/schools/NoticeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/Notices.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_09_054213_create_notice_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_10_021832_create_notice_pivot_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_10_033023_create_notifications_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Aspire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aspire.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/controls/superadmin/SchoolController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/controls/superadmin/SchoolController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/School.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_30_084124_create_school_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_30_084124_create_school_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_01_021717_create_student_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_01_021717_create_student_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/allstudents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/allstudents.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/students/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/student/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/student/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_02_150335_create_class_table_for_schools.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_02_150335_create_class_table_for_schools.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Teacher/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/Teacher/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/inc/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/notice/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/notice/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/schooladmin/notice/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/schooladmin/notice/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/trashed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/superadmin/schools/trashed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +184,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/iatstuti/laravel-cascade-soft-deletes" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gzp4OKuMySiCmVidnpVIJ45JhI" />
@@ -177,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../livingtv" />
+    <property name="last_opened_file_path" value="$USER_HOME$/livingtv" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -198,6 +217,7 @@
       <workItem from="1599230979864" duration="321000" />
       <workItem from="1599231443573" duration="2319000" />
       <workItem from="1599236674896" duration="74000" />
+      <workItem from="1600936316801" duration="860000" />
     </task>
     <servers />
   </component>
@@ -209,7 +229,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

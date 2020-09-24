@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassTableForSchools extends Migration
+class CreateNoticePivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateClassTableForSchools extends Migration
      */
     public function up()
     {
-        Schema::create('class', function (Blueprint $table) {
+        Schema::create('notice_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('school_id')->unsigned();
-            $table->string('name');
+            $table->integer('notice_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->boolean('status')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateClassTableForSchools extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('notice_user');
     }
 }

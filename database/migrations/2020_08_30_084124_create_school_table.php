@@ -23,7 +23,7 @@ class CreateSchoolTable extends Migration
             $table->string('phone');
             $table->text('school_address');
             $table->string('gender');
-            $table->string('owner_address');
+            $table->text('owner_address');
             $table->text('bio');
             $table->string('profile_image')->nullable();
             $table->SoftDeletes();

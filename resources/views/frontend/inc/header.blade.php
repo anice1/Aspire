@@ -48,22 +48,27 @@
                        aria-expanded="false">
                         <div class="admin-title">
                             <h5 class="item-title">{{ auth()->user()->username}}</h5>
-                            <span>Admin</span>
+                            <span>
+                                @role('teacher')Teacher @endrole
+                                @role('admin')Admin @endrole
+                                @role('student')Student @endrole
+                                @role('school')School Admin @endrole
+                            </span>
                         </div>
                         <div class="admin-img">
                             @if(Auth::user()->hasRole('school'))
-                            <img src="{{asset('/storage'.auth()->user()->school->profile_image)}}" alt="Admin" style="max-width: 70px;">
+                            <img src="{{asset('/storage'.auth()->user()->school->profile_image)}}" alt="Admin" style="max-width: 50px;">
                             @endif
                             @if(Auth::user()->hasRole('teacher'))
-                            <img src="{{asset('/storage'.auth()->user()->profile_image)}}" alt="Admin">
+                            <img src="{{asset('/storage'.auth()->user()->teacher->profile_image)}}" alt="Admin" style="max-width: 50px;">
                             @endif
                             @if(Auth::user()->hasRole('student'))
-                            <img src="{{asset('/storage'.auth()->user()->profile_image)}}" alt="Admin">
+                            <img src="{{asset('/storage'.auth()->user()->student->profile_image)}}" alt="Admin" style="max-width: 50px;">
                             @endif
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <div class="item-header">
+                        <div class="item-header">   
                             <h6 class="item-title">{{ auth()->user()->username}}</h6>
                         </div>
                         <div class="item-content">
@@ -111,51 +116,6 @@
                                         Is it usefull for me.....</p>
                                 </div>
                             </div>
-                            <div class="media">
-                                <div class="item-img bg-yellow author-online">
-                                    <img src="img/figure/student12.png" alt="img">
-                                </div>
-                                <div class="media-body space-sm">
-                                    <div class="item-title">
-                                        <a href="#message">
-                                            <span class="item-name">Benny Roy</span>
-                                            <span class="item-time">10:35</span>
-                                        </a>
-                                    </div>
-                                    <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="item-img bg-pink">
-                                    <img src="img/figure/student13.png" alt="img">
-                                </div>
-                                <div class="media-body space-sm">
-                                    <div class="item-title">
-                                        <a href="#message">
-                                            <span class="item-name">Steven</span>
-                                            <span class="item-time">02:35</span>
-                                        </a>
-                                    </div>
-                                    <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="item-img bg-violet-blue">
-                                    <img src="img/figure/student11.png" alt="img">
-                                </div>
-                                <div class="media-body space-sm">
-                                    <div class="item-title">
-                                        <a href="#message">
-                                            <span class="item-name">Joshep Joe</span>
-                                            <span class="item-time">12:35</span>
-                                        </a>
-                                    </div>
-                                    <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -164,24 +124,29 @@
                        aria-expanded="false">
                         <i class="far fa-bell"></i>
                         <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
-                        <span>8</span>
+                        <span @if(Auth::user()->unreadNotifications->count() <= 0) style='display:none' @endif>{{Auth::user()->unreadNotifications->count()}}</span>
+                       
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="item-header">
-                            <h6 class="item-title">03 Notifiacations</h6>
+                            <h6 class="item-title">{{Auth::user()->unreadNotifications->count()}} Notifiacations</h6>
                         </div>
                         <div class="item-content">
+                            @foreach(Auth::user()->notifications as $notification)
                             <div class="media">
                                 <div class="item-icon bg-skyblue">
                                     <i class="fas fa-check"></i>
                                 </div>
                                 <div class="media-body space-sm">
-                                    <div class="post-title">Complete Today Task</div>
-                                    <span>1 Mins ago</span>
+                                        <div class="post-title">
+                                            {{$notification->created_at}}
+                                       </div> 
+                                    <span>{{$notification->created_at->diffForHumans()}}</span>
                                 </div>
                             </div>
-                            <div class="media">
+                            @endforeach
+                            <!-- <div class="media">
                                 <div class="item-icon bg-orange">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
@@ -198,7 +163,7 @@
                                     <div class="post-title">Update Password</div>
                                     <span>45 Mins ago</span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </li>

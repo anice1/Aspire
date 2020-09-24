@@ -60,4 +60,8 @@ class User extends Authenticatable
     public function school() {
         return $this->hasOne('App\School', 'user_id');
     }
+
+    public function notices(){
+        return $this->hasMany('App\Notice','user_id');
+    }
 }
