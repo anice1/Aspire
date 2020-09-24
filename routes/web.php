@@ -61,3 +61,15 @@ Route::name('teacher.',)->group(function(){
     Route::get('student','controls\schools\StudentController@index');
     Route::resource('teacher', 'controls\teachers\TeacherController');
 });
+Route::get('/mailbox', function()
+{
+    return view('frontend.schooladmin.mailbox.index');
+});
+Route::get('/mailboxread', function()
+{
+    return view('frontend.schooladmin.mailbox.read');
+});
+Route::get('/mailboxcreate', function()
+{
+    return view('frontend.schooladmin.mailbox.create');
+});

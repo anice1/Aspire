@@ -122,7 +122,7 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
+                        class="flaticon-open-book"></i><span>Courses</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -177,9 +177,27 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="/notice-board" class="nav-link"><i
+            <li class="nav-item sidebar-nav-item">
+                <a href="/messaging" class="nav-link"><i
                         class="flaticon-script"></i><span>Notice</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Notices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Add Notice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Trash</a>
+                            </li>
+                        </ul>
+            </li>
+            <li class="nav-item">
+                <a href="/messaging" class="nav-link"><i
+                        class="flaticon-chat"></i><span>Mailbox</span></a>
             </li>
             @endrole
             @role('student')
@@ -212,7 +230,7 @@
             <li class="nav-item">
             <li class="nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-chat"></i><span>Messeage</span></a>
+                        class="flaticon-chat"></i><span>Mailbox</span></a>
             </li>
             @endrole
 
@@ -234,7 +252,7 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
+                        class="flaticon-open-book"></i><span>Courses</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
                                 <a href="" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -291,9 +309,8 @@
                 <a href="/notice-board" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
             </li>
             <li class="nav-item">
-            <li class="nav-item">
                 <a href="/messaging" class="nav-link"><i
-                        class="flaticon-chat"></i><span>Messeage</span></a>
+                        class="flaticon-chat"></i><span>Mailbox</span></a>
             </li>
             @endrole
         </ul>

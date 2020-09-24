@@ -6,7 +6,7 @@
                 <div class="breadcrumbs-area">
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons">people</i>All Students</li>
+                        <li class="active"><i class="material-icons">people</i> All Students</li>
                     </ul>
                 </div>
         <!-- Breadcubs Area End Here -->
@@ -32,10 +32,10 @@
                             <form class="mg-b-20">
                                 <div class="row gutters-8">
                                     <div class="col-11-xxxl col-xl-10 col-lg-3 col-12 form-group">
-                                        <input type="text" placeholder="Search by Name ..." class="form-control" id='searchbox'>
+                                        <input type="text" placeholder="Search by Name ..." class="form-control">
                                     </div>
                                     <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                                        <button type="button" class="fw-btn-fill btn-gradient-yellow" id='search-btn'>SEARCH</button>
+                                        <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
                                     </div>
                                 </div>
                             </form>
@@ -57,13 +57,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        @php
-                                            $i = 1;
-                                    @endphp
                                     @foreach($students as $student)
-                                    <tr  class='datatable'>
-                                        <td>{{'#00' . $i++ }}</td>
-                                        <td class="text-center"><img src="{{asset('/storage'.$student->profile_image)}}" alt="student"></td>
+                                    <tr>
+                                        <td>{{'#00' . $student->id}}</td>
+                                        <td class="text-center"><img src="{{$student->profile_image}}" alt="student"></td>
                                         <td>{{$student->firstname . ' ' . $student->lastname}}</td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$student->class}}</td>
@@ -79,16 +76,13 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('school.students.show', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('students.show', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Show</a>
 
-                                                    <a class="dropdown-item" href="{{route('school.students.edit', $student)}}"><i
+                                                    <a class="dropdown-item" href="{{route('students.edit', $student)}}"><i
                                                             class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                    <form action="{{route('school.students.destroy', $student->id)}}" method="post">
-                                                        @csrf
-                                                        <input type="hidden" name="_method" value='DELETE'>
-                                                        <button type="submit" class='dropdown-item'><i class="fa fa-times text-dark-pastel-red"></i> Delete</button>
-                                                    </form>
+                                                    <a class="dropdown-item" href="{{route('students.destroy', $student)}}"><i
+                                                            class="fas fa-cogs text-dark-pastel-green"></i>Disable</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -96,10 +90,13 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+
+                                {!! $students->links() !!}
                             </div>
                         </div>
                     </div>
                     <!-- Student Table Area End Here -->
                 </div>
             </div>
+            
 @endsection

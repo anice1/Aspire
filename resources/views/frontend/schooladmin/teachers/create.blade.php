@@ -7,7 +7,7 @@
                     <h3>Teacher</h3>
                     <ul class="breadcrumb breadcrumb-col-pink">
                         <li><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li class="active"><i class="material-icons"></i>Add New Teacher</li>
+                        <li class="active"><i class="material-icons"></i> Add New Teacher</li>
                     </ul>
                 </div>
                 @if ($errors->any())
@@ -115,7 +115,7 @@
                                         <option>Five</option>
                                     </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="11" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-hfjo-container"><span class="select2-selection__rendered" id="select2-hfjo-container" role="textbox" aria-readonly="true" title="Please Select Class *">Please Select Class *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <div class="col-xl-3 col-lg-4 col-12 form-group">
                                     <label>Address</label>
                                     <input type="text" name='address' placeholder="" class="form-control">
                                 </div>
@@ -129,13 +129,12 @@
                                     <input type="file" name='profile_image' class="form-control-file">
                                 </div>
                                 
-                                <div class="col-lg-6 col-12 form-group">
+                                <div class="col-lg-5 col-12 form-group">
                                     <label>Short BIO</label>
                                     <textarea class="textarea form-control" name="bio" id="form-message" cols="10" rows="9"></textarea>
                                 </div>
                                 <div class="col-12 form-group mg-t-8">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Create</button>
                                 </div>
                             </div>
                         </form>

@@ -23,7 +23,7 @@
     5.3 Footer
     5.4 Header Menu
     5.5 Sidebar Menu
-6. TEMPLATE STYLE
+6. STYLE
     6.1 Student Page Style
     6.2 Notice Board
     6.3 Messaging
@@ -55,7 +55,7 @@ html {
 }
 body {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik';
   font-weight: 400;
   height: 100%;
   line-height: 1.7;
@@ -64,7 +64,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   color: #646464;
-  background-color: #f0f1f3;
+  background-color: #f0f1f3; 
 }
 p {
   margin: 0 0 20px 0;
@@ -77,7 +77,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik';
   margin: 0 0 20px 0;
   color: #111111;
 }
@@ -113,12 +113,14 @@ h5 {
 }
 h6 {
   font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
-
 /* =============================
         Preloader
  ============================= */
- .container-fluid{
+ .container-fluid1{
    width: 100%;
    height: 100%;
    padding:2em 0em 4em 0em;
@@ -191,7 +193,7 @@ h6 {
 /*=============== 2.2 Dropdown ==================*/
 .dropdown .dropdown-menu {
   top: 58px;
-  min-width: 140px;
+  min-width: 170px;
   padding: 0;
   border-radius: 4px;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(33, 30, 30, 0.15);
@@ -199,17 +201,20 @@ h6 {
 }
 .dropdown .dropdown-menu .dropdown-item {
   font-size: 14px;
-  padding: 10px 15px;
+  padding: 4px 15px;
 }
 .submit-btn{
   display:none;
 }
 /*=============== 2.3 Forms ==================*/
+.form-group{
+  margin-bottom: 25;
+}
 .form-group .form-control {
-  height: 45px;
+  height: 40px;
   background-color: #f8f8f8;
   font-size: 14px;
-  color: #111111;
+  color: #646464;
   border-radius: 4px;
   border: none;
   padding: 5px 15px;
@@ -1171,15 +1176,15 @@ h6 {
   overflow: hidden;
   position: relative;
   display: inline-block;
-  height: 44px;
-  width: 100%;
+  height: 40px;
+  /* width: 150px; */
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 1px;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
   z-index: 9;
   -webkit-transition: all 0.3s ease-out;
@@ -1190,6 +1195,7 @@ h6 {
 }
 .fw-btn-fill:hover {
   background: #042954;
+  color: #fff;
 }
 .fw-btn-fill:focus {
   outline: none;
@@ -2503,7 +2509,7 @@ ul {
   color: #000;
 }
 .new-added-form .form-group .textarea {
-  height: auto;
+  height: 50px;
 }
 .new-added-form .form-group .form-control-file {
   display: inline-block;
@@ -2554,6 +2560,660 @@ ul {
   color: #a4a4a4;
 }
 /*=============== 6.3 Messaging ==================*/
+.ttr-wrapper{
+	-webkit-transition: margin 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: margin 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: margin 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: margin 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+} 
+.widget-box{
+	background-color: #fff;
+	box-shadow:0 3px 10px 0px rgba(0,0,0,.08);
+	border-radius: 4px;
+	height: 100%;
+}
+.email-wrapper{
+	display:flex;
+}
+.email-menu-bar{
+	width:240px;
+	min-width:240px;
+	border-right: 1px solid #e5e5e5;
+}
+.email-menu-bar-inner ul{
+	list-style:none;
+	margin:0;
+	padding:20px;
+}
+.email-menu-bar-inner ul li{
+	color:#000;
+}
+.email-menu-bar-inner ul li a{
+	color: #000;
+    font-size: 14px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 4px;
+}
+.email-menu-bar-inner ul li a:hover,
+.email-menu-bar-inner ul li.active a{
+	background-color:#f6f6f6;
+}
+.email-menu-bar-inner ul li a i{
+	font-size: 18px;
+	margin-right: 10px;
+	width: 20px;
+	text-align: center;
+}
+.email-menu-bar-inner ul li a .badge{
+	width: 18px;
+	height: 18px;
+	line-height: 20px;
+	padding: 0;
+	font-weight: 400;
+	margin-left: 5px;
+	position: relative;
+	top: -2px;
+}
+.compose-mail{
+	padding:20px;
+	border-bottom:1px solid #e5e5e5;
+}
+
+/* toolbar */
+.mail-list-container {
+  width: 100%;
+}
+.mail-toolbar .check-all{
+  margin-right:15px;
+}
+.mail-toolbar{
+  padding:20px;
+  border-bottom:1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+}
+.next-prev-btn{
+  margin-left:auto;
+}
+.next-prev-btn a{
+  border: 1px solid #e1e1e1;
+  display: inline-block;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 24px;
+  color: #000;
+}
+.next-prev-btn a:hover{
+  background-color:#e1e1e1;
+}
+.mail-search-bar .form-control{
+  border-radius: 4px;
+}
+.checkbox-st1{
+  min-height: 16px;
+  padding-left: 16px;
+  height: 16px;
+  position: relative;
+  top: -1px;
+}
+.custom-control-label::before {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid  #cecfcf;
+  top: 2px;
+}
+.checkbox-st1 .custom-control-label:before {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #cecfcf;
+}
+.checkbox-st1 .custom-control-label::after {
+  width: 16px;
+  height: 16px;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #042954;
+  border-color:  #cecfcf;
+}
+.form-control {
+  border-color: #e1e6eb;
+  box-shadow: none;
+  height: 40px;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 9px 12px;
+  transition: all 0.2s linear;
+}
+.mail-list-info{
+  display:flex;
+  align-items: center;
+  position: relative;
+}
+.mail-list-info:hover:nth-child(2n+1),
+.mail-list-info:hover{
+  background-color:#eaeaea;
+}
+.mail-list-info .mail-list-title-info p,
+.mail-list-info .mail-list-title h6{
+  margin:0;
+}
+.mail-list-info .mail-list-title-info p{
+  font-size: 15px;
+  line-height: 18px;
+  color:#7a7a7a;
+}
+.mail-list-info .mail-list-title h6{
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.mail-list-time span{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #929292;
+  position: relative;
+  top: -3px;
+}
+.mail-rateing span{
+  color: #929292;
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  top: -4.5px;
+}
+.mail-rateing,
+.mail-list-title,
+.mail-list-title-info,
+.mail-list-time,
+.checkbox-list{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 50px;
+}
+.mail-list-title{
+  padding-left: 10px;
+}
+.mail-list-time{
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.mail-list-title-info{
+  padding-left: 10px;
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+}
+.mail-rateing{
+  padding-left: 10px;
+}
+.checkbox-list{
+  padding-left:20px;
+}
+.mail-list-info:nth-child(2n+1){
+  background-color:#f6f6f6;
+}
+/* Mailbox Toolbar */
+.mailbox-toolbar{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  background: #eaeaea;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.mailbox-toolbar li{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.1);
+  color: #404040;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+.mailbox-toolbar li:hover{
+  transform:scale(1.2);
+  -moz-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  -ms-transform:scale(1.2);
+  -o-transform:scale(1.2);
+}
+.mail-list-info:hover .mailbox-toolbar{
+opacity: 1;
+}
+.btn-info-icon{
+	border: 0;
+	background-color: rgba(0,0,0,0.05);
+	border-radius: 40px;
+	margin-left: 10px;
+}
+.all-msg-toolbar .dropdown-menu{
+	box-shadow: 0 10px 30px 0 rgba(0,0,0,0.2);
+	border: 0;
+}
+.all-msg-toolbar .dropdown-menu li a{
+    padding: 8px 15px;
+    display: block;
+    font-size: 14px;
+    color: #202020;
+}
+.all-msg-toolbar .dropdown-menu li a:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+.all-msg-toolbar .dropdown-menu li a i{
+	margin-right:5px;
+}
+/* Read */
+.mailbox-view{
+	width: 100%;
+	padding:25px;
+}
+.mailbox-view-title {
+    padding: 0px 0px 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 25px;
+}
+.mailbox-view-title .send-mail-title{
+	margin-bottom:0;
+}
+.send-mail-user{
+	display:flex;
+	align-items:center;
+}
+.send-mail-user-pic{
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	overflow: hidden;
+	margin-right: 10px;
+}
+.send-mail-user-info h5{
+	font-size: 12px;
+	color: #C0C0C0;
+	margin: 0;
+	line-height: 18px;
+	font-weight: 400;
+}
+.send-mail-user-info h4{
+	font-size: 15px;
+	margin: 0;
+	line-height: 22px;
+	color: #000;
+	text-transform: capitalize;
+}
+.send-mail-full-info {
+    display: flex;
+    align-items: center;
+}
+.send-mail-full-info  .time span{
+	font-size:12px;
+}
+
+.read-content-body {
+    padding: 25px 0 0 0;
+}
+.read-content-title{
+	font-size: 16px;
+	color: #000;
+	margin-bottom: 5px;
+}
+.read-content-body p{
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 300;
+	margin-bottom: 15px;
+}
+.read-content-body .form-group .textarea {
+  height: 120px;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 9px 12px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  box-shadow: none;
+  border-color: #e1e6eb;
+}
+.mailbox-download-file a{ 
+	font-size: 12px;
+	padding: 8px 20px;
+	display: inline-block;
+	background-color: rgba(0,0,0,0.05);
+	border-radius: 4px;
+	color: #000;
+	margin-bottom: 4px;
+}
+.mailbox-download-file a i{
+	font-size: 14px;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+}
+/* Mail Compose */
+.mail-compose{
+	padding:30px 15px;
+}
+.mail-compose .form-group .textarea {
+  height: 40px;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 9px 12px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  box-shadow: none;
+  border-radius: 0;
+}
+.mail-compose .dropzone{
+    background: #f3f6f9!important
+}
+.mail-compose .dropzone {
+    border: 1px dashed #dddfe1;
+    min-height: 21rem;
+    position: relative
+}
+.mail-compose .dropzone .dz-message{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.dropzone {
+    background: #f3f6f9;
+    border: 2px solid rgba(120, 130, 140, .13)
+}
+[data-theme-version=dark] .dropzone{
+    background-color: #2b2e37
+}
+
+[data-theme-version=dark] .compose-content .dropzone{
+    background: #323640!important
+}
+/* Summernote */
+.note-toolbar {
+	z-index: 1;
+}
+.note-toolbar .btn {
+    background: #fff;
+    border: 1px solid #ebedf2;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #4f5264;
+    border-radius: 3px;
+}
+.note-toolbar .btn:hover{
+	color: #4f5264;
+	 background: #ebedf2;
+}
+.note-editor.note-frame .note-editing-area .note-editable {
+	padding: 10px 20px;
+}
+.card-header.note-toolbar {
+    padding: 10px 15px 15px 15px;
+    margin: 0;
+    background: #f7f8fa;
+    width: 100%;
+    position: relative;
+  
+}
+.note-editor.note-frame {
+    border: 1px solid #ebedf2;
+    padding-bottom: 0;
+}
+.card-header{
+	 border-bottom: 1px solid #ebedf2;
+}
+.note-editable ol,
+.note-editable ul{
+	padding-left:30px;
+}
+.imageuploadify .imageuploadify-images-list {
+	display: inline-block;
+	padding: 0 20px;
+}
+/* .courses-approve {
+    width: 150px;
+    height: 150px;
+    color: #30af93;
+    border: 5px solid;
+    border-radius: 100px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 86px;
+	margin: 40px auto 40px;
+} */
+@media only screen and (max-width: 1200px) {
+	.ttr-pinned-sidebar .ttr-wrapper {
+		margin-left: 310px;
+	}
+	.ttr-pinned-sidebar .ttr-sidebar{
+		left: 0;
+	}
+	.ttr-pinned-sidebar.ttr-opened-sidebar .ttr-wrapper {
+		margin-left: 0;
+	}
+	.ttr-opened-sidebar.ttr-pinned-sidebar .ttr-sidebar{
+		left: -310px;
+	}
+}
+@media only screen and (max-width: 991px) {
+	/* .admin-courses .card-courses-media {
+		width: 140px;
+		min-width: 140px;
+		height: 140px;
+		margin-right: 15px;
+	}
+	.admin-courses .card-courses-media img{
+		height: 140px;
+	}
+	.admin-courses .card-courses-view > li{
+		padding-right: 10px;
+	} */
+	.mail-rateing, 
+	.mail-list-title, 
+	.mail-list-title-info, 
+	.mail-list-time, 
+	.checkbox-list{
+		height:auto;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.widget-box .widget-inner {
+		padding: 15px;
+	}
+	.fc-toolbar button{
+		font-size: 12px;
+		padding: 8px 10px;
+	}
+	.widget-box .wc-title{
+		padding: 15px 15px;
+	}
+	.widget-box .wc-title h4 {
+		font-size: 16px;
+	}
+	.ttr-wrapper {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	/* .card-courses-media {
+		width: 140px;
+		min-width: 140px;
+		height: 140px;
+	}
+	.card-courses-title h4 {
+		font-size: 18px;		
+	}
+	.card-courses-media img{
+		height: 140px;
+	}
+	.admin-courses .card-courses-view{
+		display: table;
+	}
+	.admin-courses .card-courses-view > li {
+		padding-right: 10px;
+		width: 100%;
+		float: left;
+		margin-bottom: 10px;
+	}
+	.admin-courses .card-courses-view > li.card-courses-categories,
+	.admin-courses .card-courses-view > li.card-courses-review,
+	.admin-courses .card-courses-view > li.card-courses-stats,
+	.admin-courses .card-courses-view > li.card-courses-price {
+		width:25%;	
+	}
+	.admin-courses .card-courses-list-bx {
+		margin-bottom: 0px;
+	}
+	.admin-courses .card-courses-view > li.card-courses-price {
+		text-align:right;
+		padding-right: 0;
+	} */
+	.email-wrapper {
+		display: block;
+	}
+	.email-menu-bar{
+		border-right: 0 solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		width: 100%;
+	}
+	.mail-search-bar {
+		width: 100px;
+	}
+	
+}
+@media only screen and (max-width: 576px) {
+	/* .fc-toolbar .fc-center,
+	.fc-toolbar .fc-right,
+	.fc-toolbar .fc-left{
+		width:100%;
+	}
+	.fc .fc-toolbar > * > *{
+		float:none;
+	}
+	.fc-toolbar button.fc-today-button{
+		position: relative;
+		top: -13px;
+	}
+	.ttr-header-submenu.noti-menu {
+		width: 280px;
+	}
+	.breadcrumb-title {
+		font-size: 18px;
+	}
+	.db-breadcrumb-list li {
+		font-size: 12px;
+	}
+	.admin-courses .card-courses-media,
+	.bookmarks-bx .card-courses-media {
+		width: 100%;
+		min-width: 100%;
+		height: auto;
+		margin-bottom:15px;
+	}
+	.admin-courses.card-courses-list,
+	.bookmarks-bx.card-courses-list {
+		display: block;
+	}
+	.bookmarks-bx .card-courses-view > li {
+		position: relative;
+		padding-right: 10px;
+		float:left;
+	}
+	.bookmarks-bx  .card-courses-view {
+		display: table;
+		clear: both;
+	}
+	.admin-courses   .card-courses-categories,
+	.bookmarks-bx  .card-courses-categories{
+		width:100%;
+		margin-bottom:10px;
+	}
+	.bookmarks-bx  .card-courses-review,
+	.bookmarks-bx  .card-courses-price{
+		width:50%;
+	}
+	.bookmarks-bx  .card-courses-price{
+		text-align:right;
+	}
+	.admin-courses .card-courses-view > li.card-courses-categories,
+	.admin-courses .card-courses-view > li.card-courses-review,
+	.admin-courses .card-courses-view > li.card-courses-price {
+		width:33.33%;	
+	}
+	.admin-courses .card-courses-view > li.card-courses-price h5{
+		margin-bottom:0;
+	}
+	.admin-courses .card-courses-view > li.card-courses-stats{
+		display:none;
+	}
+	.card-courses-dec p {
+		margin-bottom: 10px;
+	}
+	.card-courses-list {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	} */
+	.mail-list-title-info{
+		display:none;
+	}
+	.mail-list-time{
+		margin-left: auto;
+	}
+	.mail-rateing, 
+	.mail-list-title, 
+	.mail-list-title-info, 
+	.mail-list-time, 
+	.checkbox-list {
+		height: 50px;
+	}
+	.imageuploadify .imageuploadify-images-list span.imageuploadify-message {
+		font-size: 12px;
+	}
+	.mail-compose {
+		padding: 30px 5px;
+	}
+	.imageuploadify .imageuploadify-images-list .imageuploadify-container{
+		margin: 5px 5px !important;
+	}
+	.send-mail-details > .d-flex{ 
+		display: block !important;
+	}
+	.send-mail-full-info{
+		margin-top: 10px;
+	}
+	/* .admin-review .card-courses-view {
+		display: table;
+		clear: both;
+	}
+	.admin-review .card-courses-view > li {
+		padding-right: 0;
+		float: left;
+	}
+	.admin-review .card-courses-view > li.card-courses-review,
+	.admin-review .card-courses-view > li.card-courses-categories{
+		width:50%;
+	}
+	.admin-review .card-courses-view > li.card-courses-categories{
+		text-align:right;
+	}
+	.admin-review .card-courses-view > li.card-courses-user{
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.admin-review .card-courses-list-bx {
+		margin-bottom: 10px;
+	} */
+}
+
+
 .message-box-wrap .card-body .message-success-box {
   text-align: center;
   padding: 5rem 2rem;
@@ -2682,295 +3342,6 @@ ul {
   top: -17px;
   left: -17px;
 }
-/* =============== 6.4 Account Settings ==================
-.account-settings-box .user-details-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media only screen and (max-width: 1499px) {
-  .account-settings-box .user-details-box {
-    display: block;
-  }
-}
-.account-settings-box .user-details-box .item-img {
-  margin-right: 40px;
-}
-@media only screen and (max-width: 1499px) {
-  .account-settings-box .user-details-box .item-img {
-    margin: 0 0 40px 0;
-  }
-}
-@media only screen and (max-width: 575px) {
-  .account-settings-box .user-details-box .item-img {
-    text-align: center;
-  }
-}
-.account-settings-box .user-details-box .item-img img {
-  border-radius: 50%;
-}
-.account-settings-box .user-details-box .item-content {
-  flex: 1;
-}
-.account-settings-box .user-details-box .item-content .info-table .table {
-  width: 100%;
-}
-.account-settings-box .user-details-box .item-content .info-table .table tr td {
-  border: none;
-  padding: 15px 10px;
-  font-size: 16px;
-}
-.account-settings-box .all-user-box .media {
-  align-items: center;
-  background-color: #f7f7f7;
-  padding: 20px 30px;
-  margin-bottom: 2px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-@media only screen and (max-width: 575px) {
-  .account-settings-box .all-user-box .media {
-    text-align: center;
-  }
-}
-.account-settings-box .all-user-box .media .item-img img {
-  border-radius: 50%;
-}
-.account-settings-box .all-user-box .media .media-body .item-title {
-  font-weight: 500;
-  color: #111111;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-.account-settings-box .all-user-box .media .media-body .item-subtitle {
-  font-size: 15px;
-}
-.account-settings-box .all-user-box .media.active {
-  background-color: #debbbb;
-}
-/*=============== 6.5 UI Elements ==================*
-.ui-btn-wrap ul li {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 14px;
-}
-.ui-btn-wrap ul li:last-child {
-  margin-right: 0;
-}
-.ui-grid-box {
-  background-color: #f2f2f2;
-  padding: 12px 25px;
-  margin-bottom: 30px;
-}
-.progress-bar-card {
-  height: auto;
-}
-.progress-bar-card .card-body .basic-progress-bar .progress {
-  margin-bottom: 30px;
-  height: 7px;
-}
-.progress-bar-card .card-body .stripe-progress-bar .progress {
-  height: 20px;
-  margin-bottom: 20px;
-}
-.progress-bar-card .card-body .gradient-progress-bar .progress {
-  height: 30px;
-  margin-bottom: 20px;
-}
-.progress-bar-card .card-body .gradient-progress-bar .progress .progress-bar {
-  text-align: right;
-  padding-right: 10px;
-  font-size: 18px;
-}
-.progress-bar-card .card-body .vertical-progress-bar .progress-bar-vertical {
-  width: 70px;
-  min-height: 200px;
-  display: flex;
-  align-items: flex-end;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  float: left;
-}
-.progress-bar-card .card-body .vertical-progress-bar .progress-bar-vertical .progress-bar {
-  width: 100%;
-  height: 0;
-  -webkit-transition: height 0.6s ease;
-  -o-transition: height 0.6s ease;
-  transition: height 0.6s ease;
-  font-size: 18px;
-  font-weight: 500;
-}
-.ui-tab-card {
-  height: auto;
-}
-.ui-tab-card .card-body .basic-tab .nav-tabs .nav-item .nav-link {
-  color: #646464;
-  padding: 10px 50px;
-}
-@media only screen and (max-width: 991px) {
-  .ui-tab-card .card-body .basic-tab .nav-tabs .nav-item .nav-link {
-    padding: 10px 30px;
-  }
-}
-@media only screen and (max-width: 575px) {
-  .ui-tab-card .card-body .basic-tab .nav-tabs .nav-item .nav-link {
-    padding: 10px;
-  }
-}
-.ui-tab-card .card-body .basic-tab .nav-tabs .nav-item .nav-link.active {
-  color: #3d5afe;
-}
-.ui-tab-card .card-body .basic-tab .tab-content .tab-pane {
-  border: 1px solid #dee2e6;
-  border-top: none;
-  padding: 25px 30px 5px;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs {
-  border-bottom: 4px solid #dee2e6;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link {
-  margin-right: 20px;
-  padding-bottom: 8px;
-  border: none;
-  color: #646464;
-  position: relative;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link:after {
-  content: "";
-  height: 4px;
-  width: 0;
-  background-color: #80deea;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link:hover:after {
-  width: 100%;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link.active {
-  background-color: transparent;
-  color: #80deea;
-}
-.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link.active:after {
-  width: 100%;
-}
-.ui-tab-card .card-body .custom-tab .tab-content .tab-pane {
-  padding-top: 25px;
-}
-.ui-tab-card .card-body .border-nav-tab .nav-tabs {
-  border: 1px solid #dee2e6;
-}
-.ui-tab-card .card-body .border-nav-tab .nav-tabs .nav-item .nav-link {
-  color: #646464;
-  border-top: none;
-  border-left: none;
-  border-right: 1px solid;
-  border-color: #dee2e6;
-  border-radius: 0;
-  padding: 10px 30px;
-}
-.ui-tab-card .card-body .border-nav-tab .nav-tabs .nav-item .nav-link:hover {
-  background-color: #f57c00;
-  border-color: #f57c00;
-  color: #ffffff;
-  box-shadow: 0px 5px 13px 0px rgba(245, 124, 0, 0.4);
-}
-.ui-tab-card .card-body .border-nav-tab .nav-tabs .nav-item .nav-link.active {
-  background-color: #f57c00;
-  color: #ffffff;
-  box-shadow: 0px 5px 13px 0px rgba(245, 124, 0, 0.4);
-  border-color: #f57c00;
-}
-.ui-tab-card .card-body .border-nav-tab .tab-content {
-  padding-top: 30px;
-}
-.ui-tab-card .card-body .vertical-tab {
-  display: flex;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs {
-  min-width: 140px;
-  margin-right: 30px;
-  border-bottom: none;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link {
-  color: #646464;
-  border: 1px solid;
-  border-color: #dee2e6;
-  border-radius: 4px;
-  padding: 10px 30px;
-  position: relative;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 10px solid #ff1744;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  visibility: hidden;
-  opacity: 0;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link:hover {
-  background-color: #ff1744;
-  border-color: #ff1744;
-  color: #ffffff;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link:hover:after {
-  visibility: visible;
-  opacity: 1;
-  right: -10px;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link.active {
-  background-color: #ff1744;
-  color: #ffffff;
-  border-color: #ff1744;
-}
-.ui-tab-card .card-body .vertical-tab .nav-tabs .nav-item .nav-link.active:after {
-  visibility: visible;
-  opacity: 1;
-  right: -10px;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs {
-  border: none;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs .nav-item .nav-link {
-  margin-right: 6px;
-  padding-bottom: 8px;
-  color: #646464;
-  border-radius: 4px;
-  padding: 10px 20px;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs .nav-item .nav-link:hover {
-  background-color: #7cc576 !important;
-  border-color: #7cc576 !important;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs .nav-item .nav-link:hover i {
-  color: #ffffff !important;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs .nav-item .nav-link.active {
-  background-color: #7cc576 !important;
-  border-color: #7cc576 !important;
-}
-.ui-tab-card .card-body .icon-tab .nav-tabs .nav-item .nav-link.active i {
-  color: #ffffff !important;
-}
-.ui-tab-card .card-body .icon-tab .tab-content {
-  padding-top: 26px;
-} */
 /*=======================================================================
 7. DASHBOARD STYLES 
 =========================================================================*/
@@ -3049,179 +3420,6 @@ ul {
     font-size: 20px;
   }
 }
-/* .dashboard-card-one .card-body .earning-report {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-@media only screen and (max-width: 991px) {
-  .dashboard-card-one .card-body .earning-report {
-    margin-bottom: 20px;
-    display: block;
-  }
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item {
-  display: inline-block;
-  margin-right: 40px;
-  padding-left: 34px;
-  position: relative;
-}
-@media only screen and (max-width: 991px) {
-  .dashboard-card-one .card-body .earning-report .item-content .single-item {
-    margin-bottom: 20px;
-  }
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item:after {
-  content: "";
-  height: 18px;
-  width: 18px;
-  border: 3px solid #ffffff;
-  -webkit-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item:last-child {
-  margin-right: 0;
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item h4 {
-  color: #9f9f9f;
-  margin-bottom: 4px;
-  font-size: 16px;
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item span {
-  padding-left: 13px;
-  font-size: 22px;
-  font-weight: 500;
-  color: #222222;
-  position: relative;
-  display: inline-block;
-}
-@media only screen and (max-width: 991px) {
-  .dashboard-card-one .card-body .earning-report .item-content .single-item span {
-    font-size: 20px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .dashboard-card-one .card-body .earning-report .item-content .single-item span {
-    font-size: 18px;
-  }
-}
-.dashboard-card-one .card-body .earning-report .item-content .single-item span:after {
-  content: "$";
-  font-size: 16px;
-  color: #646464;
-  font-weight: 500;
-  position: absolute;
-  top: 3px;
-  left: 0;
-}
-.dashboard-card-one .card-body .earning-report .dropdown {
-  text-align: right;
-}
-@media only screen and (max-width: 991px) {
-  .dashboard-card-one .card-body .earning-report .dropdown {
-    display: none;
-  }
-}
-.dashboard-card-one .card-body .earning-report .dropdown .date-dropdown-toggle {
-  color: #a7a7a7;
-  position: relative;
-  padding-right: 24px;
-}
-.dashboard-card-one .card-body .earning-report .dropdown .date-dropdown-toggle:after {
-  content: "\f108";
-  font-family: Flaticon;
-  position: absolute;
-  font-size: 12px;
-  font-weight: 600;
-  right: 2px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 5;
-  color: #222222;
-} 
-.dashboard-card-one .card-body .earning-report .dropdown .dropdown-menu {
-  top: 20px !important;
-  min-width: 15rem;
-  animation: none;
-}
-.dashboard-card-one .card-body .earning-report .dropdown .dropdown-menu .dropdown-item {
-  font-size: 14px;
-  padding: 10px 15px;
-}
-.dashboard-card-one .card-body .earning-chart-wrap {
-  position: relative;
-}
-.dashboard-card-two .card-body .expense-report {
-  display: flex;
-  margin-bottom: 38px;
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense {
-  position: relative;
-  margin-right: 40px;
-}
-@media only screen and (max-width: 1699px) {
-  .dashboard-card-two .card-body .expense-report .monthly-expense {
-    margin-right: 13px;
-  }
-}
-@media only screen and (max-width: 1499px) {
-  .dashboard-card-two .card-body .expense-report .monthly-expense {
-    margin-right: 30px;
-  }
-}
-@media only screen and (max-width: 1299px) {
-  .dashboard-card-two .card-body .expense-report .monthly-expense {
-    margin-right: 13px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .dashboard-card-two .card-body .expense-report .monthly-expense {
-    margin-right: 40px;
-  }
-}
-@media only screen and (max-width: 479px) {
-  .dashboard-card-two .card-body .expense-report .monthly-expense {
-    margin-right: 15px;
-  }
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense:last-child {
-  margin-right: 0;
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense:after {
-  content: "";
-  height: 4px;
-  width: 100%;
-  border-radius: 6px;
-  position: absolute;
-  bottom: -7px;
-  left: 0;
-  right: 0;
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense .expense-date {
-  font-size: 15px;
-  color: #9f9f9f;
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense .expense-amount {
-  color: #222222;
-  font-weight: 600;
-  font-size: 16px;
-}
-.dashboard-card-two .card-body .expense-report .monthly-expense .expense-amount span {
-  font-size: 16px;
-  color: #646464;
-}*/
 .dashboard-card-three .card-body .doughnut-chart-wrap {
   padding: 5px 0 50px;
   display: flex;
@@ -3270,76 +3468,6 @@ ul {
 .dashboard-card-four .card-body .calender-wrap .fc-calender .fc-view-container .fc-basicWeek-view table .fc-head .fc-head-container .fc-day-header {
   font-size: 14px;
 }
-/* .dashboard-card-five .card-body .traffic-title {
-  color: #a5a5a5;
-  margin-bottom: 10px;
-}
-.dashboard-card-five .card-body .traffic-number {
-  font-size: 30px;
-  font-weight: 700;
-  color: #222222;
-  line-height: 1;
-  margin-bottom: 25px;
-}
-.dashboard-card-five .card-body .traffic-bar {
-  display: flex;
-  margin-bottom: 18px;
-}
-.dashboard-card-five .card-body .traffic-bar .direct {
-  flex: 0 0 50%;
-  max-width: 50%;
-  min-height: 10px;
-  background-color: #1de9b6;
-  border-radius: 40px 0 0 40px;
-}
-.dashboard-card-five .card-body .traffic-bar .search {
-  flex: 0 0 27%;
-  max-width: 27%;
-  min-height: 10px;
-  background-color: #304ffe;
-}
-.dashboard-card-five .card-body .traffic-bar .referrals {
-  flex: 0 0 16%;
-  max-width: 16%;
-  min-height: 10px;
-  background-color: #ffea00;
-}
-.dashboard-card-five .card-body .traffic-bar .social {
-  flex: 0 0 7%;
-  max-width: 7%;
-  min-height: 10px;
-  background-color: #ed1c24;
-  border-radius: 0 40px 40px 0;
-}
-.dashboard-card-five .card-body .traffic-table .table tbody tr {
-  border-bottom: 1px dashed #e1e1e1;
-}
-.dashboard-card-five .card-body .traffic-table .table tbody tr:last-child {
-  border-bottom: none;
-}
-.dashboard-card-five .card-body .traffic-table .table tbody tr td {
-  color: #111111;
-  font-weight: 500;
-  border-top: none;
-  padding: 20px 15px;
-}
-.dashboard-card-five .card-body .traffic-table .table tbody tr .t-title {
-  position: relative;
-  padding-left: 34px;
-}
-.dashboard-card-five .card-body .traffic-table .table tbody tr .t-title:after {
-  content: "";
-  height: 17px;
-  width: 17px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  -webkit-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 50%;
-  left: 6px;
-  transform: translateY(-50%);
-} */
 .dashboard-card-six ::-webkit-scrollbar {
   width: 10px;
   background: #f0f1f2;
@@ -3385,42 +3513,6 @@ ul {
 .dashboard-card-six .card-body .notice-box-wrap .notice-list .entry-meta span {
   color: #a4a4a4;
 }
-/* 
-.dashboard-card-seven .social-media {
-  border-radius: 4px;
-  padding: 30px 20px;
-  text-align: center;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.dashboard-card-seven .social-media .media {
-  align-items: center;
-  justify-content: center;
-}
-.dashboard-card-seven .social-media .media .social-icon {
-  font-size: 24px;
-  color: #ffffff;
-}
-.dashboard-card-seven .social-media .media .media-body {
-  flex: inherit;
-}
-.dashboard-card-seven .social-media .media .media-body .item-title {
-  margin-bottom: 0;
-  color: #ffffff;
-  font-size: 15px;
-}
-@media only screen and (max-width: 1199px) {
-  .dashboard-card-seven .social-media .media .media-body {
-    margin-top: 10px;
-  }
-}
-.dashboard-card-seven .social-media .social-like {
-  font-size: 26px;
-  color: #ffffff;
-} */
 /*=============== 7.2 Dashboard Page Two ==================*/
 .dashboard-card-ten .card-body .student-info .media {
   margin-bottom: 6px;
@@ -3966,6 +4058,9 @@ ul {
 .mg-b-25 {
   margin-bottom: 25px;
 }
+.mg-b-30 {
+  margin-bottom: 30px;
+}
 .mg-r-4 {
   margin-right: 4px;
 }
@@ -4020,6 +4115,7 @@ ul {
 .mg-r-22 {
   margin-right: 22px;
 }
+.m
 /*=============== 8.5 Misc ==================*/
 .pseudo-bg-Aquamarine:after {
   background-color: #1de9b6;
@@ -4095,7 +4191,7 @@ ul {
   background: #1559a7;
 }
 /*=============== 8.6 Padding ==================*/
-.pd-0 {
+ .pd-0 {
   padding: 0;
 }
 .pd-x-0 {
@@ -4550,3 +4646,4 @@ ul {
       display:none;
       }
 }
+

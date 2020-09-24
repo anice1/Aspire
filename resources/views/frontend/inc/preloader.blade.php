@@ -1,6 +1,6 @@
 <!-- Preloader Start Here -->
 <div id="preloader">
-    <div class="container-fluid">
+    <div class="container-fluid1">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
